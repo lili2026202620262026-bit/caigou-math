@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>菜狗捞捞 · 数学分级考</title>
+  <link rel="stylesheet" href="assets/katex/katex.min.css" />
+  <script defer src="assets/katex/katex.min.js"></script>
+  <script defer src="assets/katex/contrib/auto-render.min.js"></script>
+  <script defer src="assets/caigou-katex.js"></script>
   <style>
     :root{--ink:#173a2b;--green:#66ad70;--deep:#347047;--mint:#e8f6e4;--bg:#f6fbf4;--line:#d6e9d5;--muted:#688577;--wrong:#bd5f5a}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans SC","Microsoft YaHei",sans-serif}button{font:inherit;cursor:pointer}.top{position:sticky;top:0;z-index:5;height:64px;display:flex;justify-content:space-between;align-items:center;padding:0 max(18px,7vw);border-bottom:1px solid var(--line);background:rgba(255,255,255,.9);backdrop-filter:blur(12px)}.brand{font-weight:800;font-size:18px}.brand i{font-style:normal;display:inline-grid;place-items:center;width:25px;height:25px;border-radius:50%;margin-right:7px;background:#bfe576;color:#fff;font-size:12px}.paper{color:var(--muted);font-size:12px}.wrap{max-width:1000px;margin:auto;padding:42px 20px 174px}.hero{background:linear-gradient(120deg,#fff,#e9f6e5);border:1px solid var(--line);border-radius:26px;padding:28px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}.eyebrow{font:700 11px monospace;letter-spacing:.7px;color:var(--deep)}h1{margin:10px 0;font-size:clamp(27px,4vw,42px);letter-spacing:-1.8px}.hero p{margin:0;color:#587566;line-height:1.75;font-size:14px;max-width:670px}.score{padding:14px 16px;border-radius:16px;background:#fff;border:1px solid #d9ecd5;min-width:135px;text-align:center}.score strong{display:block;font-size:26px}.score span{font-size:11px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(13,1fr);gap:6px;margin:22px 0}.nav{aspect-ratio:1;border:1px solid #d9e9d8;background:#fff;border-radius:9px;color:#4d725c;font-size:12px}.nav.active{background:var(--ink);color:white;border-color:var(--ink)}.nav.done{background:#dff3dc;border-color:#8bc585;color:var(--deep)}.mobile-progress{display:none}.card{background:#fff;border:1px solid var(--line);border-radius:23px;overflow:hidden}.card-head{padding:19px 21px 13px;display:flex;justify-content:space-between;align-items:center}.qno{font:800 15px monospace;color:var(--deep)}.tag{font-size:12px;color:#5f806c;background:#edf8ea;border-radius:99px;padding:5px 9px}.work{padding:18px 21px 21px}.hint{font-size:13px;color:var(--muted);margin:0 0 12px}.opts{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.opt{text-align:left;border:1px solid #d5e6d5;background:#fff;border-radius:11px;padding:11px 12px;color:#426351;font-size:14px;line-height:1.55}.opt.selected{border-color:var(--deep);background:#e7f6e3;color:var(--deep)}.actions{display:flex;gap:10px;margin-top:14px}.primary,.ghost{border-radius:10px;padding:10px 14px;border:0;font-size:13px}.primary{background:var(--ink);color:#fff}.ghost{background:#eff8ed;color:var(--deep)}.feedback{display:none;margin-top:14px;border:1px solid #cfe7ca;border-radius:13px;background:#f4fbf1;padding:14px;line-height:1.7;font-size:14px}.feedback.show{display:block}.feedback b{color:var(--deep)}.feedback .answer{font-weight:800;color:var(--deep);margin-top:8px}.move{display:flex;justify-content:space-between;margin-top:17px}.move button{border:0;background:transparent;color:var(--deep);font-weight:700;padding:8px}.pet{position:fixed;right:13px;bottom:10px;width:137px;z-index:8;filter:drop-shadow(0 8px 11px rgba(42,87,53,.16));user-select:none}.bubble{position:absolute;left:50%;top:-36px;transform:translateX(-50%);width:142px;padding:7px 9px;border:1px solid var(--line);border-radius:12px;background:#fff;text-align:center;font-size:11px;line-height:1.45}.bubble:after{content:"";position:absolute;left:50%;bottom:-5px;width:9px;height:9px;background:#fff;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transform:translateX(-50%) rotate(45deg)}.frame{height:131px;overflow:hidden;position:relative}.sprite{position:absolute;width:400%;max-width:none;left:0;bottom:-21px;transform:translateX(var(--x,0%));transition:transform .55s cubic-bezier(.2,.8,.25,1)}.pet.finish .frame{animation:hop .7s ease-in-out infinite alternate}@keyframes hop{to{transform:translateY(-6px)}}.petlabel{text-align:center;margin-top:-4px;padding:4px;border-radius:99px;background:rgba(246,251,244,.94);font:700 10px monospace;color:#538060}@media(max-width:650px){.top{padding:0 15px}.paper{display:none}.wrap{padding:24px 12px 160px}.hero{padding:20px;display:block;border-radius:20px}.hero p{font-size:13px}.score{margin-top:15px;display:inline-block;text-align:left;min-width:0}.score strong{display:inline;font-size:20px;margin-right:5px}.grid{display:block;margin:14px 0}.grid>.nav{display:none}.mobile-progress{display:block;padding:10px 12px;border:1px solid var(--line);border-radius:14px;background:#fff}.mobile-progress-head{display:flex;justify-content:space-between;margin-bottom:7px;color:var(--muted);font-size:12px}.mobile-progress-head b{color:var(--deep)}.mobile-progress-track{height:7px;border-radius:99px;background:#e9f2e7;overflow:hidden}.mobile-progress-track i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#9ed795,#5cae70);transition:width .35s}.card{border-radius:18px}.card-head{padding:14px 15px 11px}.work{padding:14px 15px 16px}.opts{grid-template-columns:1fr}.actions{display:grid;grid-template-columns:1fr 1fr}.primary,.ghost{width:100%;padding:11px 6px}.pet{width:113px;right:5px}.frame{height:108px}.sprite{bottom:-18px}.bubble{width:122px;font-size:10px}.petlabel{font-size:9px}}
   </style>
@@ -18,63 +22,63 @@
   <aside class="pet" id="pet"><div class="bubble" id="bubble">捞捞……先拿下一题！</div><div class="frame"><img class="sprite" id="sprite" src="assets/caigou-drowning-states.png" alt="随答题进度获救的菜狗"></div><div class="petlabel" id="petlabel">溺水中 · 0 / 25</div></aside>
   <script>
     const questions=[
-      ['D','函数奇偶性与分段函数','利用偶函数的对称条件，分别比较左右两段在 x 与 −x 处的函数值。'],
-      ['B','二次函数与不等式参数','将 f(2)f(3)<0 转化为两点函数值异号，再进行参数优化。'],
-      ['B','奇函数与周期性','由 f(x+2)=-f(x) 得到周期 4，结合奇性把各自变量移回已知区间。'],
+      ['D','函数奇偶性与分段函数','利用偶函数的对称条件，分别比较左右两段在 \\(x\\) 与 \\(-x\\) 处的函数值。'],
+      ['B','二次函数与不等式参数','将 \\(f(2)f(3)<0\\) 转化为两点函数值异号，再进行参数优化。'],
+      ['B','奇函数与周期性','由 \\(f(x+2)=-f(x)\\) 得到周期 \\(4\\)，结合奇性把各自变量移回已知区间。'],
       ['B','函数单调性与对称构造','把不等式改写为关于同一中心的函数比较，判断单调性即可。'],
-      ['D','指数、对数比较','分别考察 e^x−ln x 的单调区间，结合估值比较三个数。'],
+      ['D','指数、对数比较','分别考察 \\(e^x-\\ln x\\) 的单调区间，结合估值比较三个数。'],
       ['C','空间几何体积最值','利用四条等长边的对称性化简体积表达式，再求最值。'],
-      ['C','三角恒等变形','用 tanθ=-2 表示 sinθ、cosθ 的比值后代入化简。'],
+      ['C','三角恒等变形','用 \\(\\tan\\theta=-2\\) 表示 \\(\\sin\\theta,\\cos\\theta\\) 的比值后代入化简。'],
       ['B','函数对称变换','将 f(−a) 与 f(a) 的关系通过对数部分的互补变形建立。'],
-      ['C','双曲线渐近线与圆','写出渐近线方程，结合圆与弦的几何关系计算焦点角的正切。'],
+      ['C','双曲线渐近线与圆','写出渐近线方程，结合圆与弦的几何关系计算 \\(\\tan\\angle AFB\\)。'],
       ['B','三角函数零点个数','将式子化为单一正弦函数，按区间长度统计零点。'],
-      ['A','折叠与四棱锥体积','将折叠后的高表示为 α、β 的三角函数，并做三角最值。'],
+      ['A','折叠与四棱锥体积','将折叠后的高表示为 \\(\\alpha,\\beta\\) 的三角函数，并做三角最值。'],
       ['B','圆的切线长度','两圆切线长度相等等价于点到两个圆心距离相等，再求原点到中垂线距离。'],
-      ['B','二项式定项','令通项中 x 的指数为 0，寻找使 n 为正整数的最小 k。'],
-      ['A','解析几何与抛物线','先得到 P 的轨迹，再利用焦点弦的角条件求 AQ。'],
-      ['B','向量模与夹角','把条件化为关于 c−b 的数量积关系，用基本不等式确定夹角范围。'],
-      ['A','等差、等比数列与周期函数','用中项性质化简自变量为 9，再按 f(x+2)=-f(x) 回代。'],
+      ['B','二项式定项','令通项中 \\(x\\) 的指数为 \\(0\\)，寻找使 \\(n\\) 为正整数的最小 \\(k\\)。'],
+      ['A','解析几何与抛物线','先得到 \\(P\\) 的轨迹，再利用焦点弦的角条件求 \\(|AQ|\\)。'],
+      ['B','向量模与夹角','把条件化为关于 \\(\\vec c-\\vec b\\) 的数量积关系，用基本不等式确定夹角范围。'],
+      ['A','等差、等比数列与周期函数','用中项性质化简自变量为 \\(9\\)，再按 \\(f(x+2)=-f(x)\\) 回代。'],
       ['C','球与三棱锥体积','由球表面积求半径；再由三角形外接圆半径求球心到平面的距离。'],
       ['B','排列组合','先安排两辆不同白车，再逐个枚举满足行列限制的黑车位置。'],
-      ['D','等比数列与乘积最值','利用 a₁a₂a₃ 求出中项和公比，将前 n 项积化为指数二次函数。'],
-      ['D','向量与折线最短路','把两段向量模转化为折线长度，采用对称法取最短并反求 |OB|。'],
-      ['B','正方体截面','由平行条件确定截面为矩形 BCFE，分别计算两条相邻边。'],
-      ['A','椭圆焦点与向量','先由直线确定 F、C，用向量等式求 A 坐标，代入椭圆方程求离心率。'],
-      ['C','递推数列估计','对倒数的立方作差并累加，夹逼得到 c₁₈ 的范围。'],
-      ['C','平面几何与数量积比较','分别识别 P、Q、R 的几何位置，比较三组向量夹角与长度。'],
+      ['D','等比数列与乘积最值','利用 \\(a_1a_2a_3\\) 求出中项和公比，将前 \\(n\\) 项积化为指数二次函数。'],
+      ['D','向量与折线最短路','把两段向量模转化为折线长度，采用对称法取最短并反求 \\(|OB|\\)。'],
+      ['B','正方体截面','由平行条件确定截面为矩形 \\(BCFE\\)，分别计算两条相邻边。'],
+      ['A','椭圆焦点与向量','先由直线确定 \\(F,C\\)，用向量等式求 \\(A\\) 的坐标，代入椭圆方程求离心率。'],
+      ['C','递推数列估计','对倒数的立方作差并累加，夹逼得到 \\(c_{18}\\) 的范围。'],
+      ['C','平面几何与数量积比较','分别识别 \\(P,Q,R\\) 的几何位置，比较三组向量夹角与长度。'],
       ['B','扇形、月牙面积与积分估计','将对称月牙配对求和，转化为正弦和并用定积分给出下界。']
     ].map((x,i)=>({no:i+1,answer:x[0],point:x[1],explain:x[2]}));
     const textBank=[
-      ['已知函数 f(x)={sin(x−a)，x≤0；cos(x−b)，x>0} 是偶函数，则 a、b 的值可能是','a=π/3，b=π/3','a=2π/3，b=π/6','a=π/3，b=π/6','a=2π/3，b=5π/6'],
-      ['已知实数 m、n，函数 f(x)=x²+mx+n 满足 f(2)·f(3)<0，则 m²+2mn 的最大值为','16/3','81/5','81/3','16/5'],
-      ['定义在 R 上的奇函数 f(x) 满足 f(x+2)=−f(x)，且当 x∈[0,1] 时 f(x)=2ˣ−1，则','f(6)<f(−7)<f(11/2)','f(6)<f(11/2)<f(−7)','f(−7)<f(11/2)<f(6)','f(11/2)<f(−7)<f(6)'],
-      ['函数 f(x)=sin(x−1)+e^(x−1)−e^(1−x)−x+4，则满足 f(x)+f(3−2x)<6 的 x 的范围是','(3,+∞)','(1,+∞)','(−∞,3)','(−∞,1)'],
-      ['设 a=e^√2−ln2，b=e^√3−ln3，c=√2e−2/e，则','a<b<c','b<a<c','b<c<a','c<a<b'],
-      ['四面体 D−ABC 中，AC=BC=AD=BD=1，则 D−ABC 体积的最大值为','4√2/27','3√2/8','2√3/27','√3/18'],
-      ['若 tanθ=−2，则 sinθ(1+sin2θ)/(sinθ+cosθ) 等于','−6/5','−2/5','2/5','6/5'],
-      ['已知 f(x)=xln(e^(2x)+1)−x²+1，f(a)=2，则 f(−a) 的值为','1','0','−1','−2'],
-      ['F(c,0)(c>0) 是双曲线 x²/a²−y²/b²=1 的焦点。圆 x²+y²−2cx+b²=0 与一条倾斜角为 30° 的渐近线交于 A、B，则 tan∠AFB=','−√2','−√3','−2√2','−2√3'],
-      ['f(x)=sinωx−cos(ωx+π/6)(ω>0) 在 [0,π] 上有且仅有 2 个零点，则 ω 的范围是','[1,13/6]','[7/6,13/6)','(7/6,2)','[1,13/6)'],
-      ['长方形 ABCD 中 AB=√15/2，AD=1。将 △ADE 沿 DE 折起，设 ∠ADE=α，二面角 A′−DE−C 为 β。若 α+β=π/2，则四棱锥 A′−BCDE 体积最大值为','1/4','2/3','(√15−1)/12','(√5−1)/8'],
-      ['过 P(x,y) 作圆 C₁:x²+y²=1 与圆 C₂:(x−2)²+(y−2)²=1 的切线，切点分别为 A、B。若 |PA|=|PB|，则 x²+y² 的最小值为','√2','2','2√2','8'],
-      ['二项式 (x⁵−2√x/x³)ⁿ 的展开式含有常数项，则 n 的最小值为','2','3','4','5'],
-      ['A(1,0)，B(0,6)。动点 C 在线段 OB 上；按题图作 D、E、F，OF 与 CE 交于 P。Q 在 P 的轨迹上且 ∠OAQ=120°，则 |AQ|=','4','2','4/3','2/3'],
-      ['向量 a、b、c 满足 |a|=1，2a+b=0，2|c−a|=|c−b|，则 c−b 与 a 夹角的最大值为','π/12','π/6','π/4','π/3'],
-      ['{aₙ} 为等差数列，{bₙ} 为等比数列，a₁+a₂₀₂₀=27，b₁b₂₀₂₀=2。f(x+2)=−f(x)，且 f(x)=eˣ(x∈[0,2])，则 f((a₁₀₁₀+a₁₀₁₁)/(1+b₁₀₁₀b₁₀₁₁))=','e','e²','e⁻¹','e⁻²'],
-      ['A、B、C 在表面积为 16π 的球 O 上，AC=AB=1，∠ABC=30°，则三棱锥 O−ABC 的体积为','1/12','√3/12','1/4','√3/4'],
-      ['景区有 A 至 H 共 8 个停车位。2 辆不同白车、2 辆不同黑车停车，要求同色车不在同一行也不在同一列，则方法数为','288','336','576','1680'],
-      ['等比数列 {aₙ} 各项为正，a₁a₂a₃=27，a₄−a₂=−8/3，则 a₁a₂…aₙ 的最大值为','9','8','3','27'],
-      ['点 O、A、B 不重合且 |OA|=|AB|=4。λ∈[0,1] 时，|λOB−OA|+|(1−λ)BO−BA/2| 的最小值为 2√5，则 |OB|=','2','2√2','4','4√2'],
-      ['棱长为 2 的正方体 ABCD−A₁B₁C₁D₁ 中，E、F 分别为 AA₁、CC₁ 中点。过 BE 的平面 α 与 A₁F 平行，则截面面积为','√5','2√5','4','5'],
-      ['直线 x−y+1=0 经过椭圆 x²/a²+y²/b²=1(a>b>0) 的左焦点 F，交椭圆于 A、B，交 y 轴于 C。若 FC=2AC，则离心率为','(√10−√2)/2','(√3−1)/2','2√2−2','√2−1'],
-      ['数列 {cₙ} 满足 c₁=1，cₙ₊₁=cₙ/(cₙ³+1)，则 c₁₈∈','(1/3,2/5)','(2/7,1/3)','(1/4,2/7)','(2/9,1/4)'],
-      ['P、Q、R 是等腰直角三角形 ABC(∠A=π/2) 内点，满足原卷所给角条件及 sin∠ARA+sin∠BRB+sin∠CRC=0。下列数量积关系正确的是','PA·PB>QA·QB>RA·RB','QA·QB>PA·PB>RA·RB','RA·RB>PA·PB>QA·QB','RA·RB>QA·QB>PA·PB'],
-      ['半径为 √2 的半圆弧 AB 上取点 P，以 AP 为直径作半圆，阴影为月牙 AP。将弧 AB 作 2k+1 等分，月牙面积平均值为 Sₖ。若对任意 k∈N* 有 λ<Sₖ，则 λ 最大值为','1/π','2/π','1/2','1']
+      ['已知函数 \\(f(x)=\\begin{cases}\\sin(x-a),&x\\le0,\\\\\\cos(x-b),&x>0\\end{cases}\\) 是偶函数，则 \\(a,b\\) 的值可能是','\\(a=\\frac\\pi3,\\ b=\\frac\\pi3\\)','\\(a=\\frac{2\\pi}3,\\ b=\\frac\\pi6\\)','\\(a=\\frac\\pi3,\\ b=\\frac\\pi6\\)','\\(a=\\frac{2\\pi}3,\\ b=\\frac{5\\pi}6\\)'],
+      ['已知实数 \\(m,n\\)，函数 \\(f(x)=x^2+mx+n\\) 满足 \\(f(2)f(3)<0\\)，则 \\(m^2+2mn\\) 的最大值为','\\(\\frac{16}3\\)','\\(\\frac{81}5\\)','\\(27\\)','\\(\\frac{16}5\\)'],
+      ['定义在 \\(\\mathbb R\\) 上的奇函数 \\(f(x)\\) 满足 \\(f(x+2)=-f(x)\\)，且当 \\(x\\in[0,1]\\) 时 \\(f(x)=2^x-1\\)，则','\\(f(6)<f(-7)<f(11/2)\\)','\\(f(6)<f(11/2)<f(-7)\\)','\\(f(-7)<f(11/2)<f(6)\\)','\\(f(11/2)<f(-7)<f(6)\\)'],
+      ['函数 \\(f(x)=\\sin(x-1)+e^{x-1}-e^{1-x}-x+4\\)，则满足 \\(f(x)+f(3-2x)<6\\) 的 \\(x\\) 的范围是','\\((3,+\\infty)\\)','\\((1,+\\infty)\\)','\\((-\\infty,3)\\)','\\((-\\infty,1)\\)'],
+      ['设 \\(a=e^{\\sqrt2}-\\ln2\\)，\\(b=e^{\\sqrt3}-\\ln3\\)，\\(c=\\sqrt2e-2/e\\)，则','\\(a<b<c\\)','\\(b<a<c\\)','\\(b<c<a\\)','\\(c<a<b\\)'],
+      ['四面体 \\(D-ABC\\) 中，\\(AC=BC=AD=BD=1\\)，则四面体体积的最大值为','\\(\\frac{4\\sqrt2}{27}\\)','\\(\\frac{3\\sqrt2}{8}\\)','\\(\\frac{2\\sqrt3}{27}\\)','\\(\\frac{\\sqrt3}{18}\\)'],
+      ['若 \\(\\tan\\theta=-2\\)，则 \\(\\displaystyle\\frac{\\sin\\theta(1+\\sin2\\theta)}{\\sin\\theta+\\cos\\theta}\\) 等于','\\(-\\frac65\\)','\\(-\\frac25\\)','\\(\\frac25\\)','\\(\\frac65\\)'],
+      ['已知 \\(f(x)=x\\ln(e^{2x}+1)-x^2+1\\)，\\(f(a)=2\\)，则 \\(f(-a)\\) 的值为','\\(1\\)','\\(0\\)','\\(-1\\)','\\(-2\\)'],
+      ['\\(F(c,0)\\ (c>0)\\) 是双曲线 \\(\\displaystyle\\frac{x^2}{a^2}-\\frac{y^2}{b^2}=1\\) 的焦点。圆 \\(x^2+y^2-2cx+b^2=0\\) 与一条倾斜角为 \\(30^\\circ\\) 的渐近线交于 \\(A,B\\)，则 \\(\\tan\\angle AFB=\\)','\\(-\\sqrt2\\)','\\(-\\sqrt3\\)','\\(-2\\sqrt2\\)','\\(-2\\sqrt3\\)'],
+      ['函数 \\(f(x)=\\sin\\omega x-\\cos(\\omega x+\\pi/6)\\ (\\omega>0)\\) 在 \\([0,\\pi]\\) 上有且仅有 2 个零点，则 \\(\\omega\\) 的范围是','\\([1,13/6]\\)','\\([7/6,13/6)\\)','\\((7/6,2)\\)','\\([1,13/6)\\)'],
+      ['长方形 \\(ABCD\\) 中，\\(AB=\\sqrt{15}/2\\)，\\(AD=1\\)。将 \\(\\triangle ADE\\) 沿 \\(DE\\) 折起，设 \\(\\angle ADE=\\alpha\\)，二面角 \\(A^{\\prime}-DE-C\\) 为 \\(\\beta\\)。若 \\(\\alpha+\\beta=\\pi/2\\)，则四棱锥 \\(A^{\\prime}-BCDE\\) 体积最大值为','\\(\\frac14\\)','\\(\\frac23\\)','\\(\\frac{\\sqrt{15}-1}{12}\\)','\\(\\frac{\\sqrt5-1}{8}\\)'],
+      ['过 \\(P(x,y)\\) 作圆 \\(C_1:x^2+y^2=1\\) 与圆 \\(C_2:(x-2)^2+(y-2)^2=1\\) 的切线，切点分别为 \\(A,B\\)。若 \\(|PA|=|PB|\\)，则 \\(x^2+y^2\\) 的最小值为','\\(\\sqrt2\\)','\\(2\\)','\\(2\\sqrt2\\)','\\(8\\)'],
+      ['二项式 \\(\\displaystyle\\left(x^5-\\frac{2\\sqrt{x}}{x^3}\\right)^n\\) 的展开式含有常数项，则 \\(n\\) 的最小值为','\\(2\\)','\\(3\\)','\\(4\\)','\\(5\\)'],
+      ['\\(A(1,0)\\)，\\(B(0,6)\\)。动点 \\(C\\) 在线段 \\(OB\\) 上；按题图作 \\(D,E,F\\)，\\(OF\\) 与 \\(CE\\) 交于 \\(P\\)。\\(Q\\) 在 \\(P\\) 的轨迹上且 \\(\\angle OAQ=120^\\circ\\)，则 \\(|AQ|=\\)','\\(4\\)','\\(2\\)','\\(\\frac43\\)','\\(\\frac23\\)'],
+      ['向量 \\(\\vec a,\\vec b,\\vec c\\) 满足 \\(|\\vec a|=1\\)，\\(2\\vec a+\\vec b=0\\)，\\(2|\\vec c-\\vec a|=|\\vec c-\\vec b|\\)，则 \\(\\vec c-\\vec b\\) 与 \\(\\vec a\\) 夹角的最大值为','\\(\\frac\\pi{12}\\)','\\(\\frac\\pi6\\)','\\(\\frac\\pi4\\)','\\(\\frac\\pi3\\)'],
+      ['\\(\\{a_n\\}\\) 为等差数列，\\(\\{b_n\\}\\) 为等比数列，\\(a_1+a_{2020}=27\\)，\\(b_1b_{2020}=2\\)。\\(f(x+2)=-f(x)\\)，且 \\(f(x)=e^x\\ (x\\in[0,2])\\)，则 \\(\\displaystyle f\\!\\left(\\frac{a_{1010}+a_{1011}}{1+b_{1010}b_{1011}}\\right)=\\)','\\(e\\)','\\(e^2\\)','\\(e^{-1}\\)','\\(e^{-2}\\)'],
+      ['\\(A,B,C\\) 在表面积为 \\(16\\pi\\) 的球 \\(O\\) 上，\\(AC=AB=1\\)，\\(\\angle ABC=30^\\circ\\)，则三棱锥 \\(O-ABC\\) 的体积为','\\(\\frac1{12}\\)','\\(\\frac{\\sqrt3}{12}\\)','\\(\\frac14\\)','\\(\\frac{\\sqrt3}{4}\\)'],
+      ['景区有 \\(A\\) 至 \\(H\\) 共 8 个停车位。2 辆不同白车、2 辆不同黑车停车，要求同色车不在同一行也不在同一列，则方法数为','\\(288\\)','\\(336\\)','\\(576\\)','\\(1680\\)'],
+      ['等比数列 \\(\\{a_n\\}\\) 各项为正，\\(a_1a_2a_3=27\\)，\\(a_4-a_2=-8/3\\)，则 \\(a_1a_2\\cdots a_n\\) 的最大值为','\\(9\\)','\\(8\\)','\\(3\\)','\\(27\\)'],
+      ['点 \\(O,A,B\\) 不重合且 \\(|OA|=|AB|=4\\)。当 \\(\\lambda\\in[0,1]\\) 时，\\(\\left|\\lambda\\overrightarrow{OB}-\\overrightarrow{OA}\\right|+\\left|(1-\\lambda)\\overrightarrow{BO}-\\frac12\\overrightarrow{BA}\\right|\\) 的最小值为 \\(2\\sqrt5\\)，则 \\(|OB|=\\)','\\(2\\)','\\(2\\sqrt2\\)','\\(4\\)','\\(4\\sqrt2\\)'],
+      ['棱长为 2 的正方体 \\(ABCD-A_1B_1C_1D_1\\) 中，\\(E,F\\) 分别为 \\(AA_1,CC_1\\) 的中点。过 \\(BE\\) 的平面 \\(\\alpha\\) 与 \\(A_1F\\) 平行，则截面面积为','\\(\\sqrt5\\)','\\(2\\sqrt5\\)','\\(4\\)','\\(5\\)'],
+      ['直线 \\(x-y+1=0\\) 经过椭圆 \\(\\displaystyle\\frac{x^2}{a^2}+\\frac{y^2}{b^2}=1\\ (a>b>0)\\) 的左焦点 \\(F\\)，交椭圆于 \\(A,B\\)，交 \\(y\\) 轴于 \\(C\\)。若 \\(FC=2AC\\)，则离心率为','\\(\\frac{\\sqrt{10}-\\sqrt2}{2}\\)','\\(\\frac{\\sqrt3-1}{2}\\)','\\(2\\sqrt2-2\\)','\\(\\sqrt2-1\\)'],
+      ['数列 \\(\\{c_n\\}\\) 满足 \\(c_1=1\\)，\\(\\displaystyle c_{n+1}=\\frac{c_n}{c_n^3+1}\\)，则 \\(c_{18}\\in\\)','\\((1/3,2/5)\\)','\\((2/7,1/3)\\)','\\((1/4,2/7)\\)','\\((2/9,1/4)\\)'],
+      ['\\(P,Q,R\\) 是等腰直角三角形 \\(ABC\\ (\\angle A=\\pi/2)\\) 的内点，满足原卷所给角条件及 \\(\\sin\\angle ARA+\\sin\\angle BRB+\\sin\\angle CRC=0\\)。下列数量积关系正确的是','\\(\\overrightarrow{PA}\\!\\cdot\\!\\overrightarrow{PB}>\\overrightarrow{QA}\\!\\cdot\\!\\overrightarrow{QB}>\\overrightarrow{RA}\\!\\cdot\\!\\overrightarrow{RB}\\)','\\(\\overrightarrow{QA}\\!\\cdot\\!\\overrightarrow{QB}>\\overrightarrow{PA}\\!\\cdot\\!\\overrightarrow{PB}>\\overrightarrow{RA}\\!\\cdot\\!\\overrightarrow{RB}\\)','\\(\\overrightarrow{RA}\\!\\cdot\\!\\overrightarrow{RB}>\\overrightarrow{PA}\\!\\cdot\\!\\overrightarrow{PB}>\\overrightarrow{QA}\\!\\cdot\\!\\overrightarrow{QB}\\)','\\(\\overrightarrow{RA}\\!\\cdot\\!\\overrightarrow{RB}>\\overrightarrow{QA}\\!\\cdot\\!\\overrightarrow{QB}>\\overrightarrow{PA}\\!\\cdot\\!\\overrightarrow{PB}\\)'],
+      ['半径为 \\(\\sqrt2\\) 的半圆弧 \\(AB\\) 上取点 \\(P\\)，以 \\(AP\\) 为直径作半圆，阴影为月牙 \\(AP\\)。将弧 \\(AB\\) 作 \\(2k+1\\) 等分，月牙面积平均值为 \\(S_k\\)。若对任意 \\(k\\in\\mathbb N^*\\) 有 \\(\\lambda<S_k\\)，则 \\(\\lambda\\) 的最大值为','\\(\\frac1\\pi\\)','\\(\\frac2\\pi\\)','\\(\\frac12\\)','\\(1\\)']
     ];
     questions.forEach((q,i)=>{q.text=textBank[i][0];q.options=textBank[i].slice(1)});
     let current=Number(localStorage.getItem('caigou-placement-current')||0);let done=JSON.parse(localStorage.getItem('caigou-placement-done')||'{}');let chosen=JSON.parse(localStorage.getItem('caigou-placement-chosen')||'{}');
     const el=id=>document.getElementById(id);const save=()=>{localStorage.setItem('caigou-placement-current',current);localStorage.setItem('caigou-placement-done',JSON.stringify(done));localStorage.setItem('caigou-placement-chosen',JSON.stringify(chosen));};
-    function render(){const q=questions[current],count=Object.keys(done).length;el('grid').innerHTML=`<div class="mobile-progress"><div class="mobile-progress-head"><span><b>第 ${q.no} / 25 题</b></span><span>完成 ${count} 题</span></div><div class="mobile-progress-track"><i style="width:${(current+1)/25*100}%"></i></div></div>`+questions.map((x,i)=>`<button class="nav ${i===current?'active':''} ${done[x.no]?'done':''}" onclick="go(${i})">${x.no}</button>`).join('');el('card').innerHTML=`<div class="card-head"><span class="qno">第 ${q.no} 题</span><span class="tag">单项选择</span></div><div class="work"><div style="font-size:16px;font-weight:700;line-height:1.8;margin:2px 0 14px">${q.text}</div><p class="hint">选择一个答案后提交；想先自查可直接打开解析。</p><div class="opts">${q.options.map((t,i)=>{const a='ABCD'[i];return `<button class="opt ${chosen[q.no]===a?'selected':''}" onclick="pick('${a}')"><b>${a}.</b> ${t}</button>`}).join('')}</div><div class="actions"><button class="primary" onclick="submit()">提交本题</button><button class="ghost" onclick="reveal()">查看解析</button></div><div class="feedback" id="feedback"><b>考点：</b>${q.point}<br><b>解析要点：</b>${q.explain}<div class="answer">正确答案：${q.answer}</div></div><div class="move"><button onclick="go(Math.max(0,current-1))">← 上一题</button><button onclick="go(Math.min(24,current+1))">下一题 →</button></div></div>`;updatePet();}
+    function render(){const q=questions[current],count=Object.keys(done).length;el('grid').innerHTML=`<div class="mobile-progress"><div class="mobile-progress-head"><span><b>第 ${q.no} / 25 题</b></span><span>完成 ${count} 题</span></div><div class="mobile-progress-track"><i style="width:${(current+1)/25*100}%"></i></div></div>`+questions.map((x,i)=>`<button class="nav ${i===current?'active':''} ${done[x.no]?'done':''}" onclick="go(${i})">${x.no}</button>`).join('');el('card').innerHTML=`<div class="card-head"><span class="qno">第 ${q.no} 题</span><span class="tag">单项选择</span></div><div class="work"><div class="question-text" style="font-size:16px;font-weight:700;line-height:1.8;margin:2px 0 14px">${q.text}</div><p class="hint">选择一个答案后提交；想先自查可直接打开解析。</p><div class="opts">${q.options.map((t,i)=>{const a='ABCD'[i];return `<button class="opt ${chosen[q.no]===a?'selected':''}" onclick="pick('${a}')"><b>${a}.</b> ${t}</button>`}).join('')}</div><div class="actions"><button class="primary" onclick="submit()">提交本题</button><button class="ghost" onclick="reveal()">查看解析</button></div><div class="feedback" id="feedback"><b>考点：</b>${q.point}<br><b>解析要点：</b>${q.explain}<div class="answer">正确答案：${q.answer}</div></div><div class="move"><button onclick="go(Math.max(0,current-1))">← 上一题</button><button onclick="go(Math.min(24,current+1))">下一题 →</button></div></div>`;updatePet();window.CaigouMath?.render(el('card'))}
     function go(i){current=i;save();render();window.scrollTo({top:0,behavior:'smooth'});}function pick(a){chosen[questions[current].no]=a;save();render();}function submit(){const n=questions[current].no;if(!chosen[n]){alert('先选一个答案，再提交吧。');return}done[n]=true;save();render();}function reveal(){el('feedback').classList.add('show');}
     function updatePet(){const count=Object.keys(done).length;el('score').textContent=`${count} / 25`;const level=Math.min(3,Math.floor(count/7));el('sprite').style.setProperty('--x',`${-25*level}%`);const labels=['溺水中','冒泡中','快上岸了','捞出来啦！'];const words=['捞捞……先拿下一题！','水位下降一点，菜狗抬头了！','再坚持几题，马上靠岸。','全部完成，菜狗安全上岸！'];el('petlabel').textContent=`${labels[level]} · ${count} / 25`;el('bubble').textContent=words[level];el('pet').classList.toggle('finish',count===25);}
     window.go=go;window.pick=pick;window.submit=submit;window.reveal=reveal;render();
