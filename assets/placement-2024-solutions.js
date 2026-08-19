@@ -18,7 +18,7 @@ window.PLACEMENT_2024_SOLUTIONS = [
       ['固定 x₁ 求最大值', '因为 1-2x₁<0，上式关于 x₂ 开口向下，顶点值为：', '\\[m^2+2mn\\le g(x_1)=\\frac{x_1^4}{2x_1-1}.\\]'],
       ['考察端点上界', '在 2≤x≤3 上，g\'(x)=2x³(3x-2)/(2x-1)²>0，因此最大的选项上界是：', '\\[g(3)=\\frac{81}{5}.\\]']
     ],
-    conclusion: '按试题命题意图选择 B。严格地说，原条件是“<0”，81/5 是上确界而非可取到的最大值。'
+    conclusion: '严格地说，原条件是“<0”，因此 81/5 是上确界而不是能够取到的最大值；题目选项按这一上界设置。'
   },
   {
     point: '奇函数、反周期与函数值比较',
@@ -76,14 +76,15 @@ window.PLACEMENT_2024_SOLUTIONS = [
   },
   {
     point: '函数奇偶性构造',
-    lead: '把常数 1 分离后，剩余部分恰好是奇函数。',
+    lead: '直接计算 f(-a) 很困难，因为题目只给出了 f(a)。关键是先去掉常数 1，再严格证明剩余部分是奇函数。',
     steps: [
-      ['去掉常数项', '令 g(x)=f(x)-1=xln(e^{2x}+1)-x²。'],
-      ['验证奇函数', '把 -x 代入并与 g(x) 相加：', '\\[g(-x)+g(x)=x\\ln\\frac{e^{2x}+1}{e^{-2x}+1}-2x^2=x\\ln e^{2x}-2x^2=0.\\]'],
-      ['利用已知函数值', 'f(a)=2 表示 g(a)=1，因此 g(-a)=-1。'],
-      ['还原 f(-a)', 'f(-a)=g(-a)+1=0。']
+      ['构造辅助函数', '为了把不影响奇偶性的常数项单独分离，定义：', '\\[g(x)=f(x)-1=x\\ln\\!\\left(e^{2x}+1\\right)-x^2.\\]'],
+      ['写出 \\(g(-x)\\)', '把自变量 \\(x\\) 换成 \\(-x\\)。注意平方项 \\((-x)^2=x^2\\)，所以平方项的符号不变：', '\\[g(-x)=-x\\ln\\!\\left(e^{-2x}+1\\right)-x^2.\\]'],
+      ['严格验证奇函数', '将 \\(g(-x)\\) 与 \\(g(x)\\) 相加，并利用 \\(e^{-2x}+1=\\dfrac{e^{2x}+1}{e^{2x}}\\)。这样对数中分式的分母恰好可以约去：', '\\[\\begin{aligned}g(-x)+g(x)&=x\\ln\\frac{e^{2x}+1}{e^{-2x}+1}-2x^2\\\\&=x\\ln e^{2x}-2x^2\\\\&=2x^2-2x^2=0.\\end{aligned}\\]'],
+      ['利用题目给出的函数值', '上一步对任意实数 \\(x\\) 都成立，因此 \\(g\\) 是奇函数，即 \\(g(-a)=-g(a)\\)。另一方面，由 \\(f(a)=2\\) 可得：', '\\[g(a)=f(a)-1=1,\\qquad g(-a)=-1.\\]'],
+      ['还原原函数', '由定义 \\(f(x)=g(x)+1\\)，再令 \\(x=-a\\)：', '\\[f(-a)=g(-a)+1=-1+1=0.\\]']
     ],
-    conclusion: '选择 B。'
+    conclusion: '因此 f(-a)=0。'
   },
   {
     point: '双曲线渐近线、圆的弦与倍角公式',
@@ -212,7 +213,8 @@ window.PLACEMENT_2024_SOLUTIONS = [
     steps: [
       ['引入动点', '令 OM=λOB，并取 P 为 BA 中点，则：', '\\[|\\lambda\\overrightarrow{OB}-\\overrightarrow{OA}|=AM,\\qquad |(1-\\lambda)\\overrightarrow{BO}-\\tfrac12\\overrightarrow{BA}|=PM.\\]'],
       ['使用对称法', '把 A 关于直线 OB 对称到 A′，则 AM+PM=A′M+PM；最短值为直线距离 A′P=2√5。'],
-      ['建立三角关系', '设 ∠OAB=2θ。由 OA=AB=4，有 AA′=8cosθ、AP=2。对 △AA′P 使用余弦定理可得：', '\\[\\cos^2\\theta=\\frac12.\\]'],
+      ['建立三角关系', '设 ∠OAB=2θ。由 OA=AB=4，有 AA′=8cosθ、AP=2。题设最短值给出 A′P=2√5。在 △AA′P 中使用余弦定理：', '\\[\\frac{AP^2+(AA^{\\prime})^2-(A^{\\prime}P)^2}{2\\,AP\\cdot AA^{\\prime}}=\\cos\\theta\\;\\Longrightarrow\\;\\frac{4+64\\cos^2\\theta-20}{32\\cos\\theta}=\\cos\\theta.\\]'],
+      ['解出角的三角函数', '整理上式得到 32cos²θ=16；因为 θ 是三角形内角的一半，cosθ>0：', '\\[\\cos^2\\theta=\\frac12,\\qquad \\sin\\theta=\\frac{\\sqrt2}{2}.\\]'],
       ['求底边 OB', '等腰三角形中 OB=8sinθ，因此：', '\\[OB=8\\cdot\\frac{\\sqrt2}{2}=4\\sqrt2.\\]']
     ],
     conclusion: '选择 D。'
@@ -256,7 +258,8 @@ window.PLACEMENT_2024_SOLUTIONS = [
     point: '三角形特殊点与向量数量积比较',
     lead: '三个点分别由三组条件确定：P 是等角点，R 是内心，Q 可由相似三角形求长度。数量积最终都化成可比较的常数。',
     steps: [
-      ['识别 R 为内心', '设 a=BC、b=CA、c=AB。由正弦定理和向量条件可推出 R 同时位于三个角平分线上，因此 R 是 △ABC 的内心。'],
+      ['证明 R 是内心', '设 a=BC、b=CA、c=AB，外接圆半径为 ρ。由正弦定理 sinA=a/(2ρ) 等，把题设向量式化为 a·RA+b·RB+c·RC=0。再用 RA=RC+CA、RB=RC+CB 整理：', '\\[(a+b+c)\\overrightarrow{RC}=a\\overrightarrow{AC}+b\\overrightarrow{BC}=ab\\left(\\frac{\\overrightarrow{AC}}{|AC|}+\\frac{\\overrightarrow{BC}}{|BC|}\\right).\\]'],
+      ['说明角平分线结论', '右端是从 C 指向 A、B 的两个单位向量之和，方向正好是 ∠ACB 的内角平分线。因此 R 在 C 的角平分线上；循环同理，R 也在 A、B 的角平分线上，所以 R 是内心。'],
       ['计算 P 对应的数量积', '不妨按比例取 AB=AC=6。三角形中 ∠APB=∠BPC=∠CPA=120°，且 P 在 A 的角平分线上，可得：', '\\[PA=3\\sqrt2-\\sqrt6,\\quad PB=2\\sqrt6,\\quad \\overrightarrow{PA}\\cdot\\overrightarrow{PB}=6-6\\sqrt3.\\]'],
       ['计算 R 对应的数量积', '直角等腰三角形内切圆半径为 6-3√2，整理得到：', '\\[\\overrightarrow{RA}\\cdot\\overrightarrow{RB}=72-54\\sqrt2.\\]'],
       ['计算 Q 对应的数量积', '由角条件可证 △BQC∽△AQB，所以 BQ=√2·AQ；再用余弦定理解得 AQ²=36/5，于是：', '\\[\\overrightarrow{QA}\\cdot\\overrightarrow{QB}=-\\frac{36}{5}.\\]'],
@@ -270,8 +273,8 @@ window.PLACEMENT_2024_SOLUTIONS = [
     steps: [
       ['对称配对', '将 Pᵢ 与 P₂ₖ₊₁₋ᵢ 配对。由半圆对称性和 APᵢ²+BPᵢ²=AB²=8，可得每对月牙面积和：', '\\[2\\sin\\frac{i\\pi}{2k+1}.\\]'],
       ['写出平均值', '共 2k 个月牙，因此：', '\\[S_k=\\frac{2\\sum_{i=1}^{k}\\sin\\frac{i\\pi}{2k+1}}{2k}.\\]'],
-      ['转化为积分下界', '利用 sin x 在 [0,π/2] 上的单调性作黎曼和估计：', '\\[S_k>\\frac2\\pi\\int_0^{\\pi/2}\\sin x\\,dx=\\frac2\\pi.\\]'],
-      ['说明这是最佳常数', '当 k→∞ 时，上述离散平均趋近 2/π，因此所有 Sₖ 的下确界就是 2/π。']
+      ['严格得到积分下界', '把 [0,π/2] 分成 k 个等长小区间。第 i 个取样点 xᵢ=iπ/(2k+1) 位于该小区间中点的右侧；sin x 在区间上递增且为凹函数，因此对应矩形面积严格大于该小区间曲线下面积。求和得到：', '\\[S_k=\\frac2\\pi\\sum_{i=1}^{k}\\frac{\\pi}{2k}\\sin\\frac{i\\pi}{2k+1}>\\frac2\\pi\\int_0^{\\pi/2}\\sin x\\,dx=\\frac2\\pi.\\]'],
+      ['说明 2/π 是最佳常数', '当 k→∞ 时，取样点与等分点的差趋于 0，上述和就是 sin x 在 [0,π/2] 上的黎曼和，所以：', '\\[\\lim_{k\\to\\infty}S_k=\\frac2\\pi.\\]']
     ],
     conclusion: '满足 λ<Sₖ（任意正整数 k）的最大 λ 为 2/π，选择 B。'
   }
