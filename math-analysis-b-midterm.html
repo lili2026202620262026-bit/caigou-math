@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>菜狗捞捞 · 数学分析 B 期中题库</title>
+  <title>菜狗捞捞 · 数学分析 B（大一上期中）</title>
   <link rel="stylesheet" href="assets/katex/katex.min.css">
   <script defer src="assets/katex/katex.min.js"></script>
   <script defer src="assets/katex/contrib/auto-render.min.js"></script>
@@ -21,15 +21,15 @@
       main{padding:30px 14px 190px}.hero{display:block;margin-bottom:27px}.eyebrow{font-size:10px;letter-spacing:.35px}.hero h1{font-size:36px;line-height:1.18;letter-spacing:-2px;margin:10px 0 12px}.lead{font-size:14px;line-height:1.75;margin:0}.hero-card{display:none}
       .toolbar{display:block;margin:0 0 13px}.toolbar h2{font-size:18px;margin-bottom:11px}.count{font-size:11px;white-space:nowrap}.filters{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.filter{padding:8px 4px;font-size:12px;text-align:center}
       .questions{gap:10px}.question{border-radius:15px;padding:16px 14px}.q-head{gap:9px}.num{width:29px;height:29px;border-radius:9px;font-size:12px}.q-title{font-size:15px;line-height:1.65;padding-top:0}.tag{display:none}.answer-zone{padding-left:0;margin-top:12px}.options{display:grid;grid-template-columns:1fr;gap:7px}.option{width:100%;min-width:0;padding:10px 12px;font-size:13px;line-height:1.45}.text-answer{min-height:110px;font-size:14px;padding:11px}.actions{display:grid;grid-template-columns:1fr 1fr;gap:7px}.submit,.reveal{width:100%;min-height:40px;padding:8px 6px;font-size:12px}.result{padding:12px;margin-top:12px}.result p{font-size:13px;line-height:1.68}
-      .pet{right:7px;bottom:8px;width:116px;pointer-events:none}.sprite-frame{width:116px;height:113px}.sprite{bottom:-18px}.pet-bubble{width:122px;top:-37px;font-size:10px;padding:6px 8px}.pet-stage{font-size:9px;padding:3px 6px;right:-1px;top:3px}.pet-label{font-size:9px;margin-top:-5px;padding:3px 4px;white-space:nowrap}
+      .pet{right:3px;bottom:6px;width:90px;pointer-events:none}.sprite-frame{width:90px;height:88px}.sprite{bottom:-14px}.pet-bubble{width:102px;top:-34px;font-size:9px;padding:5px 7px}.pet-stage{font-size:8px;padding:3px 5px;right:-1px;top:3px}.pet-label{font-size:8px;margin-top:-4px;padding:3px;white-space:nowrap}
     }
     @media(max-width:360px){.hero h1{font-size:31px}.filters{grid-template-columns:1fr}.filter{padding:8px}.actions{grid-template-columns:1fr}.pet{transform:scale(.9);transform-origin:right bottom;right:0}.q-title{font-size:14px}}
   </style>
 </head>
 <body>
-  <header class="topbar"><div class="brand"><b>菜</b>菜狗捞捞</div><div class="term">2025 秋季 · 数学分析 B</div></header>
+  <header class="topbar"><div class="brand"><b>菜</b>菜狗捞捞</div><div class="term">数学分析 B · 大一上期中</div></header>
   <main>
-    <section class="hero"><div><div class="eyebrow">MATH ANALYSIS · MIDTERM SURVIVAL KIT</div><h1>先做题，<em>再捞菜狗。</em></h1><p class="lead">来自 2025 年秋季数学分析 B 的期中题库。每题先独立作答；卡住时再打开答案与考点解析。答完一题，右下角的菜狗就离岸边更近一点。</p></div><aside class="hero-card"><strong id="hero-status">菜狗正在努力露头</strong><p id="hero-copy">完成一题，水位下降一格。不要让它在极限里无限下沉。</p><div class="progress"><i id="bar"></i></div></aside></section>
+    <section class="hero"><div><div class="eyebrow">MATH ANALYSIS B · FRESHMAN FALL MIDTERM</div><h1>先做题，<em>再捞菜狗。</em></h1><p class="lead">数学分析 B（大一上期中）题库。每题先独立作答；卡住时再按“考点分析 → 分步推导 → 严谨说明 → 最终答案”查看完整解析。</p></div><aside class="hero-card"><strong id="hero-status">菜狗正在努力露头</strong><p id="hero-copy">完成一题，水位下降一格。不要让它在极限里无限下沉。</p><div class="progress"><i id="bar"></i></div></aside></section>
     <div class="toolbar"><h2>试卷题库 <span class="count" id="counter">0 / 10 已作答</span></h2><div class="filters"><button class="filter active" data-filter="all">全部</button><button class="filter" data-filter="choice">选择题</button><button class="filter" data-filter="proof">解答题</button></div></div>
     <section class="questions" id="questions"></section>
   </main>
@@ -39,6 +39,8 @@
     <div class="sprite-frame"><img class="sprite" src="assets/caigou-drowning-states.png" alt="随答题进度获救的菜狗"></div>
     <div class="pet-label" id="pet-label">溺水中 · 0 / 10</div>
   </aside>
+  <script src="assets/caigou-rich-solutions.js"></script>
+  <script src="assets/math-analysis-b-midterm-solutions.js"></script>
   <script>
   const data=[
     {type:'choice',tag:'数列极限',q:'下列说法正确的是（ ）',opts:['数列 \\(\\{a_n\\}\\) 收敛的充要条件是 \\(\\{a_{2n-1}\\}\\) 与 \\(\\{a_{2n}\\}\\) 均收敛且极限相等','单调递减有界数列必有下确界，反之成立','对任意 \\(\\varepsilon>0\\)，若有无穷多个 \\(n\\) 满足 \\(|x_n|<\\varepsilon\\)，则 \\(\\{x_n\\}\\) 为无穷小数列','\\(\\displaystyle\\lim_{n\\to\\infty}\\frac1{\\sqrt[n]{n!}}=+\\infty\\)'],ans:0,point:'数列收敛的子列判别与无穷小定义',explain:'奇、偶子列均收敛且极限相等时，原数列收敛，所以 A 正确。B 的逆命题不成立；C 只说明存在趋于 \\(0\\) 的子列；D 中 \\(\\sqrt[n]{n!}\\to+\\infty\\)，故其倒数趋于 \\(0\\)，并非 \\(+\\infty\\)。'},
@@ -52,9 +54,10 @@
     {type:'proof',tag:'函数极限',q:'叙述函数极限的归结原则，并证明极限 \\(\\displaystyle\\lim_{x\\to0}\\sin\\frac1x\\) 不存在。',point:'函数极限的归结原则；反例数列',explain:'取 \\(x_n=1/(2n\\pi)\\)，则 \\(x_n\\to0\\) 且 \\(\\sin(1/x_n)=0\\)；再取 \\(y_n=1/(2n\\pi+\\pi/2)\\)，则 \\(y_n\\to0\\) 且 \\(\\sin(1/y_n)=1\\)。两条趋于 \\(0\\) 的数列对应的函数值极限不同，由归结原则知原极限不存在。'},
     {type:'proof',tag:'上确界',q:'设 \\(S\\) 为有界数集。证明：若 \\(\\sup S=a\\notin S\\)，则存在严格递增数列 \\(\\{x_n\\}\\subset S\\)，使 \\(\\displaystyle\\lim_{n\\to\\infty}x_n=a\\)。',point:'上确界定义；递推构造；夹逼准则',explain:'先取 \\(a-1<x_1<a\\)。递推时令 \\(\\varepsilon_n=\\min\\{1/n,a-x_{n-1}\\}\\)。由上确界定义可取 \\(x_n\\in S\\)，使 \\(a-\\varepsilon_n<x_n<a\\)，于是 \\(x_n>x_{n-1}\\) 且 \\(a-1/n<x_n<a\\)。由夹逼定理得 \\(x_n\\to a\\)。'}
   ];
+  data.forEach((item,i)=>{item.solution=window.MathAnalysisBMidtermSolutions[i]});
   const root=document.querySelector('#questions'), done=new Set(); let selected={};
   const esc=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;');
-  function draw(filter='all'){root.innerHTML=data.map((d,i)=>`<article class="question ${done.has(i)?'done':''}" data-type="${d.type}" ${filter!=='all'&&filter!==d.type?'hidden':''}><div class="q-head"><span class="num">${String(i+1).padStart(2,'0')}</span><div class="q-title">${d.q}</div><span class="tag">${d.tag}</span></div><div class="answer-zone">${d.type==='choice'?`<div class="options">${d.opts.map((o,n)=>`<button class="option ${selected[i]===n?'selected':''}" onclick="pick(${i},${n})">${'ABCD'[n]} · ${esc(o)}</button>`).join('')}</div>`:`<textarea class="text-answer" placeholder="在这里写下你的证明或计算过程…" oninput="typed(${i},this.value)">${selected[i]||''}</textarea>`}<div class="actions"><button class="submit" onclick="submit(${i})">提交本题</button><button class="reveal" onclick="reveal(${i})">做不出来，查看答案 →</button></div><div class="result" id="result-${i}"><strong id="result-title-${i}"></strong><p><b>考点：</b>${d.point}</p><p class="analysis"><b>答案与解析：</b>${d.explain}</p></div></div></article>`).join('');window.CaigouMath?.render(root)}
+  function draw(filter='all'){root.innerHTML=data.map((d,i)=>`<article class="question ${done.has(i)?'done':''}" data-type="${d.type}" ${filter!=='all'&&filter!==d.type?'hidden':''}><div class="q-head"><span class="num">${String(i+1).padStart(2,'0')}</span><div class="q-title">${d.q}</div><span class="tag">${d.tag}</span></div><div class="answer-zone">${d.type==='choice'?`<div class="options">${d.opts.map((o,n)=>`<button class="option ${selected[i]===n?'selected':''}" onclick="pick(${i},${n})">${'ABCD'[n]} · ${esc(o)}</button>`).join('')}</div>`:`<textarea class="text-answer" placeholder="在这里写下你的证明或计算过程…" oninput="typed(${i},this.value)">${selected[i]||''}</textarea>`}<div class="actions"><button class="submit" onclick="submit(${i})">提交本题</button><button class="reveal" onclick="reveal(${i})">做不出来，查看答案 →</button></div><div class="result" id="result-${i}"><strong id="result-title-${i}"></strong><div class="analysis">${window.CaigouRichSolution.render(d.solution,d.solution.answer||d.explain)}</div></div></div></article>`).join('');window.CaigouMath?.render(root)}
   window.pick=(i,n)=>{selected[i]=n;draw(current)};window.typed=(i,v)=>selected[i]=v;
   window.submit=i=>{if(data[i].type==='choice'&&selected[i]===undefined){alert('先选择一个选项吧。');return}if(data[i].type==='proof'&&!selected[i]?.trim()){alert('先写下一点思路吧。');return}done.add(i);show(i,data[i].type==='choice'?(selected[i]===data[i].ans?'回答正确！菜狗上浮了一点。':'已记录作答。对照解析再捞一次菜狗吧。'):'已记录作答。对照解析补全证明。');sync();draw(current);show(i,data[i].type==='choice'?(selected[i]===data[i].ans?'回答正确！菜狗上浮了一点。':'已记录作答。对照解析再捞一次菜狗吧。'):'已记录作答。对照解析补全证明。')};window.reveal=i=>{show(i,'参考答案已展开。');};
   function show(i,title){let r=document.querySelector('#result-'+i);if(!r)return;r.classList.add('show');document.querySelector('#result-title-'+i).textContent=title}
