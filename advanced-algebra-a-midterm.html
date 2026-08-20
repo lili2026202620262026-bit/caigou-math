@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>菜狗捞捞 · 高等代数 A（大一上期中）</title>
+  <link rel="stylesheet" href="assets/katex/katex.min.css">
+  <script defer src="assets/katex/katex.min.js"></script>
+  <script defer src="assets/katex/contrib/auto-render.min.js"></script>
+  <script defer src="assets/caigou-katex.js"></script>
+  <style>
+    :root{--ink:#173a2b;--deep:#347047;--green:#6bae72;--bg:#f6fbf4;--mint:#eff8e7;--line:#d6e9d5;--muted:#688577;--white:#fff;--gold:#b27b19}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;overflow-x:hidden;background:var(--bg);color:var(--ink);font-family:"Noto Sans SC","Microsoft YaHei",sans-serif}button,textarea{font:inherit}button{cursor:pointer}
+    .top{height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 max(16px,7vw);position:sticky;top:0;z-index:6;background:#fffffff0;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.brand{font-size:18px;font-weight:900}.brand i{font-style:normal;display:inline-grid;place-items:center;width:26px;height:26px;margin-right:7px;border-radius:50%;background:#bfe576;color:#fff;font-size:12px}.term{padding:7px 11px;border:1px solid var(--line);border-radius:99px;background:#fff;color:var(--muted);font-size:12px}
+    main{max-width:980px;margin:auto;padding:42px 18px 165px}.hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end;padding:30px;border:1px solid var(--line);border-radius:26px;background:linear-gradient(125deg,#fff 14%,#e6f5e2);overflow:hidden}.eyebrow{color:var(--deep);font:800 11px Consolas,monospace;letter-spacing:.8px}.hero h1{margin:11px 0 13px;font-size:clamp(31px,5vw,48px);line-height:1.12;letter-spacing:-2px}.hero h1 em{font-style:normal;background:linear-gradient(transparent 64%,#d6efaa 0)}.hero p{max-width:670px;margin:0;color:#587566;font-size:14px;line-height:1.8}.score{min-width:126px;padding:14px 16px;border:1px solid #d6e8d2;border-radius:16px;background:#ffffffc9;text-align:center}.score b{display:block;font-size:26px}.score span{color:var(--muted);font-size:11px}
+    .progress{margin:16px 0 20px;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:#fff}.progress-head{display:flex;justify-content:space-between;gap:12px;margin-bottom:8px;color:var(--muted);font-size:12px}.progress-head b{color:var(--deep)}.track{height:7px;overflow:hidden;border-radius:99px;background:#e8f1e6}.track i{display:block;width:0;height:100%;border-radius:99px;background:linear-gradient(90deg,#a7dc9d,#63ad71);transition:width .35s ease}
+    .question-card{min-width:0;padding:25px;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:0 12px 36px #50795a0c}.question-card.done{border-color:#9ecf98}.q-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}.q-index{display:flex;align-items:center;gap:9px}.num{display:grid;place-items:center;width:34px;height:34px;flex:none;border-radius:10px;background:#eaf7e7;color:var(--deep);font:900 13px Consolas,monospace}.kind{padding:5px 9px;border-radius:99px;background:#f4f8f3;color:#63806e;font-size:11px;font-weight:800}.points{color:var(--muted);font:12px Consolas,monospace}.question-text{min-width:0;color:#183a2b;font-size:17px;font-weight:700;line-height:1.9;overflow-wrap:anywhere}.question-text>.katex-display{font-weight:400}.answer-zone{margin-top:21px;padding-top:18px;border-top:1px dashed #dbe9d9}.answer-label{display:block;margin-bottom:8px;color:#456754;font-size:13px;font-weight:800}.draft{display:block;width:100%;min-height:116px;padding:12px 13px;resize:vertical;border:1px solid #d5e6d5;border-radius:12px;outline:0;background:#fcfffb;color:var(--ink);font-size:14px;line-height:1.7}.draft:focus{border-color:#6db476;box-shadow:0 0 0 3px #e6f5e2}.actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:11px}.primary,.ghost{min-height:42px;padding:9px 14px;border:0;border-radius:10px;font-size:13px;font-weight:800}.primary{background:var(--ink);color:#fff}.ghost{background:#eef8eb;color:var(--deep)}.feedback{min-height:20px;margin-left:auto;color:#547461;font-size:12px}.solution{display:none;margin-top:16px;padding:16px;border:1px solid #cfe7ca;border-radius:14px;background:#f4fbf1;font-size:14px;line-height:1.8}.solution.show{display:block}
+    .pager{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;margin-top:14px}.nav-btn{min-height:44px;padding:10px 14px;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--deep);font-size:13px;font-weight:800}.nav-btn:last-child{justify-self:stretch}.nav-btn:disabled{cursor:not-allowed;opacity:.42}.pager-status{color:var(--muted);font:12px Consolas,monospace;text-align:center;white-space:nowrap}
+    .pet{--offset:0%;position:fixed;right:10px;bottom:8px;width:128px;z-index:8;filter:drop-shadow(0 8px 12px #426b4933);pointer-events:none;user-select:none}.bubble{position:absolute;left:50%;top:-40px;transform:translateX(-50%);width:142px;padding:7px 9px;border:1px solid var(--line);border-radius:12px;background:#fff;text-align:center;font-size:10px;line-height:1.45}.bubble:after{content:"";position:absolute;left:50%;bottom:-5px;width:9px;height:9px;transform:translateX(-50%) rotate(45deg);border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}.frame{height:122px;overflow:hidden;position:relative}.sprite{position:absolute;left:0;bottom:-20px;width:400%;max-width:none;transform:translateX(var(--offset));transition:.5s ease}.pet.done .frame{animation:bounce .65s ease infinite alternate}.pet-label{margin-top:-4px;padding:4px;border-radius:99px;background:#f6fbf4ed;color:#538060;font:700 10px Consolas,monospace;text-align:center}@keyframes bounce{to{transform:translateY(-6px)}}
+    @media(max-width:680px){.top{height:60px;padding:0 14px}.brand{font-size:17px}.term{display:none}main{padding:24px 12px 150px}.hero{display:block;padding:22px 20px;border-radius:21px}.hero h1{font-size:34px;letter-spacing:-1.5px}.hero p{font-size:13px;line-height:1.7}.score{display:inline-block;min-width:0;margin-top:15px;padding:9px 12px;text-align:left}.score b{display:inline;margin-right:5px;font-size:20px}.question-card{padding:17px 14px;border-radius:17px}.q-head{margin-bottom:12px}.num{width:31px;height:31px}.question-text{font-size:16px;line-height:1.8}.draft{min-height:130px}.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.primary,.ghost{width:100%;min-height:44px;padding:8px}.feedback{grid-column:1/-1;margin:0;text-align:center}.solution{padding:13px 11px}.pager{grid-template-columns:1fr 1fr}.pager-status{grid-column:1/-1;grid-row:1}.nav-btn{grid-row:2}.pet{right:3px;bottom:5px;width:90px}.frame{height:87px}.sprite{bottom:-14px}.bubble{top:-35px;width:108px;padding:5px 7px;font-size:9px}.pet-label{font-size:8px;white-space:nowrap}}
+  </style>
+</head>
+<body>
+  <header class="top"><div class="brand"><i>菜</i>菜狗捞捞</div><div class="term">高等代数 A · 大一上期中</div></header>
+  <main>
+    <section class="hero">
+      <div><div class="eyebrow">ADVANCED ALGEBRA A · FRESHMAN FALL MIDTERM</div><h1>算清每一步，<br><em>把菜狗捞上来。</em></h1><p>高等代数 A 大一上学期期中题库，共 5 题、每题 20 分。先写下自己的计算或证明，再主动打开“考点分析 → 分步推导 → 正确答案”。</p></div>
+      <div class="score"><b id="score">0 / 5</b><span>已完成</span></div>
+    </section>
+    <section class="progress"><div class="progress-head"><b id="progress-title">复习刚开始</b><span id="progress-copy">第 1 题 · 已完成 0 / 5</span></div><div class="track"><i id="bar"></i></div></section>
+    <article class="question-card" id="card"></article>
+    <nav class="pager" aria-label="题目导航"><button class="nav-btn" id="prev" type="button">← 上一题</button><span class="pager-status" id="pager-status">01 / 05</span><button class="nav-btn" id="next" type="button">下一题 →</button></nav>
+  </main>
+  <aside class="pet" id="pet"><div class="bubble" id="bubble">先拿下第一题吧！</div><div class="frame"><img class="sprite" src="assets/caigou-drowning-states.png" alt="随答题进度获救的四足菜狗"></div><div class="pet-label" id="pet-label">溺水中 · 0 / 5</div></aside>
+  <script src="assets/caigou-rich-solutions.js"></script>
+  <script src="assets/advanced-algebra-a-midterm-solutions.js"></script>
+  <script>
+    const questions = [
+      {
+        no: 1,
+        type: '计算题',
+        text: '求行列式 \\[\\begin{vmatrix}1+x&1&1&1\\\\1&1-x&1&1\\\\1&1&1+y&1\\\\1&1&1&1-y\\end{vmatrix}.\\]',
+        options: [],
+        answer: '\\(x^2y^2\\)'
+      },
+      {
+        no: 2,
+        type: '计算题',
+        text: '设 \\[D=\\begin{vmatrix}2&3&1&0\\\\0&0&3&5\\\\1&1&-1&2\\\\-1&-1&-1&1\\end{vmatrix},\\] 其中 \\(A_{ij}\\) 表示元素 \\(a_{ij}\\) 的代数余子式。求：\\((1)\\ A_{21}+A_{22}+A_{23}+A_{24}\\)；\\((2)\\ A_{31}+A_{32}+2A_{33}\\)。',
+        options: [],
+        answer: '\\((1)\\ 4;\\quad(2)\\ -2\\)'
+      },
+      {
+        no: 3,
+        type: '计算题',
+        text: '齐次线性方程组 \\[\\begin{cases}\\lambda x_1+x_2+x_3=0,\\\\x_1+\\lambda x_2+x_3=0,\\\\x_1+x_2+\\lambda x_3=0\\end{cases}\\] 有非零解，求 \\(\\lambda\\)。',
+        options: [],
+        answer: '\\(\\lambda=-2\\text{ 或 }\\lambda=1\\)'
+      },
+      {
+        no: 4,
+        type: '计算题',
+        text: '设 \\(k\\) 为正整数，\\[A=\\begin{pmatrix}\\lambda&1&0\\\\0&\\lambda&1\\\\0&0&\\lambda\\end{pmatrix},\\] 求 \\(A^k\\)。',
+        options: [],
+        answer: '\\(A^k=\\displaystyle\\sum_{j=0}^{\\min(2,k)}\\binom{k}{j}\\lambda^{k-j}N^j\\)，其中 \\(N=A-\\lambda I\\)'
+      },
+      {
+        no: 5,
+        type: '证明题',
+        text: '设 \\(A\\) 为任意 \\(n\\) 阶方阵（\\(n\\ge2\\)），\\(A^*\\) 为 \\(A\\) 的伴随矩阵。证明：\\[|A^*|=|A|^{n-1}.\\]',
+        options: [],
+        answer: '\\(|A^*|=|A|^{n-1}\\)'
+      }
+    ].map((question, index) => {
+      const solution = window.AdvancedAlgebraAMidtermSolutions[index];
+      return {...question, point: solution.point, lead: solution.lead, steps: solution.steps, conclusion: solution.conclusion, solution};
+    });
+
+    const storageKey = 'caigou-advanced-algebra-a-midterm-state-v1';
+    const freshState = {current: 0, done: {}, chosen: {}};
+    let state;
+    try {
+      const saved = JSON.parse(localStorage.getItem(storageKey) || 'null');
+      state = saved && typeof saved === 'object' ? {...freshState, ...saved} : freshState;
+    } catch {
+      state = freshState;
+    }
+    state.current = Math.max(0, Math.min(questions.length - 1, Number(state.current) || 0));
+    state.done = state.done && typeof state.done === 'object' ? state.done : {};
+    state.chosen = state.chosen && typeof state.chosen === 'object' ? state.chosen : {};
+
+    const $ = id => document.getElementById(id);
+    const escapeHtml = value => window.CaigouRichSolution.escapeHtml(value);
+    const save = () => localStorage.setItem(storageKey, JSON.stringify(state));
+
+    function completedCount() {
+      return questions.filter(question => state.done[question.no]).length;
+    }
+
+    function progressState(count) {
+      if (count === questions.length) return 3;
+      if (count >= 3) return 2;
+      if (count >= 1) return 1;
+      return 0;
+    }
+
+    function syncProgress() {
+      const count = completedCount();
+      const stage = progressState(count);
+      const titles = ['复习刚开始', '菜狗冒泡中', '快到岸边了', '期中过关，菜狗上岸！'];
+      const bubbles = ['先拿下第一题吧！', '不错，菜狗露头啦！', '再坚持一下，岸边很近！', '五题完成，安全上岸！'];
+      const labels = ['溺水中', '冒泡中', '快上岸了', '捞出来啦'];
+      $('score').textContent = `${count} / ${questions.length}`;
+      $('progress-title').textContent = titles[stage];
+      $('progress-copy').textContent = `第 ${state.current + 1} 题 · 已完成 ${count} / ${questions.length}`;
+      $('bar').style.width = `${count / questions.length * 100}%`;
+      $('bubble').textContent = bubbles[stage];
+      $('pet-label').textContent = `${labels[stage]} · ${count} / ${questions.length}`;
+      $('pet').style.setProperty('--offset', `${-25 * stage}%`);
+      $('pet').classList.toggle('done', count === questions.length);
+    }
+
+    function render(feedback = '') {
+      const question = questions[state.current];
+      const card = $('card');
+      card.className = `question-card${state.done[question.no] ? ' done' : ''}`;
+      card.innerHTML = `<div class="q-head"><div class="q-index"><span class="num">${String(question.no).padStart(2, '0')}</span><span class="kind">${escapeHtml(question.type)}</span></div><span class="points">20 POINTS</span></div><div class="question-text">${escapeHtml(question.text)}</div><div class="answer-zone"><label class="answer-label" for="draft">先写下你的计算或证明</label><textarea class="draft" id="draft" placeholder="把关键步骤写在这里；提交后才计入完成进度。"></textarea><div class="actions"><button class="primary" type="button" onclick="submitCurrent()">提交本题</button><button class="ghost" type="button" onclick="reveal()">查看解析</button><span class="feedback" id="feedback" aria-live="polite">${escapeHtml(feedback)}</span></div><div class="solution" id="solution">${window.CaigouRichSolution.render(question.solution, question.answer)}</div></div>`;
+      const draft = $('draft');
+      draft.value = state.chosen[question.no] || '';
+      draft.addEventListener('input', event => {
+        state.chosen[question.no] = event.target.value;
+        save();
+      });
+      $('prev').disabled = state.current === 0;
+      $('next').disabled = state.current === questions.length - 1;
+      $('pager-status').textContent = `${String(state.current + 1).padStart(2, '0')} / ${String(questions.length).padStart(2, '0')}`;
+      syncProgress();
+      window.CaigouMath?.render(card);
+    }
+
+    function go(index) {
+      state.current = Math.max(0, Math.min(questions.length - 1, Number(index) || 0));
+      save();
+      render();
+    }
+
+    function submitCurrent() {
+      const question = questions[state.current];
+      const draft = state.chosen[question.no] || '';
+      if (!draft.trim()) {
+        alert('先写下一点计算或证明思路吧。');
+        return;
+      }
+      state.done[question.no] = true;
+      save();
+      render('已提交，本题计入完成进度；解析仍保持隐藏。');
+    }
+
+    function reveal() {
+      const panel = $('solution');
+      if (!panel) return;
+      panel.classList.add('show');
+      $('feedback').textContent = '参考解析已展开。';
+      window.CaigouMath?.render(panel);
+    }
+
+    $('prev').addEventListener('click', () => go(state.current - 1));
+    $('next').addEventListener('click', () => go(state.current + 1));
+    window.go = go;
+    window.reveal = reveal;
+    window.submitCurrent = submitCurrent;
+    render();
+  </script>
+</body>
+</html>
