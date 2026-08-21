@@ -283,3 +283,4 @@ window.PLACEMENT_2024_SOLUTIONS = [
     conclusion: '使 \\(\\lambda<S_k\\) 对任意正整数 \\(k\\) 恒成立的最大 \\(\\lambda\\) 为 \\(\\frac2\\pi\\)。'
   }
 ];
+window.PLACEMENT_2024_SOLUTIONS = window.PLACEMENT_2024_SOLUTIONS.map(solution => ({sourceLevel:'原卷还原',sourceNote:'题干与选项由清晰分级考试卷逐题核对。',...solution}));

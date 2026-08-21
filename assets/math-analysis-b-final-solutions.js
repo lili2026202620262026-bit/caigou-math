@@ -113,3 +113,4 @@ window.MathAnalysisBFinalSolutions = [
     ],conclusion:'原积分等于 \\(8\\)。'
   }
 ];
+window.MathAnalysisBFinalSolutions = window.MathAnalysisBFinalSolutions.map(solution => ({sourceLevel:'原卷还原',sourceNote:'题干由清晰原卷照片逐题核对。',...solution}));

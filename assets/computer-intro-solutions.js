@@ -106,3 +106,4 @@ window.ComputerIntroSolutions = [
     {title:'核对示例',text:'返回 1、2、4、5、10、11、20、22、44、55、110，和为 284，符合题意。'}
   ],conclusion:'函数返回所有真因子，示例调用同时展示列表与和。',answer:'见完整代码'}
 ];
+window.ComputerIntroSolutions = window.ComputerIntroSolutions.map(solution => ({sourceLevel:'原卷还原',sourceNote:'题干由清晰原卷照片逐题核对。',...solution}));

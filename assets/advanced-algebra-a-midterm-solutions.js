@@ -126,3 +126,4 @@ window.AdvancedAlgebraAMidtermSolutions = [
     conclusion: '非奇异与奇异两类已经覆盖所有 \\(n\\ge2\\) 阶方阵，因此 \\(|A^*|=|A|^{n-1}\\) 恒成立。'
   }
 ];
+window.AdvancedAlgebraAMidtermSolutions = window.AdvancedAlgebraAMidtermSolutions.map(solution => ({sourceLevel:'原卷还原',sourceNote:'题干由清晰原卷照片逐题核对。',...solution}));
