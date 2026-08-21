@@ -72,3 +72,4 @@ window.MathAnalysisAMidtermSolutions = [
     conclusion: '因此 \\(f(x)\\equiv A\\)（\\(x>0\\)）。'
   }
 ];
+window.MathAnalysisAMidtermSolutions = window.MathAnalysisAMidtermSolutions.map(solution => ({sourceLevel:'单份回忆还原',sourceNote:'题干依据一份手写回忆稿整理；可辨条件已逐题核对。',...solution}));

@@ -3,6 +3,10 @@
   style.textContent = `
     .rich-solution{color:#294b38}
     .analysis-label{display:inline-flex;padding:4px 9px;border-radius:99px;background:#fff7df;color:#b27b19;font-size:12px;font-weight:800}
+    .source-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 13px}
+    .source-badge{display:inline-flex;padding:4px 9px;border-radius:99px;background:#e4f3df;color:#347047;font-size:12px;font-weight:800}
+    .source-badge.search{background:#e8f0ff;color:#4466a5}.source-badge.supplement{background:#fff0dc;color:#a96516}
+    .source-note{color:#688577;font-size:12px;line-height:1.65}
     .analysis-point{margin:11px 0 5px;color:#347047;font-weight:800}
     .analysis-lead{margin:0 0 16px;line-height:1.75;color:#4f6b5b}
     .solution-title{margin:0 0 10px;color:#347047;font-weight:800}
@@ -36,7 +40,10 @@
 
   const render = (solution, answer) => {
     if (!solution) return `<div class="final-answer">正确答案：${escapeHtml(answer)}</div>`;
-    return `<div class="rich-solution"><span class="analysis-label">考点分析</span><div class="analysis-point">${escapeHtml(solution.point)}</div><p class="analysis-lead">${escapeHtml(solution.lead)}</p><div class="solution-title">解题步骤</div><div class="solution-steps">${(solution.steps || []).map(renderStep).join('')}</div>${solution.note ? `<div class="solution-note"><b>严谨性说明：</b>${escapeHtml(solution.note)}</div>` : ''}${solution.conclusion ? `<div class="solution-conclusion">${escapeHtml(solution.conclusion)}</div>` : ''}<div class="final-answer">正确答案：${escapeHtml(answer)}</div></div>`;
+    const level = solution.sourceLevel || '来源待补录';
+    const sourceClass = level.includes('同类型') ? ' supplement' : level.includes('检索') ? ' search' : '';
+    const source = `<div class="source-row"><span class="source-badge${sourceClass}">${escapeHtml(level)}</span>${solution.sourceNote ? `<span class="source-note">${escapeHtml(solution.sourceNote)}</span>` : ''}</div>`;
+    return `<div class="rich-solution">${source}<span class="analysis-label">考点分析</span><div class="analysis-point">${escapeHtml(solution.point)}</div><p class="analysis-lead">${escapeHtml(solution.lead)}</p><div class="solution-title">解题步骤</div><div class="solution-steps">${(solution.steps || []).map(renderStep).join('')}</div>${solution.note ? `<div class="solution-note"><b>严谨性说明：</b>${escapeHtml(solution.note)}</div>` : ''}${solution.conclusion ? `<div class="solution-conclusion">${escapeHtml(solution.conclusion)}</div>` : ''}<div class="final-answer">正确答案：${escapeHtml(answer)}</div></div>`;
   };
 
   window.CaigouRichSolution = { render, escapeHtml };

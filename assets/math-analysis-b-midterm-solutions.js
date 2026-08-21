@@ -103,3 +103,4 @@ window.MathAnalysisBMidtermSolutions = [
     ],conclusion:'构造出的数列严格递增、每项属于 \\(S\\)，并由夹逼定理趋于 \\(a\\)。',answer:'命题得证'
   }
 ];
+window.MathAnalysisBMidtermSolutions = window.MathAnalysisBMidtermSolutions.map(solution => ({sourceLevel:'原卷还原',sourceNote:'题干由清晰原卷照片逐题核对。',...solution}));
