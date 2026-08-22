@@ -1,9 +1,7 @@
 (() => {
   const questions = [];
-  const DEFAULT_SOURCE = '14 张清晰原卷与手写答案照片交叉核对；题干、选项、题号均可辨。';
-  const makeSolution = (point, lead, steps, conclusion, note = '', sourceNote = DEFAULT_SOURCE) => ({
+  const makeSolution = (point, lead, steps, conclusion, note = '') => ({
     sourceLevel: '原卷还原',
-    sourceNote,
     point,
     lead,
     steps: steps.map(([title, text]) => ({ title, text })),
@@ -19,8 +17,8 @@
     solution,
     ...(material ? { material } : {})
   });
-  const three = (point, lead, one, two, threeStep, conclusion, note = '', sourceNote = DEFAULT_SOURCE) =>
-    makeSolution(point, lead, [one, two, threeStep], conclusion, note, sourceNote);
+  const three = (point, lead, one, two, threeStep, conclusion, note = '') =>
+    makeSolution(point, lead, [one, two, threeStep], conclusion, note);
 
   const clozeA = {
     title: '完形填空 A · Studying Mathematics（第 41–50 题）',

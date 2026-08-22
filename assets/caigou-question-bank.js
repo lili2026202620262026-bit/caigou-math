@@ -23,7 +23,8 @@
   function sourceMeta(q){
     const solution=q.solution||{},level=q.sourceLevel||solution.sourceLevel,note=q.sourceNote||solution.sourceNote;
     if(!level&&!note)return '';
-    return `<div class="source-meta">${level?`<span class="source-level">${esc(level)}</span>`:''}${note?`<small>${esc(note)}</small>`:''}</div>`;
+    const visibleNote=level==='原卷还原'?'':note;
+    return `<div class="source-meta">${level?`<span class="source-level">${esc(level)}</span>`:''}${visibleNote?`<small>${esc(visibleNote)}</small>`:''}</div>`;
   }
   function material(q){
     if(!q.material)return '';
