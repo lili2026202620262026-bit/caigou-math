@@ -7,6 +7,7 @@
   <style>
     :root{--ink:#173a2b;--deep:#347047;--green:#65ad71;--mint:#e8f6e4;--bg:#f6fbf4;--line:#d6e9d5;--muted:#688577;--white:#fff}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans SC","Microsoft YaHei",sans-serif}.top{height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 max(16px,7vw);position:sticky;top:0;z-index:5;background:#fffffff0;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.brand{font-weight:900;font-size:18px}.brand i{font-style:normal;display:inline-grid;place-items:center;width:26px;height:26px;margin-right:7px;border-radius:50%;background:#bfe576;color:#fff;font-size:12px}.top span{font-size:12px;color:var(--muted)}main{max-width:1040px;margin:auto;padding:42px 20px 150px}.hero{position:relative;overflow:hidden;padding:38px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(125deg,#fff 10%,#e6f5e2)}.eyebrow{font:800 11px monospace;letter-spacing:.9px;color:var(--deep)}h1{max-width:650px;margin:12px 0 14px;font-size:clamp(34px,5.5vw,58px);line-height:1.08;letter-spacing:-2.5px}.hero p{max-width:700px;margin:0;color:#587566;line-height:1.8;font-size:14px}.summary{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.summary span{padding:7px 11px;border:1px solid #cee5ca;border-radius:99px;background:#ffffffb8;color:var(--deep);font-size:12px;font-weight:700}.section{margin-top:32px}.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:13px}.section h2{margin:0;font-size:22px}.section-head span{font-size:12px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.card{display:flex;flex-direction:column;min-height:205px;padding:21px;border:1px solid var(--line);border-radius:21px;background:#fff;color:inherit;text-decoration:none;transition:.2s ease}.card:hover{transform:translateY(-3px);border-color:#9dcc98;box-shadow:0 12px 28px #50795a14}.chips{display:flex;gap:7px;flex-wrap:wrap}.chip{padding:5px 8px;border-radius:99px;background:#edf8ea;color:#568064;font-size:11px;font-weight:700}.chip.exam{background:#173a2b;color:#fff}.card h3{margin:15px 0 8px;font-size:21px}.card p{margin:0;color:#688577;font-size:13px;line-height:1.65}.enter{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:18px;color:var(--deep);font-size:13px;font-weight:800}.enter b{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--mint);font-size:16px}.pet{position:fixed;right:10px;bottom:8px;width:122px;z-index:6;filter:drop-shadow(0 8px 12px #426b4933);user-select:none}.bubble{position:absolute;left:50%;top:-39px;transform:translateX(-50%);width:145px;padding:7px 9px;border:1px solid var(--line);border-radius:12px;background:#fff;text-align:center;font-size:10px;line-height:1.45}.frame{height:116px;overflow:hidden;position:relative}.sprite{position:absolute;width:400%;max-width:none;left:0;bottom:-19px}.petlabel{text-align:center;margin-top:-4px;padding:4px;border-radius:99px;background:#f6fbf4ed;color:#538060;font:700 10px monospace}@media(max-width:700px){.top{padding:0 14px}.top span{display:none}main{padding:24px 12px 145px}.hero{padding:24px 20px;border-radius:22px}h1{letter-spacing:-1.6px}.grid{grid-template-columns:1fr}.card{min-height:183px;padding:18px}.section{margin-top:26px}.pet{width:105px;right:3px}.frame{height:100px}.sprite{bottom:-16px}.bubble{width:122px;font-size:9px}}
   </style>
+  <style>.pet{pointer-events:none}@media(max-width:700px){main{position:relative;z-index:3}.pet{z-index:2}}</style>
 </head>
 <body>
   <header class="top"><div class="brand"><i>菜</i>菜狗学考题库</div><span>按学科整理 · 期中期末独立链接</span></header>
@@ -15,7 +16,7 @@
       <div class="eyebrow">CAIGOU EXAM QUESTION BANK</div>
       <h1>选一门课，<br>把菜狗捞上来。</h1>
       <p>目前均为大一上学期题库。每套题沿用统一的浅绿色菜狗 UI：先独立作答，卡住时再按“考点分析 → 分步推导 → 严谨说明 → 最终答案”查看完整解析。数学题统一使用 LaTeX，手机与电脑均可打开。</p>
-      <div class="summary"><span>10 套题库</span><span>共 205 题</span><span>7 个学科方向</span></div>
+      <div class="summary"><span>11 套题库</span><span>共 239 题</span><span>8 个学科方向</span></div>
     </section>
 
     <section class="section">
@@ -73,6 +74,18 @@
           <div class="chips"><span class="chip">计算机科学导论</span><span class="chip exam">大一上期末</span><span class="chip">24 题</span></div>
           <h3>计算机科学导论 · 大一上期末</h3>
           <p>填空、判断、简答与 Python 程序题，适合期末集中复习。</p>
+          <div class="enter">开始刷题 <b>→</b></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2>汉语言</h2><span>1 套 · 34 题</span></div>
+      <div class="grid">
+        <a class="card" href="modern-chinese-final.html">
+          <div class="chips"><span class="chip">现代汉语</span><span class="chip exam">大一上期末</span><span class="chip">34 题</span></div>
+          <h3>现代汉语 · 大一上期末</h3>
+          <p>填空、判断、声母辨认、汉字造字法、构词类型与简答；29 题单份回忆还原，5 题同类型补全。</p>
           <div class="enter">开始刷题 <b>→</b></div>
         </a>
       </div>
