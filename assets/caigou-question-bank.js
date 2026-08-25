@@ -20,11 +20,9 @@
     if (!config.choiceMode) return `<div class="options">${q.options.map((o,i)=>`<div class="option">${String.fromCharCode(65+i)}. ${esc(o)}</div>`).join('')}</div>`;
     return `<div class="options choice-options">${q.options.map((o,i)=>{const letter=String.fromCharCode(65+i),selected=state.chosen[q.no]===letter;return `<label class="option choice-option${selected?' selected':''}"><input type="radio" name="choice" value="${letter}"${selected?' checked':''}><span class="choice-letter">${letter}</span><span>${esc(o)}</span></label>`}).join('')}</div>`;
   }
-  function sourceMeta(q){
-    const solution=q.solution||{},level=q.sourceLevel||solution.sourceLevel,note=q.sourceNote||solution.sourceNote;
-    if(!level&&!note)return '';
-    const visibleNote=level==='原卷还原'?'':note;
-    return `<div class="source-meta">${level?`<span class="source-level">${esc(level)}</span>`:''}${visibleNote?`<small>${esc(visibleNote)}</small>`:''}</div>`;
+  function publicTag(q){
+    const supplemental=q.supplemental===true||q.solution?.supplemental===true;
+    return supplemental?'<div class="public-tag"><span class="supplemental-tag">同类型补全</span></div>':'';
   }
   function material(q){
     if(!q.material)return '';
@@ -34,7 +32,7 @@
     const q=questions[state.current],isChoice=Boolean(config.choiceMode&&(q.options||[]).length),long=!['选择题','填空题'].includes(q.type);
     const editor=isChoice?`<div class="answer-label choice-prompt">先选择一个答案，再提交本题</div>`:`<label class="answer-label" for="draft">先写下你的答案或关键步骤</label><textarea class="draft${long?'':' short'}" id="draft" placeholder="提交后才计入完成进度；解析默认隐藏。"></textarea>`;
     $('card').className=`question-card${state.done[q.no]?' done':''}`;
-    $('card').innerHTML=`<div class="q-head"><div class="q-index"><span class="num">${String(q.no).padStart(2,'0')}</span><span class="kind">${esc(q.type)}</span></div>${sourceMeta(q)}</div>${material(q)}<div class="question-text">${esc(q.text)}${options(q)}</div><div class="answer-zone">${editor}<div class="actions"><button class="primary" onclick="submitCurrent()">提交本题</button><button class="ghost" onclick="reveal()">查看解析</button><span class="feedback" id="feedback">${esc(message)}</span></div><div class="solution" id="solution">${window.CaigouRichSolution.render(q.solution,q.answer)}</div></div>`;
+    $('card').innerHTML=`<div class="q-head"><div class="q-index"><span class="num">${String(q.no).padStart(2,'0')}</span><span class="kind">${esc(q.type)}</span></div>${publicTag(q)}</div>${material(q)}<div class="question-text">${esc(q.text)}${options(q)}</div><div class="answer-zone">${editor}<div class="actions"><button class="primary" onclick="submitCurrent()">提交本题</button><button class="ghost" onclick="reveal()">查看解析</button><span class="feedback" id="feedback">${esc(message)}</span></div><div class="solution" id="solution">${window.CaigouRichSolution.render(q.solution,q.answer)}</div></div>`;
     if(isChoice){$('card').querySelectorAll('input[name="choice"]').forEach(input=>input.addEventListener('change',e=>{state.chosen[q.no]=e.target.value;save();$('card').querySelectorAll('.choice-option').forEach(label=>label.classList.toggle('selected',label.contains(e.target))) }))}else{$('draft').value=state.chosen[q.no]||'';$('draft').addEventListener('input',e=>{state.chosen[q.no]=e.target.value;save()})}
     $('prev').disabled=state.current===0;$('next').disabled=state.current===questions.length-1;$('pager-status').textContent=`${String(state.current+1).padStart(2,'0')} / ${String(questions.length).padStart(2,'0')}`;sync();window.CaigouMath?.render($('card'))
   }
