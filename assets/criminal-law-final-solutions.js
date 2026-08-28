@@ -1,7 +1,6 @@
 window.CriminalLawFinalSolutions = [
   {
-    sourceLevel:'检索还原',
-    sourceNote:'回忆稿保留了刑法第13条“但书”及答案；以该独特表述检索到同题干、同四选项的公开题库版本。',
+
     point:'犯罪概念中的刑法第13条“但书”',
     lead:'关键是区分“不构成犯罪”与“已经构成犯罪但免予刑罚”。第13条但书在犯罪成立层面排除入罪。',
     steps:[
@@ -12,8 +11,7 @@ window.CriminalLawFinalSolutions = [
     conclusion:'“情节显著轻微、危害不大，不认为是犯罪”表示该行为不构成犯罪。'
   },
   {
-    sourceLevel:'检索还原',
-    sourceNote:'回忆稿明确保留“法无明文规定不为罪，法无明文规定不处罚”；检索到同表述的公开单选题并核对刑法第3条。',
+
     point:'罪刑法定原则',
     lead:'判断哪项原则时，要把通俗表述与刑法第3条逐句对应：犯罪与刑罚都必须有成文法律依据。',
     steps:[
@@ -24,8 +22,7 @@ window.CriminalLawFinalSolutions = [
     conclusion:'该经典表述对应罪刑法定原则。'
   },
   {
-    sourceLevel:'同类型补全',
-    sourceNote:'多份回忆仅保留“文义解释并非永远优于论理解释”“审判的时候怀孕”“入户抢劫中的户”等判断片段，原四个选项缺失，按这些片段补全。',
+    supplemental:true,
     point:'刑法解释方法与解释结论',
     lead:'分别判断文义边界、扩大解释、当然解释与限制解释，不能只看结论宽窄，还要看解释依据。',
     steps:[
@@ -37,8 +34,7 @@ window.CriminalLawFinalSolutions = [
     conclusion:'C对“入户抢劫”中“户”的限制解释判断正确。'
   },
   {
-    sourceLevel:'同类型补全',
-    sourceNote:'回忆稿只写“因果关系中断问题”，没有留下人物、行为和选项；补入独立异常医疗介入的同考点题。',
+    supplemental:true,
     point:'刑法因果关系中的异常介入因素',
     lead:'先找最初行为造成的危险，再判断后续事件是否异常、独立并足以单独支配最终结果。',
     steps:[
@@ -50,8 +46,7 @@ window.CriminalLawFinalSolutions = [
     conclusion:'剧毒误注是独立、异常且支配死亡的介入因素，通常中断原击打行为与死亡结果之间的归责。'
   },
   {
-    sourceLevel:'同类型补全',
-    sourceNote:'回忆稿仅保留“哪项行为不构成危害行为”，具体情境和选项缺失；按意志支配性考点补全。',
+    supplemental:true,
     point:'刑法上危害行为的意志支配性',
     lead:'刑法上的行为必须是人的意识和意志支配下的身体活动；纯粹反射、痉挛或外力强制通常不属于行为。',
     steps:[
@@ -62,8 +57,7 @@ window.CriminalLawFinalSolutions = [
     conclusion:'无意识癫痫痉挛不受意志支配，不属于刑法意义上的危害行为。'
   },
   {
-    sourceLevel:'同类型补全',
-    sourceNote:'回忆稿只留下“不作为义务来源、医生见死不救不一定构成犯罪”的要点；采用公开法考同考点四选项题补全。',
+    supplemental:true,
     point:'不作为犯罪的成立条件',
     lead:'不作为犯罪至少要核对保证人地位、履行可能性、结果及其可避免性，不能看到“没救人”就直接入罪。',
     steps:[
@@ -75,8 +69,7 @@ window.CriminalLawFinalSolutions = [
     conclusion:'D正确：危害公共安全、侵犯人身权利和侵犯财产的犯罪中都可能存在不作为犯。'
   },
   {
-    sourceLevel:'检索还原',
-    sourceNote:'回忆稿保留“犯罪的特征”；检索到公开题库中“犯罪最基本属性”的同表述四选项题。',
+
     point:'犯罪的本质特征',
     lead:'犯罪具有严重社会危害性、刑事违法性和应受刑罚处罚性，其中社会危害性是刑法规制的实质根据。',
     steps:[
@@ -88,8 +81,7 @@ window.CriminalLawFinalSolutions = [
     conclusion:'犯罪最基本的属性是严重的社会危害性。'
   },
   {
-    sourceLevel:'检索还原',
-    sourceNote:'多份回忆均写“年满16周岁负刑事责任”；检索到同题干和同组选项的公开题库版本，并按现行刑法第17条复核。',
+
     point:'完全负刑事责任年龄',
     lead:'“完全负刑事责任年龄”问的是原则上对刑法规定的全部犯罪承担责任的年龄起点，不等于未成年人量刑上没有特殊保护。',
     steps:[
@@ -101,8 +93,7 @@ window.CriminalLawFinalSolutions = [
     conclusion:'我国刑法上的完全负刑事责任年龄起点为已满16周岁。'
   },
   {
-    sourceLevel:'同类型补全',
-    sourceNote:'回忆稿保留“属人原则中最高刑三年以下可以不予追究”，原题干与干扰项缺失；依据刑法第7条补全。',
+    supplemental:true,
     point:'我国刑法的属人管辖',
     lead:'抓住行为人国籍、犯罪地点和“三年以下最高刑”例外，并注意国家工作人员、军人的特别规则。',
     steps:[
@@ -114,8 +105,7 @@ window.CriminalLawFinalSolutions = [
     conclusion:'C完整表述了刑法第7条第1款的属人管辖规则。'
   },
   {
-    sourceLevel:'同类型补全',
-    sourceNote:'回忆稿只写“教唆犯的处罚原则”，原选项缺失；依据刑法第29条补为基础单选。',
+    supplemental:true,
     point:'教唆犯的处罚原则',
     lead:'教唆犯不是固定的主犯或从犯，处罚取决于其在共同犯罪中的实际作用，并有教唆未成年人等特别规则。',
     steps:[
@@ -127,8 +117,7 @@ window.CriminalLawFinalSolutions = [
     conclusion:'教唆犯应按其在共同犯罪中所起的作用处罚。'
   },
   {
-    sourceLevel:'同类型补全',
-    sourceNote:'单份回忆保留“甲教唆乙抢劫，乙在去抢劫途中被捕，属于犯罪预备”的核心，原选项缺失；补全干扰项。',
+    supplemental:true,
     point:'犯罪预备与着手实行的界限',
     lead:'前往现场、携带工具通常仍在为实行犯罪创造条件；只有开始实施抢劫构成要件行为才是着手。',
     steps:[
@@ -140,8 +129,7 @@ window.CriminalLawFinalSolutions = [
     conclusion:'乙的抢劫行为停留在犯罪预备阶段。'
   },
   {
-    sourceLevel:'检索还原',
-    sourceNote:'回忆稿保留“正当防卫构成要件”；检索到公开题库中同题干、同四选项的题目。',
+
     point:'正当防卫的成立条件',
     lead:'正当防卫要求现实、正在进行的不法侵害，保护合法权益，针对侵害人本人，并遵守必要限度。',
     steps:[
@@ -153,8 +141,7 @@ window.CriminalLawFinalSolutions = [
     conclusion:'D是正当防卫成立的合法条件之一。'
   },
   {
-    sourceLevel:'同类型补全',
-    sourceNote:'多份回忆确认考“紧急避险”，但没有留下具体情境和选项；依据刑法第21条补入自然灾害避险题。',
+    supplemental:true,
     point:'紧急避险的成立条件',
     lead:'检查现实危险、正在发生、不得已、保护合法利益、损害较小法益和特殊责任人限制。',
     steps:[
@@ -166,8 +153,7 @@ window.CriminalLawFinalSolutions = [
     conclusion:'A同时满足紧迫危险、不得已与利益衡量要求，构成紧急避险。'
   },
   {
-    sourceLevel:'同类型补全',
-    sourceNote:'回忆稿只保留“犯罪构成要件不包括什么”，原选项缺失；按课程常用四要件体系补全。',
+    supplemental:true,
     point:'传统四要件犯罪构成体系',
     lead:'本题按本科刑法总论常用的四要件表述作答：犯罪客体、犯罪客观方面、犯罪主体、犯罪主观方面。',
     steps:[
@@ -179,8 +165,7 @@ window.CriminalLawFinalSolutions = [
     conclusion:'犯罪动机不属于传统四要件体系中的独立犯罪构成要件。'
   },
   {
-    sourceLevel:'同类型补全',
-    sourceNote:'回忆稿提到“预备、既遂、未遂、中止的判断”，但未保留综合题情境；补入毒药失效的标准未遂题。',
+    supplemental:true,
     point:'犯罪未遂与不能犯未遂',
     lead:'判断顺序是是否着手、为何未得逞、是否自动放弃；毒药失效不改变行为人已经开始实行杀人。',
     steps:[
@@ -192,8 +177,7 @@ window.CriminalLawFinalSolutions = [
     conclusion:'甲已经着手杀人，因毒药失效而未得逞，构成故意杀人罪未遂。'
   },
   {
-    sourceLevel:'多份回忆交叉还原',
-    sourceNote:'“刑法”作为名词解释在多份独立回忆截图中一致出现，题目本身可交叉确认。',
+
     point:'刑法的概念与调整对象',
     lead:'定义应同时说明规范内容、法律后果与国家属性，避免只写“规定刑罚的法律”。',
     steps:[
@@ -204,8 +188,7 @@ window.CriminalLawFinalSolutions = [
     conclusion:'刑法是规定犯罪、刑事责任和刑罚的法律规范总和。'
   },
   {
-    sourceLevel:'多份回忆交叉还原',
-    sourceNote:'“疏忽大意的过失”在多份回忆截图中一致出现，题目本身可交叉确认。',
+
     point:'疏忽大意过失的认识因素',
     lead:'定义必须包含“应当预见、能够预见、没有预见、发生结果”四个环节。',
     steps:[
@@ -216,8 +199,7 @@ window.CriminalLawFinalSolutions = [
     conclusion:'应当预见且能够预见危害结果，因为疏忽大意没有预见，以致结果发生的，是疏忽大意的过失。'
   },
   {
-    sourceLevel:'多份回忆交叉还原',
-    sourceNote:'“教唆犯”在多份回忆截图中一致出现，题目本身可交叉确认。',
+
     point:'教唆犯的概念',
     lead:'概念核心是故意引起他人的犯罪决意，而不是亲自实施构成要件行为。',
     steps:[
@@ -228,8 +210,7 @@ window.CriminalLawFinalSolutions = [
     conclusion:'故意唆使他人产生犯罪决意并实施犯罪的人，是教唆犯。'
   },
   {
-    sourceLevel:'多份回忆交叉还原',
-    sourceNote:'“从旧兼从轻原则”在多份回忆截图中一致出现，题目本身可交叉确认。',
+
     point:'刑法时间效力的从旧兼从轻',
     lead:'先确定行为时旧法，再比较裁判时新法；原则从旧，例外适用对行为人更有利的新法。',
     steps:[
@@ -240,8 +221,7 @@ window.CriminalLawFinalSolutions = [
     conclusion:'从旧兼从轻是原则适用行为时旧法，但新法不入罪或处罚较轻时适用新法。'
   },
   {
-    sourceLevel:'多份回忆交叉还原',
-    sourceNote:'“紧急避险”在多份回忆截图中一致出现，题目本身可交叉确认。',
+
     point:'紧急避险的概念',
     lead:'完整定义要包含保护目的、正在发生的危险、不得已、损害另一较小法益和限度。',
     steps:[
@@ -252,8 +232,7 @@ window.CriminalLawFinalSolutions = [
     conclusion:'紧急避险是为避免正在发生的危险，在不得已情况下损害较小合法权益的正当化行为。'
   },
   {
-    sourceLevel:'多份回忆交叉还原',
-    sourceNote:'“我国属地原则的内容/属地管辖权”在多份回忆截图中一致出现。',
+
     point:'我国刑法的属地管辖原则',
     lead:'答案应覆盖领域内犯罪、船舶航空器拟制领土和行为地结果地择一标准。',
     steps:[
@@ -265,8 +244,7 @@ window.CriminalLawFinalSolutions = [
     conclusion:'我国属地原则以领域为核心，并采用行为地或结果地任一在境内即可的标准。'
   },
   {
-    sourceLevel:'多份回忆交叉还原',
-    sourceNote:'“共同犯罪的成立要件/条件”在多份回忆截图中一致出现。',
+
     point:'共同犯罪的成立条件',
     lead:'共同犯罪不是人数相加，必须同时存在合格主体、共同故意和相互配合的共同犯罪行为。',
     steps:[
@@ -278,8 +256,7 @@ window.CriminalLawFinalSolutions = [
     conclusion:'二人以上具备共同故意并实施相互联系的共同犯罪行为，才能成立共同犯罪。'
   },
   {
-    sourceLevel:'多份回忆交叉还原',
-    sourceNote:'“区分间接故意和过于自信的过失”在多份回忆截图中一致出现。',
+
     point:'间接故意与过于自信过失的界限',
     lead:'两者都预见危害结果可能发生，决定性区别在意志因素：放任发生还是确信能够避免。',
     steps:[
@@ -291,8 +268,7 @@ window.CriminalLawFinalSolutions = [
     conclusion:'间接故意是预见可能发生而放任，过于自信过失是预见可能发生但轻信能够避免。'
   },
   {
-    sourceLevel:'多份回忆交叉还原',
-    sourceNote:'“犯罪中止的特征/内容”在多份回忆截图中一致出现。',
+
     point:'犯罪中止的成立特征',
     lead:'依次审查时间性、自动性、客观行为和有效性；“想停手”但没有阻止结果并不足够。',
     steps:[
@@ -304,8 +280,7 @@ window.CriminalLawFinalSolutions = [
     conclusion:'犯罪中止具有时间性、自动性、客观放弃或防果行为及有效性。'
   },
   {
-    sourceLevel:'多份回忆交叉还原',
-    sourceNote:'论述题题干及15分分值在多份回忆截图中一致出现。',
+
     point:'罪责刑相适应原则的含义、立法体现与司法适用',
     lead:'论述要形成“原则含义—立法配置—裁判适用—执行调整”的完整链条，并说明罪行与人身危险性两个评价面向。',
     steps:[
@@ -319,8 +294,7 @@ window.CriminalLawFinalSolutions = [
     conclusion:'该原则要求立法、量刑和执行各环节都让刑罚与罪行严重程度及刑事责任大小保持均衡。'
   },
   {
-    sourceLevel:'多份回忆交叉还原',
-    sourceNote:'案例人物年龄、共同盗窃、楼下望风、3000元、事后500元及三个设问由多份截图交叉确认；措辞差异处采用共同信息。',
+
     point:'未成年人刑事责任、共同盗窃、共犯脱离与停止形态',
     lead:'先分别审查年龄和盗窃既遂，再判断李某的离开是否有效消除其对共同犯罪的贡献，最后处理15周岁假设。',
     steps:[
@@ -332,6 +306,6 @@ window.CriminalLawFinalSolutions = [
       {title:'处理回忆答案冲突',text:'截图所附AI答案把16岁李某直接认定为犯罪中止，忽略了共犯中止需要有效阻止共同结果这一条件；本题页面保留该差异，但采用上述严格分析。'}
     ],
     conclusion:'严格结论：王某、16岁的李某构成盗窃罪共同犯罪并对既遂负责；李某若15周岁，不对盗窃罪负刑事责任。',
-    note:'回忆截图内的AI答案为“王某既遂、李某中止”。按照共同犯罪中止的通说要求，仅离开而未有效防止既遂结果，不能成立中止；因此本解析不沿用该答案。'
+    note:'参考材料中的答案为“王某既遂、李某中止”。按照共同犯罪中止的通说要求，仅离开而未有效防止既遂结果，不能成立中止；因此本解析不沿用该答案。'
   }
 ];

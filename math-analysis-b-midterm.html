@@ -25,6 +25,7 @@
     }
     @media(max-width:360px){.hero h1{font-size:31px}.filters{grid-template-columns:1fr}.filter{padding:8px}.actions{grid-template-columns:1fr}.pet{transform:scale(.9);transform-origin:right bottom;right:0}.q-title{font-size:14px}}
   </style>
+  <link rel="stylesheet" href="assets/caigou-question-bank.css?v=20260828">
 </head>
 <body>
   <header class="topbar"><div class="brand"><b>菜</b>菜狗捞捞</div><div class="term">数学分析 B · 大一上期中</div></header>
@@ -64,4 +65,9 @@
   function sync(){let n=done.size,p=n/data.length,state=n===10?3:n>=6?2:n>=3?1:0,stage=n===10?'老师':n>=3?'菜菜':'捞捞';document.querySelector('#counter').textContent=`${n} / ${data.length} 已作答`;document.querySelector('#bar').style.width=(p*100)+'%';let label=n===10?'安全上岸 · 10 / 10':n>=6?'正在爬缸 · '+n+' / 10':n>=3?'努力上浮 · '+n+' / 10':'溺水求捞 · '+n+' / 10';document.querySelector('#pet-label').textContent=label;document.querySelector('#pet-stage').textContent=stage;document.querySelector('#pet-text').textContent=n===10?'老师！这次真的被捞出来啦！':n>=6?'看到岸了，再答几题！':n>=3?'菜菜正在努力上浮！':'捞捞……先拿下一题！';document.querySelector('#hero-status').textContent=n===10?'恭喜，菜狗安全上岸！':n?'菜狗正在上浮':'菜狗正在努力露头';document.querySelector('#hero-copy').textContent=n===10?'本套题已全部完成，期中周平安度过。':'完成一题，菜狗会进入新的获救状态。';let pet=document.querySelector('#pet');pet.style.setProperty('--offset',`${-state*25}%`);pet.classList.toggle('celebrate',n===10)}
   let current='all';document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{current=b.dataset.filter;document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));draw(current)});draw();sync();
   </script>
+  <script>
+    window.CaigouBankConfig={title:'数学分析 B（大一上期中）',eyebrow:'MATHEMATICAL ANALYSIS B · FRESHMAN FALL MIDTERM',heading:'数学分析 B，<br><em>把菜狗捞上来。</em>',description:'先独立作答，需要时再展开严谨、清晰的分步解析。',storageKey:'caigou-math-analysis-b-midterm-state-v2',choiceMode:true};
+    window.CaigouBankQuestions=data.map((x,i)=>({no:i+1,type:x.type==='choice'?'选择题':'证明题',text:x.q,options:x.opts||[],answer:x.type==='choice'?String.fromCharCode(65+x.ans):(x.solution?.answer||x.explain),solution:x.solution}));
+  </script>
+  <script src="assets/caigou-question-bank.js?v=20260828"></script>
 </body></html>

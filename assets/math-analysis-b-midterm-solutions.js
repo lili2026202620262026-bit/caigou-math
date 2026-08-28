@@ -27,9 +27,9 @@ window.MathAnalysisBMidtermSolutions = [
       {title:'展开 D',text:'余弦的首个非零差值是二次项。',formula:'\\[1-\\cos x=\\frac{x^2}{2}+o(x^2).\\]'},
       {title:'比较阶数',text:'A、B 是一阶，C 是三阶，D 是二阶。因此并不存在“其余三个同阶、只有一个不同阶”的唯一选项。'}
     ],
-    note:'原卷答案表给出 C，但按题面“与其他三个不是同阶”严格判断，C 与 D 都无法成为唯一异类。网页保留原卷答案 C，同时明确标注命题瑕疵。',
-    conclusion:'按原卷答案取 C；严格数学结论是本题没有唯一正确选项。',
-    answer:'原卷 C；严格题意无唯一答案'
+    note:'参考答案表给出 C，但按题面“与其他三个不是同阶”严格判断，C 与 D 都无法成为唯一异类。网页保留参考答案 C，同时明确标注命题瑕疵。',
+    conclusion:'按参考答案取 C；严格数学结论是本题没有唯一正确选项。',
+    answer:'C；严格题意无唯一答案'
   },
   {
     point:'左右极限与间断点分类',
@@ -103,4 +103,4 @@ window.MathAnalysisBMidtermSolutions = [
     ],conclusion:'构造出的数列严格递增、每项属于 \\(S\\)，并由夹逼定理趋于 \\(a\\)。',answer:'命题得证'
   }
 ];
-window.MathAnalysisBMidtermSolutions = window.MathAnalysisBMidtermSolutions.map(solution => ({sourceLevel:'原卷还原',sourceNote:'题干由清晰原卷照片逐题核对。',...solution}));
+window.MathAnalysisBMidtermSolutions = window.MathAnalysisBMidtermSolutions.map(solution => ({...solution}));

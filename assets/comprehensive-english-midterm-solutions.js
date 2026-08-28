@@ -1,7 +1,6 @@
 (() => {
   const questions = [];
   const makeSolution = (point, lead, steps, conclusion, note = '') => ({
-    sourceLevel: '原卷还原',
     point,
     lead,
     steps: steps.map(([title, text]) => ({ title, text })),
@@ -491,8 +490,8 @@ Black & Decker also makes a coffee maker that drips coffee directly into a carry
     ['核对严格语法', 'working to 后必须接动词原形；按命题意图，D 应为 reestablish，表达“重新确立”。'],
     ['排除其余词义', 'refine 是改进，relay 是转达，replay 是重放，都不能表示恢复社会角色。'],
     '本句按命题意图应表达“重新确立她们在美国生活中的重要角色”。',
-    '原卷 D 项印作 reestablished，与 to 后接动词原形冲突；手写答案指向 D。严格语法应改为 reestablish，因此交互保留原卷答案 D，同时明确记录印刷词形错误。',
-    '原卷、手写答案页均清晰；D 项存在可确认的词形印刷错误，严格形式应为 reestablish。'
+    '题面 D 项印作 reestablished，与 to 后接动词原形冲突；参考答案指向 D。严格语法应改为 reestablish，因此交互保留答案 D，同时明确记录印刷词形错误。',
+    '题面与参考答案页均清晰；D 项存在可确认的词形印刷错误，严格形式应为 reestablish。'
   ), clozeB);
 
   add('阅读理解', `How many calculating devices which were designed before the 1800s are mentioned?`, ['one', 'two', 'three', 'four'], 'C', three(

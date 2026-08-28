@@ -1,6 +1,6 @@
 (() => {
   const style = document.createElement('style');
-  style.textContent = '.katex-display{max-width:100%;overflow-x:auto;overflow-y:hidden;padding:.25rem 0}.katex{font-size:1.02em}.q-title,.q,.question-text,.opt{min-width:0;max-width:100%;overflow-wrap:anywhere;word-break:break-word}.q-title>.katex,.q>.katex,.question-text>.katex{display:inline-block;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle}.opt{overflow-x:auto;overflow-y:hidden}';
+  style.textContent = '.katex-display{max-width:100%;overflow:visible;padding:.25rem 0}.katex{font-size:1.02em}.q-title,.q,.question-text,.opt{min-width:0;max-width:100%;overflow-wrap:anywhere;word-break:break-word}.q-title>.katex,.q>.katex,.question-text>.katex{display:inline-block;max-width:100%;vertical-align:middle}.opt{min-width:0;max-width:100%;overflow:visible}.katex-display>.katex{transform-origin:top left}@media(max-width:680px){.katex-display{font-size:.94em}}';
   document.head.appendChild(style);
 
   const options = {
@@ -33,14 +33,28 @@
     });
   };
 
+  const fit = (root = document.body) => {
+    requestAnimationFrame(() => root.querySelectorAll('.katex-display > .katex').forEach((math) => {
+      math.style.transform = '';
+      math.style.marginBottom = '';
+      const box = math.parentElement;
+      if (!box || !box.clientWidth || math.scrollWidth <= box.clientWidth + 1) return;
+      const scale = Math.max(.72, Math.min(1, box.clientWidth / math.scrollWidth));
+      math.style.transform = `scale(${scale})`;
+      math.style.marginBottom = `${math.getBoundingClientRect().height * (scale - 1)}px`;
+    }));
+  };
+
   const render = (root = document.body) => {
     if (!root || !window.renderMathInElement) return false;
     addBreaks(root);
     window.renderMathInElement(root, options);
+    fit(root);
     return true;
   };
 
-  window.CaigouMath = { render };
+  window.CaigouMath = { render, fit };
+  window.addEventListener('resize', () => fit(document.body));
   document.addEventListener('DOMContentLoaded', () => {
     render(document.body);
     let scheduled = false;

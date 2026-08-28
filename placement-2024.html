@@ -91,5 +91,14 @@
     function updatePet(){const count=Object.keys(done).length;el('score').textContent=`${count} / 25`;const level=Math.min(3,Math.floor(count/7));el('sprite').style.setProperty('--x',`${-25*level}%`);const labels=['溺水中','冒泡中','快上岸了','捞出来啦！'];const words=['捞捞……先拿下一题！','水位下降一点，菜狗抬头了！','再坚持几题，马上靠岸。','全部完成，菜狗安全上岸！'];el('petlabel').textContent=`${labels[level]} · ${count} / 25`;el('bubble').textContent=words[level];el('pet').classList.toggle('finish',count===25);}
     window.go=go;window.pick=pick;window.submit=submit;window.reveal=reveal;render();
   </script>
+  <link rel="stylesheet" href="assets/caigou-question-bank.css?v=20260828">
+  <script>
+    const unifiedKey='caigou-placement-state-v2';
+    if(!localStorage.getItem(unifiedKey))localStorage.setItem(unifiedKey,JSON.stringify({current,done,chosen}));
+    window.CaigouBankConfig={title:'数学分级考',eyebrow:'MATHEMATICS PLACEMENT PRACTICE',heading:'数学分级考，<br><em>和菜狗一起闯关。</em>',description:'共 25 道单项选择题；逐题作答，需要时再查看考点与分步解析。',storageKey:unifiedKey,choiceMode:true};
+    window.CaigouBankQuestions=questions.map(q=>({no:q.no,type:'单项选择题',text:q.text,options:q.options,answer:q.answer,solution:q.solution}));
+  </script>
+  <script src="assets/caigou-rich-solutions.js"></script>
+  <script src="assets/caigou-question-bank.js?v=20260828"></script>
 </body>
 </html>
