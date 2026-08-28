@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="菜狗捞捞 SUIBE 学分总览：用互动地图看懂约 160 学分、课程结构与八学期节奏。">
+  <meta property="og:title" content="SUIBE 学分总览 · 菜狗捞捞">
+  <meta property="og:description" content="把 160 学分，拼成毕业地图。看懂课程结构、八学期节奏与成绩单常识。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://lili2026202620262026-bit.github.io/caigou-math/assets/suibe-credits-og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SUIBE 学分总览 · 菜狗捞捞">
+  <meta name="twitter:description" content="把 160 学分，拼成毕业地图。看懂课程结构、八学期节奏与成绩单常识。">
+  <meta name="twitter:image" content="https://lili2026202620262026-bit.github.io/caigou-math/assets/suibe-credits-og.png">
+  <title>菜狗捞捞 · SUIBE 学分总览</title>
+  <style>
+    :root{--ink:#173a2b;--deep:#347047;--leaf:#68ad72;--lime:#cbed7d;--mint:#edf8e8;--paper:#fffef9;--bg:#f5faf2;--line:#d5e7d2;--muted:#688577;--sun:#ffd869;--blue:#cfeafa;--violet:#e8def8;--coral:#ffd9cb;--shadow:0 20px 60px rgba(44,92,58,.12)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;overflow-x:hidden;background:var(--bg);color:var(--ink);font-family:"Noto Sans SC","Microsoft YaHei",sans-serif}a{color:inherit}button,input{font:inherit}.top{position:sticky;top:0;z-index:20;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 max(16px,7vw);border-bottom:1px solid rgba(213,231,210,.9);background:rgba(255,255,255,.88);backdrop-filter:blur(14px)}.brand{display:flex;align-items:center;gap:9px;font-weight:900;text-decoration:none}.brand-mark{display:grid;place-items:center;width:29px;height:29px;border-radius:48% 52% 44% 56%;background:var(--lime);color:#315f3f;font-size:12px;transform:rotate(-5deg)}.top-note{font-size:12px;color:var(--muted)}main{max-width:1140px;margin:auto;padding:32px 20px 120px}
+    .hero{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:1.06fr .94fr;gap:40px;min-height:560px;align-items:center;padding:56px;border:1px solid var(--line);border-radius:34px;background:radial-gradient(circle at 84% 18%,#fbffe8 0 13%,transparent 34%),linear-gradient(140deg,#fff 0 48%,#e7f5e2 100%);box-shadow:var(--shadow)}.hero:before{content:"";position:absolute;right:-110px;top:-150px;z-index:-1;width:430px;height:430px;border:1px dashed #a9ce9f;border-radius:50%}.eyebrow{font:850 11px ui-monospace,monospace;letter-spacing:1.15px;color:var(--deep)}h1{margin:13px 0 18px;font-size:clamp(43px,6.4vw,74px);line-height:.98;letter-spacing:-4px}h1 em{font-style:normal;color:var(--leaf)}.lead{max-width:620px;margin:0;color:#557263;font-size:15px;line-height:1.85}.chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:24px}.chips span{padding:8px 12px;border:1px solid #cfe5ca;border-radius:99px;background:#ffffffc9;color:var(--deep);font-size:12px;font-weight:850}.jump{display:inline-flex;align-items:center;gap:10px;margin-top:33px;color:var(--deep);font-size:13px;font-weight:900;text-decoration:none}.jump i{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--ink);color:#fff;font-style:normal}.credit-orbit{position:relative;width:min(100%,430px);aspect-ratio:1;margin:auto}.orbit-line{position:absolute;inset:5%;border:1px dashed #9ac58f;border-radius:50%;animation:spin 30s linear infinite}.orbit-line:after{content:"";position:absolute;left:50%;top:-8px;width:16px;height:16px;border-radius:50%;background:var(--sun);box-shadow:0 0 0 7px #fff8da}@keyframes spin{to{transform:rotate(360deg)}}.credit-core{position:absolute;inset:25%;display:grid;place-items:center;border:1px solid #acd0a5;border-radius:46% 54% 51% 49%;background:#fff;box-shadow:0 20px 45px rgba(64,106,68,.13);transform:rotate(-4deg)}.credit-core div{text-align:center;transform:rotate(4deg)}.credit-core b{display:block;font-size:58px;line-height:.9;letter-spacing:-5px}.credit-core small{color:var(--muted);font-weight:800}.badge{position:absolute;display:grid;place-items:center;width:98px;height:84px;padding:9px;border:1px solid #d2e7ce;border-radius:22px;background:#fff;text-align:center;box-shadow:0 10px 28px rgba(51,95,58,.09);font-size:11px;font-weight:850;line-height:1.35}.badge b{display:block;font-size:19px}.badge.one{left:-1%;top:20%;background:#fff6d6;transform:rotate(-6deg)}.badge.two{right:-1%;top:23%;background:#e8f4ff;transform:rotate(6deg)}.badge.three{left:9%;bottom:6%;background:#f0e9fb;transform:rotate(4deg)}.badge.four{right:5%;bottom:3%;background:#ffe9df;transform:rotate(-5deg)}
+    .section{margin-top:78px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:22px}.kicker{margin-bottom:7px;color:var(--deep);font:850 11px ui-monospace,monospace;letter-spacing:1px}.section h2{margin:0;font-size:clamp(29px,4vw,45px);letter-spacing:-2px}.section-head p{max-width:480px;margin:0;color:var(--muted);font-size:13px;line-height:1.75}.atlas{display:grid;grid-template-columns:.82fr 1.18fr;gap:16px}.ratio-card,.module-card{border:1px solid var(--line);border-radius:26px;background:#fff;box-shadow:0 12px 34px rgba(61,119,66,.06)}.ratio-card{display:grid;place-items:center;min-height:410px;padding:28px;background:linear-gradient(150deg,#173a2b,#2f6b47);color:#fff}.donut{position:relative;display:grid;place-items:center;width:240px;aspect-ratio:1;border-radius:50%;background:conic-gradient(var(--lime) 0 79%,#ffdf82 79% 100%)}.donut:after{content:"";position:absolute;inset:34px;border-radius:50%;background:#234e36}.donut-center{position:relative;z-index:1;text-align:center}.donut-center b{display:block;font-size:50px;letter-spacing:-4px}.donut-center small{color:#cee3d1;font-weight:750}.ratio-legend{display:flex;gap:18px;margin-top:23px;color:#d7e8d9;font-size:11px;font-weight:800}.ratio-legend i{display:inline-block;width:9px;height:9px;margin-right:6px;border-radius:50%;background:var(--lime)}.ratio-legend span:last-child i{background:#ffdf82}.module-card{padding:28px}.module-card h3{margin:0 0 8px;font-size:20px}.module-card>p{margin:0;color:var(--muted);font-size:12px;line-height:1.7}.module-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}.module{min-height:135px;padding:16px;border:1px solid var(--line);border-radius:18px;background:var(--module-bg,#f7fbf5)}.module i{display:grid;place-items:center;width:36px;height:36px;border-radius:12px;background:#fff;font-style:normal;font-weight:900}.module b{display:block;margin:13px 0 5px;font-size:13px}.module span{color:var(--muted);font-size:10px;line-height:1.55}
+    .pet{position:fixed;right:max(10px,calc((100vw - 1140px)/2 - 150px));bottom:8px;z-index:12;width:140px;filter:drop-shadow(0 9px 15px rgba(43,76,45,.22));pointer-events:none}.pet img{display:block;width:100%;height:auto}.pet-bubble{position:absolute;left:50%;top:-41px;width:144px;padding:8px 10px;transform:translateX(-50%);border:1px solid var(--line);border-radius:13px;background:#fff;text-align:center;font-size:10px;line-height:1.45}.pet-label{margin-top:-3px;padding:4px;border-radius:99px;background:#f5faf2eb;color:#538060;text-align:center;font:750 10px ui-monospace,monospace}
+    @media(max-width:840px){main{padding:22px 13px 80px}.hero{grid-template-columns:1fr;min-height:auto;padding:31px 24px;border-radius:27px}.credit-orbit{width:min(100%,360px)}h1{letter-spacing:-2.5px}.section{margin-top:55px}.section-head{display:block}.section-head p{margin-top:11px}.atlas{grid-template-columns:1fr}.pet{position:relative;right:auto;bottom:auto;width:94px;margin:-18px 3px 0 auto}.pet-bubble{display:none}}
+    @media(max-width:560px){.top{padding:0 14px}.top-note{display:none}.hero{padding:26px 19px}.credit-orbit{width:292px}.badge{width:76px;height:68px;border-radius:17px;font-size:9px}.badge b{font-size:15px}.donut{width:210px}.module-grid{grid-template-columns:1fr 1fr}.module-card{padding:21px}.module{min-height:126px;padding:13px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.orbit-line{animation:none}}
+  </style>
+  <style>
+    :focus-visible{outline:3px solid #f3be35;outline-offset:3px}.panel{padding:28px;border:1px solid var(--line);border-radius:26px;background:#fff;box-shadow:0 12px 34px rgba(61,119,66,.06)}
+    .explorer{display:grid;grid-template-columns:310px minmax(0,1fr);gap:16px}.block-tabs{display:grid;gap:8px;padding:13px;border:1px solid var(--line);border-radius:25px;background:#eaf5e7}.block-tab{display:flex;align-items:center;gap:12px;width:100%;min-height:66px;padding:11px 13px;border:1px solid transparent;border-radius:16px;background:transparent;color:var(--ink);text-align:left;cursor:pointer}.block-tab:hover{background:#f7fcf5}.block-tab.active{border-color:#cfe3cb;background:#fff;box-shadow:0 8px 22px rgba(65,107,66,.08)}.block-tab i{display:grid;place-items:center;flex:none;width:40px;height:40px;border-radius:13px;background:var(--tab-bg,#fff);font-style:normal;font-weight:900}.block-tab b{display:block;font-size:13px}.block-tab small{display:block;margin-top:3px;color:var(--muted);font-size:10px}.block-detail{position:relative;overflow:hidden;min-height:480px;padding:34px;border:1px solid var(--line);border-radius:25px;background:#fff}.block-detail:after{content:"";position:absolute;right:-130px;top:-150px;width:380px;height:380px;border:1px dashed #d8ead5;border-radius:50%}.block-head,.block-copy,.course-list,.split-bar,.detail-note{position:relative;z-index:1}.block-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}.block-overline{color:var(--deep);font:850 11px ui-monospace,monospace;letter-spacing:1px}.block-title{margin:8px 0 0;font-size:clamp(27px,3.5vw,39px);letter-spacing:-1.5px}.credit-stamp{flex:none;display:grid;place-items:center;width:91px;height:91px;border:1px solid #c8dfc3;border-radius:46% 54% 51% 49%;background:#eff8e9;transform:rotate(5deg);text-align:center}.credit-stamp b{display:block;font-size:26px;letter-spacing:-1px}.credit-stamp small{font-size:9px;color:var(--muted);font-weight:800}.block-copy{max-width:640px;margin:18px 0 0;color:var(--muted);font-size:13px;line-height:1.8}.split-bar{display:grid;grid-template-columns:var(--required,79%) 1fr;overflow:hidden;height:12px;margin-top:27px;border-radius:99px;background:#edf3eb}.split-bar i:first-child{background:linear-gradient(90deg,#8dcb83,#4e9b63)}.split-bar i:last-child{background:#ffda76}.split-labels{position:relative;z-index:1;display:flex;justify-content:space-between;gap:15px;margin-top:8px;color:var(--muted);font-size:10px;font-weight:800}.course-list{display:flex;gap:8px;flex-wrap:wrap;margin-top:25px}.course-pill{padding:8px 11px;border:1px solid var(--line);border-radius:99px;background:#f8fcf7;font-size:11px;font-weight:800}.detail-note{margin-top:26px;padding:13px 15px;border-radius:15px;background:#fff8df;color:#776532;font-size:11px;line-height:1.65}
+    .semester-board{position:relative;overflow:hidden;padding:31px;border:1px solid var(--line);border-radius:28px;background:#fff;box-shadow:0 12px 34px rgba(61,119,66,.06)}.term-track{position:absolute;left:7%;right:7%;top:71px;height:3px;border-radius:99px;background:linear-gradient(90deg,var(--leaf) 0 50%,#dce9da 50%)}.term-tabs{position:relative;z-index:1;display:grid;grid-template-columns:repeat(8,1fr);gap:9px}.term-tab{padding:0;border:0;background:transparent;color:var(--ink);cursor:pointer}.term-dot{display:grid;place-items:center;width:49px;height:49px;margin:auto;border:5px solid #fff;border-radius:50%;background:#dce9da;box-shadow:0 0 0 2px #cfdfcc;color:#63806d;font:900 11px ui-monospace,monospace}.term-tab:nth-child(-n+4) .term-dot{background:var(--leaf);box-shadow:0 0 0 2px #a4cca0;color:#fff}.term-tab.active .term-dot{background:var(--ink);box-shadow:0 0 0 3px var(--sun);color:#fff;transform:translateY(-3px)}.term-tab b{display:block;margin-top:14px;font-size:11px}.term-tab small{display:block;margin-top:3px;color:var(--muted);font-size:9px}.term-detail{display:grid;grid-template-columns:.7fr 1.3fr;gap:24px;align-items:center;margin-top:31px;padding:22px;border-radius:20px;background:#f3f9f0}.term-number{padding-right:20px;border-right:1px solid var(--line)}.term-number small{display:block;color:var(--muted);font-size:10px;font-weight:800}.term-number strong{display:block;margin-top:5px;font-size:46px;line-height:1;letter-spacing:-3px}.term-number strong i{font-style:normal;font-size:15px;letter-spacing:0}.term-copy b{font-size:15px}.term-copy p{margin:7px 0 0;color:var(--muted);font-size:11px;line-height:1.7}.rhythm-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.rhythm-card{padding:20px;border:1px solid var(--line);border-radius:20px;background:#fff}.rhythm-card i{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:var(--card-bg,var(--mint));font-style:normal;font-weight:900}.rhythm-card b{display:block;margin:14px 0 7px;font-size:13px}.rhythm-card p{margin:0;color:var(--muted);font-size:10px;line-height:1.7}
+    .backpack{display:grid;grid-template-columns:1fr 1fr;gap:16px}.control-panel{background:linear-gradient(155deg,#fff 0 62%,#f1f8ed)}.panel-label{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}.panel-label b{font-size:17px}.panel-label span{padding:5px 9px;border-radius:99px;background:var(--mint);color:var(--deep);font-size:10px;font-weight:850}.slider{display:block;margin-top:23px}.slider:first-of-type{margin-top:0}.slider-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:9px}.slider-head b{font-size:13px}.slider-head strong{font-size:22px}.slider-head small{color:var(--muted);font-size:11px}.slider input{width:100%;margin:0;accent-color:var(--deep)}.slider p{margin:7px 0 0;color:var(--muted);font-size:10px;line-height:1.6}.quick-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:20px}.quick-row button{padding:7px 10px;border:1px solid var(--line);border-radius:99px;background:#fff;color:var(--deep);font-size:10px;font-weight:850;cursor:pointer}.result-panel{position:relative;overflow:hidden;display:grid;grid-template-columns:180px minmax(0,1fr);gap:25px;align-items:center;background:linear-gradient(145deg,#173a2b,#2e6745);color:#fff}.result-panel:after{content:"";position:absolute;right:-100px;bottom:-150px;width:330px;height:330px;border:1px dashed rgba(255,255,255,.22);border-radius:50%}.progress-ring{position:relative;z-index:1;display:grid;place-items:center;width:175px;aspect-ratio:1;border-radius:50%;background:conic-gradient(var(--lime) var(--progress,0%),rgba(255,255,255,.15) 0)}.progress-ring:after{content:"";position:absolute;inset:18px;border-radius:50%;background:#25533a}.progress-center{position:relative;z-index:1;text-align:center}.progress-center b{display:block;font-size:43px;line-height:1;letter-spacing:-3px}.progress-center small{color:#cde3d1;font-size:10px}.result-copy{position:relative;z-index:1}.result-copy .mini{color:#cce3d0;font:850 10px ui-monospace,monospace;letter-spacing:.8px}.result-copy h3{margin:7px 0 9px;font-size:25px}.result-copy p{margin:0;color:#d5e8d8;font-size:11px;line-height:1.75}.result-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:18px}.result-stat{padding:11px;border:1px solid rgba(255,255,255,.16);border-radius:13px;background:rgba(255,255,255,.06)}.result-stat b{display:block;font-size:18px}.result-stat span{color:#cde1d0;font-size:9px}
+    .boulders{display:grid;grid-template-columns:1fr 1fr;gap:16px}.boulder{position:relative;overflow:hidden;min-height:335px;padding:29px;border:1px solid var(--line);border-radius:27px;background:#fff;box-shadow:0 12px 34px rgba(61,119,66,.06)}.boulder:after{content:attr(data-num);position:absolute;right:-8px;bottom:-28px;color:var(--wash,#eef7e9);font-size:180px;font-weight:950;line-height:1}.boulder>*{position:relative;z-index:1}.boulder-icon{display:grid;place-items:center;width:48px;height:48px;border-radius:15px;background:var(--icon-bg,#fff2b8);font-style:normal;font-weight:950}.boulder h3{margin:18px 0 8px;font-size:26px}.boulder>p{max-width:500px;margin:0;color:var(--muted);font-size:12px;line-height:1.8}.boulder ul{display:grid;gap:8px;margin:22px 0 0;padding:0;list-style:none}.boulder li{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:750}.boulder li:before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--leaf)}
+    .science-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.science-card{padding:23px;border:1px solid var(--line);border-radius:22px;background:#fff}.science-card i{display:grid;place-items:center;width:43px;height:43px;border-radius:14px;background:var(--science-bg,var(--mint));font-style:normal;font-weight:900}.science-card h3{margin:16px 0 8px;font-size:16px}.science-card p{margin:0;color:var(--muted);font-size:11px;line-height:1.75}.fact{margin-top:15px;padding:11px;border-radius:13px;background:#f6faf4;color:#4f705c;font-size:10px;line-height:1.65}.warning{margin-top:15px;padding:16px 18px;border:1px solid #ead58c;border-radius:18px;background:#fff8df;color:#73622f;font-size:11px;line-height:1.75}.jump,.quick-row button{min-height:42px}.slider input{height:42px;margin:-8px 0}
+    .note-wall{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.note{position:relative;min-height:214px;padding:24px;border-radius:5px 5px 23px 5px;background:var(--note,#fff2b8);box-shadow:0 12px 28px rgba(83,113,81,.09);transform:rotate(var(--rotate,-1deg))}.note:nth-child(2){--note:#e5f2ff;--rotate:1.2deg}.note:nth-child(3){--note:#eaf7e1;--rotate:-.4deg}.note:before{content:"";position:absolute;left:50%;top:-7px;width:72px;height:17px;transform:translateX(-50%) rotate(-2deg);background:rgba(255,255,255,.58)}.note i{font-style:normal;font-size:24px}.note b{display:block;margin:16px 0 9px;font-size:16px}.note p{margin:0;color:#5c7062;font-size:11px;line-height:1.8}.footer{margin-top:76px;padding-top:25px;border-top:1px solid var(--line);color:var(--muted);font-size:10px;line-height:1.8}.footer b{color:var(--deep)}
+    @media(max-width:840px){.explorer{grid-template-columns:1fr}.block-tabs{grid-template-columns:repeat(3,1fr)}.block-tab{display:block;min-height:83px;padding:9px 6px;text-align:center}.block-tab i{margin:auto}.block-tab small{display:none}.term-tabs{grid-template-columns:repeat(4,1fr);row-gap:20px}.term-track{display:none}.backpack{grid-template-columns:1fr}.boulders{grid-template-columns:1fr}.science-grid,.rhythm-cards,.note-wall{grid-template-columns:1fr}.result-panel{min-height:330px}.footer{margin-top:55px}}
+    @media(max-width:560px){.block-tabs{grid-template-columns:repeat(2,1fr)}.block-detail{padding:24px 18px}.credit-stamp{width:74px;height:74px}.semester-board{padding:25px 12px}.term-detail{grid-template-columns:1fr;gap:13px}.term-number{padding:0 0 13px;border-right:0;border-bottom:1px solid var(--line)}.result-panel{grid-template-columns:1fr;padding:23px}.progress-ring{width:154px;margin:auto}.result-copy{text-align:center}.boulder{min-height:320px;padding:23px}.boulder:after{font-size:150px}.science-card,.note{padding:20px}}
+
+    /* Medium-screen typography and course-detail composition */
+    .brand{min-height:42px}.section-head>div{min-width:0}.section h2{line-height:1.12;text-wrap:balance;word-break:normal}.heading-part{display:inline-block;white-space:nowrap}.block-detail{display:grid;grid-template-columns:minmax(220px,.82fr) minmax(0,1.18fr);grid-template-areas:"head copy" "head split" "courses note";gap:24px 32px;align-items:start;min-height:0}.block-detail:after{right:-170px;top:-190px}.block-head{grid-area:head;flex-direction:column;justify-content:flex-start}.block-title{max-width:320px;line-height:1.16;text-wrap:balance;word-break:normal}.credit-stamp{margin-top:18px}.block-copy{grid-area:copy;max-width:none;margin:0}.split-stack{position:relative;z-index:1;grid-area:split}.split-bar{margin-top:0}.course-list{grid-area:courses;align-content:flex-start;margin-top:0}.detail-note{grid-area:note;margin-top:0}.course-pill{white-space:nowrap}
+    @media(max-width:1080px){.section-head{display:block}.section-head p{margin-top:11px}.explorer{grid-template-columns:1fr}.block-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}.block-tab{display:flex;min-height:66px;padding:11px 13px;text-align:left}.block-tab i{margin:0}.block-tab small{display:block}}
+    @media(max-width:700px){.block-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.block-tab{min-height:64px;padding:9px}.block-tab small{display:none}.block-detail{grid-template-columns:1fr;grid-template-areas:"head" "copy" "split" "courses" "note";gap:20px}.block-head{display:grid;grid-template-columns:minmax(0,1fr) 78px;gap:15px;align-items:start}.block-title{max-width:none}.credit-stamp{width:74px;height:74px;margin-top:0}.course-list{gap:7px}}
+    @media(max-width:420px){.block-tab{gap:9px;padding:8px}.block-tab i{width:36px;height:36px}.block-detail{padding:22px 17px}.block-title{font-size:26px}.credit-stamp{width:68px;height:68px}.credit-stamp b{font-size:23px}}
+  </style>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="index.html"><span class="brand-mark">菜</span>菜狗捞捞</a>
+    <span class="top-note">SUIBE 学分总览 · 理解培养方案的互动地图</span>
+  </header>
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">SUIBE CREDIT FIELD GUIDE · 学分不是积分</div>
+        <h1>把 160 学分，<br><em>拼成毕业地图。</em></h1>
+        <p class="lead">通识、学科基础、专业、个性拓展……看起来像一大串课程名，其实是一只分格清楚的毕业背包。跟着菜狗先看结构，再安排八学期节奏。</p>
+        <div class="chips"><span>总量约 160</span><span>必修约 79%</span><span>八学期规划</span></div>
+        <a class="jump" href="#atlas"><i>↓</i>打开学分地图</a>
+      </div>
+      <div class="credit-orbit" aria-label="学分结构示意图">
+        <div class="orbit-line"></div>
+        <div class="credit-core"><div><b>160</b><small>学分左右</small></div></div>
+        <div class="badge one"><div><b>54</b>通识必修</div></div>
+        <div class="badge two"><div><b>38</b>学科基础</div></div>
+        <div class="badge three"><div><b>22</b>专业课程</div></div>
+        <div class="badge four"><div><b>35</b>个性拓展</div></div>
+      </div>
+    </section>
+
+    <section class="section" id="atlas">
+      <div class="section-head">
+        <div><div class="kicker">01 · CREDIT ATLAS</div><h2>先看整张拼图，再看每一块</h2></div>
+        <p>各专业培养方案会有差异，下面用约 160 学分的典型结构帮助理解；正式选课与毕业审核请以本专业培养方案为准。</p>
+      </div>
+      <div class="atlas">
+        <article class="ratio-card">
+          <div class="donut" aria-label="必修约占百分之七十九，选修约占百分之二十一"><div class="donut-center"><b>79%</b><small>必修课程</small></div></div>
+          <div class="ratio-legend"><span><i></i>必修约 126</span><span><i></i>选修约 34</span></div>
+        </article>
+        <article class="module-card">
+          <h3>六块课程拼图</h3>
+          <p>数字是帮助建立量级感的估算值，不同专业会在学科基础、专业课与个性拓展上有所浮动。</p>
+          <div class="module-grid">
+            <div class="module" style="--module-bg:#fff8dd"><i>通</i><b>思政理论</b><span>约 20 学分 · 重要基础课</span></div>
+            <div class="module" style="--module-bg:#eaf5ff"><i>EN</i><b>大学英语</b><span>约 16 学分 · 贯穿低年级</span></div>
+            <div class="module" style="--module-bg:#edf8e8"><i>其</i><b>通识其他</b><span>约 30 学分 · 数学、体育等</span></div>
+            <div class="module" style="--module-bg:#f1eafd"><i>基</i><b>学科基础</b><span>约 38 学分 · 专业底座</span></div>
+            <div class="module" style="--module-bg:#ffece5"><i>专</i><b>专业课程</b><span>约 22 学分 · 必修＋选修</span></div>
+            <div class="module" style="--module-bg:#eef5df"><i>拓</i><b>个性拓展</b><span>约 35 学分 · 实践与发展</span></div>
+          </div>
+        </article>
+      </div>
+      <aside class="pet" aria-label="菜狗桌宠"><div class="pet-bubble">先把学分装进六个格子，别一上来就被 160 吓到。</div><img src="assets/caigou-mascot-transparent.png" alt="四条腿的菜狗"><div class="pet-label">学分导航员</div></aside>
+    </section>
+
+    <section class="section" id="blocks">
+      <div class="section-head">
+        <div><div class="kicker">02 · COURSE BLOCK EXPLORER</div><h2>点一块，拆开看看装了什么</h2></div>
+        <p>课程结构由通识教育、学科基础、专业课和个性拓展等模块组成。这里把它们翻译成更好懂的“学分积木”。</p>
+      </div>
+      <div class="explorer">
+        <div class="block-tabs" role="tablist" aria-label="课程模块">
+          <button class="block-tab active" type="button" role="tab" aria-selected="true" data-block="thought"><i style="--tab-bg:#fff1b8">思</i><span><b>思政理论</b><small>通识必修 · 20</small></span></button>
+          <button class="block-tab" type="button" role="tab" aria-selected="false" data-block="english"><i style="--tab-bg:#e1f2ff">EN</i><span><b>大学英语</b><small>通识必修 · 16</small></span></button>
+          <button class="block-tab" type="button" role="tab" aria-selected="false" data-block="general"><i style="--tab-bg:#e8f6df">通</i><span><b>通识其他</b><small>必修＋选修 · 约 30</small></span></button>
+          <button class="block-tab" type="button" role="tab" aria-selected="false" data-block="foundation"><i style="--tab-bg:#eee5fb">基</i><span><b>学科基础</b><small>专业底座 · 约 38</small></span></button>
+          <button class="block-tab" type="button" role="tab" aria-selected="false" data-block="major"><i style="--tab-bg:#ffe7df">专</i><span><b>专业课程</b><small>必修＋选修 · 约 22</small></span></button>
+          <button class="block-tab" type="button" role="tab" aria-selected="false" data-block="expansion"><i style="--tab-bg:#edf5d9">拓</i><span><b>个性拓展</b><small>实践发展 · 约 35</small></span></button>
+        </div>
+        <article class="block-detail" role="tabpanel" tabindex="0">
+          <div class="block-head">
+            <div><div class="block-overline" id="blockOverline">GENERAL REQUIRED</div><h3 class="block-title" id="blockTitle">思政理论 · 先稳住的大块头</h3></div>
+            <div class="credit-stamp"><div><b id="blockCredits">20</b><small>估算学分</small></div></div>
+          </div>
+          <p class="block-copy" id="blockCopy">约占总学分 13%。课程分布在多个学期，既是毕业结构里的大块头，也会持续影响成绩表现，适合从低年级就认真对待。</p>
+          <div class="split-stack">
+            <div class="split-bar" id="splitBar" style="--required:100%" aria-label="必修与选修结构"><i></i><i></i></div>
+            <div class="split-labels"><span id="requiredLabel">必修 20</span><span id="electiveLabel">选修 0</span></div>
+          </div>
+          <div class="course-list" id="courseList"></div>
+          <div class="detail-note" id="blockNote">别把“容易拿分”当成“可以轻视”。学分占比大时，每门课的成绩都会更明显地进入整体表现。</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="semesters">
+      <div class="section-head">
+        <div><div class="kicker">03 · EIGHT-SEMESTER RHYTHM</div><h2>八学期不是八次冲刺</h2></div>
+        <p>前四学期通常必修更密集，后半程逐步转向专业选修、实践与毕业环节。点学期查看常见修读量和任务重心。</p>
+      </div>
+      <div class="semester-board">
+        <div class="term-track"></div>
+        <div class="term-tabs" role="tablist" aria-label="八学期节奏">
+          <button class="term-tab active" type="button" role="tab" aria-selected="true" data-term="0"><span class="term-dot">S1</span><b>大一上</b><small>26–30</small></button>
+          <button class="term-tab" type="button" role="tab" aria-selected="false" data-term="1"><span class="term-dot">S2</span><b>大一下</b><small>24–28</small></button>
+          <button class="term-tab" type="button" role="tab" aria-selected="false" data-term="2"><span class="term-dot">S3</span><b>大二上</b><small>24–28</small></button>
+          <button class="term-tab" type="button" role="tab" aria-selected="false" data-term="3"><span class="term-dot">S4</span><b>大二下</b><small>20–26</small></button>
+          <button class="term-tab" type="button" role="tab" aria-selected="false" data-term="4"><span class="term-dot">S5</span><b>大三上</b><small>8–16</small></button>
+          <button class="term-tab" type="button" role="tab" aria-selected="false" data-term="5"><span class="term-dot">S6</span><b>大三下</b><small>8–12</small></button>
+          <button class="term-tab" type="button" role="tab" aria-selected="false" data-term="6"><span class="term-dot">S7</span><b>大四上</b><small>8–12</small></button>
+          <button class="term-tab" type="button" role="tab" aria-selected="false" data-term="7"><span class="term-dot">S8</span><b>大四下</b><small>7</small></button>
+        </div>
+        <div class="term-detail" aria-live="polite"><div class="term-number"><small id="termName">大一上 · 常见修读量</small><strong><span id="termCredits">26–30</span><i> 学分</i></strong></div><div class="term-copy"><b id="termTitle">新生落地：必修主干最密集</b><p id="termCopy">先熟悉培养方案和教务系统，优先稳住思政、英语、数学等基础课。第一年课程权重大，成绩要从一开始就认真记账。</p></div></div>
+      </div>
+      <div class="rhythm-cards">
+        <article class="rhythm-card"><i>1–4</i><b>低年级：先守必修底盘</b><p>必修比例高、课程多，先保证不漏修、不挂科，再考虑加码活动与竞赛。</p></article>
+        <article class="rhythm-card" style="--card-bg:#fff1bb"><i>5–6</i><b>中段：选修开始变重</b><p>结合方向与兴趣选择专业、学科基础和个性拓展选修，避免只按“好过”选课。</p></article>
+        <article class="rhythm-card" style="--card-bg:#e8e5fb"><i>7–8</i><b>高年级：实践与毕业收口</b><p>提前检查缺口，给实习、毕业论文与学分认定留出缓冲，不把补洞留到最后。</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="backpack">
+      <div class="section-head">
+        <div><div class="kicker">04 · CREDIT BACKPACK</div><h2>拖一拖，看看毕业背包还缺什么</h2></div>
+        <p>这是理解结构的模拟器，不连接教务系统，也不上传个人数据。真正的毕业审核要同时满足总学分与各模块要求。</p>
+      </div>
+      <div class="backpack">
+        <div class="panel control-panel">
+          <div class="panel-label"><b>我的模拟进度</b><span>仅当前页面</span></div>
+          <label class="slider"><div class="slider-head"><b>已修总学分</b><strong><span id="doneValue">48</span><small> / 160</small></strong></div><input id="doneRange" type="range" min="0" max="170" value="48" aria-label="已修总学分"><p>超过 160 不一定代表所有模块都达标，还要核对必修、选修和毕业环节。</p></label>
+          <label class="slider"><div class="slider-head"><b>其中选修学分</b><strong><span id="electiveValue">8</span><small> / 约 34</small></strong></div><input id="electiveRange" type="range" min="0" max="50" value="8" aria-label="已修选修学分"><p>选修不是“随便修”：通识、学科基础、专业和个性拓展可能各有自己的最低要求。</p></label>
+          <div class="quick-row" aria-label="快速设置学期阶段"><button type="button" data-credit="28" data-elective="2">大一上</button><button type="button" data-credit="54" data-elective="6">大一结束</button><button type="button" data-credit="102" data-elective="15">大二结束</button><button type="button" data-credit="144" data-elective="29">大三结束</button></div>
+        </div>
+        <aside class="panel result-panel" aria-live="polite">
+          <div class="progress-ring" id="progressRing" style="--progress:30%"><div class="progress-center"><b><span id="progressPercent">30</span>%</b><small>总学分进度</small></div></div>
+          <div class="result-copy"><div class="mini">CAIGOU BACKPACK CHECK</div><h3 id="backpackTitle">背包刚装到第三格</h3><p id="backpackCopy">先把低年级必修课稳稳放好；每学期结束时，用培养方案逐项对照模块，而不只看总数。</p><div class="result-stats"><div class="result-stat"><b id="remainValue">112</b><span>距离 160 还差</span></div><div class="result-stat"><b id="electiveGap">26</b><span>选修参考缺口</span></div></div></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="cores">
+      <div class="section-head">
+        <div><div class="kicker">05 · THE BIG BOULDERS</div><h2><span class="heading-part">两块大石头，</span><span class="heading-part">最好一开始就放稳</span></h2></div>
+        <p>思政理论与大学英语合计约 36 学分，约占总量两成以上。它们分布广、持续时间长，对学习节奏影响明显。</p>
+      </div>
+      <div class="boulders">
+        <article class="boulder" data-num="20" style="--wash:#fff6d7"><i class="boulder-icon">思</i><h3>思政理论 · 约 20 学分</h3><p>主要覆盖马克思主义基本原理、毛泽东思想和中国特色社会主义理论体系概论、习近平新时代中国特色社会主义思想概论、思想道德与法治、中国近现代史纲要、形势与政策、思政实践等。</p><ul><li>课程数量多，分布在多个学期</li><li>总学分占比约 13%</li><li>重修不会覆盖原有成绩记录</li></ul></article>
+        <article class="boulder" data-num="16" style="--wash:#e8f4ff;--icon-bg:#dff1ff"><i class="boulder-icon">EN</i><h3>大学英语 · 约 16 学分</h3><p>主要包括通用英语读写、通用英语视听说与拓展英语等模块，体现学校的国际化办学特色。</p><ul><li>总学分占比约 10%</li><li>从大一开始持续积累更轻松</li><li>把语言能力和课程成绩一起经营</li></ul></article>
+      </div>
+    </section>
+
+    <section class="section" id="science">
+      <div class="section-head">
+        <div><div class="kicker">06 · CREDIT SCIENCE LAB</div><h2><span class="heading-part">学分、成绩、绩点，</span><span class="heading-part">不是一回事</span></h2></div>
+        <p>把三个概念分开，才能读懂培养方案与成绩单：学分看课程分量，成绩看这门课学得怎样，绩点用于量化成绩表现。</p>
+      </div>
+      <div class="science-grid">
+        <article class="science-card"><i>分</i><h3>学分 = 课程的“重量”</h3><p>修完并通过课程后获得。毕业时不仅看总重量，还要检查每个课程模块是否按要求装齐。</p><div class="fact">同样 3 学分的两门课，在总学分里重量相同，但成绩不同会带来不同的绩点表现。</div></article>
+        <article class="science-card" style="--science-bg:#e3f2ff"><i>G</i><h3>绩点 = 成绩的“换算尺”</h3><p>绩点反映课程成绩表现，通常会结合课程学分计算。高学分课程的成绩更值得认真经营。</p><div class="fact">“水课一定高分”是常见误区。课程难度与个人基础、考核方式都有关，不能只看传闻选课。</div></article>
+        <article class="science-card" style="--science-bg:#fff0bf"><i>认</i><h3>认定制课程也会记成绩</h3><p>部分实践课程采用合格／不合格或集中认定，但成绩单与绩点仍可能按学校规则记录。</p><div class="fact">示例：部分课程合格按 84 分（绩点 3.3）记载；部分认定课程按 89 分（绩点 3.7）记载。以当年规定为准。</div></article>
+      </div>
+      <div class="warning"><b>重要提醒：</b>补考、重修、重新学习等成绩会按学校规则真实记录，不能把“重修”理解成自动覆盖原成绩。涉及毕业资格、排名或升学时，请直接核对教务系统与最新管理规定。</div>
+    </section>
+
+    <section class="section" id="notes">
+      <div class="section-head"><div><div class="kicker">07 · CAIGOU STICKY NOTES</div><h2>最后，贴三张防踩坑便签</h2></div><p>真正容易出问题的，往往不是少修一门课，而是只盯总数、忽略模块，或把选课策略建立在道听途说上。</p></div>
+      <div class="note-wall">
+        <article class="note"><i>🧩</i><b>总学分够，不等于结构够</b><p>必修、通识选修、学科基础选修、专业选修、个性拓展等模块可能分别设线，毕业审核看的是整张拼图。</p></article>
+        <article class="note"><i>🗓</i><b>前四学期要守住成绩</b><p>低年级必修密集、学分权重大。先建立稳定学习节奏，给交换、升学、就业与方向选择多留一分底气。</p></article>
+        <article class="note"><i>🔎</i><b>每学期做一次学分盘点</b><p>选课前看培养方案，期末后看教务系统；把已修、在修、未修和认定中分开记录，最后一年会轻松很多。</p></article>
+      </div>
+    </section>
+
+    <footer class="footer"><b>菜狗捞捞 · SUIBE 学分总览</b><br>页面用于帮助理解培养方案，不替代教务系统、专业培养方案或学校正式文件。各专业课程名称、学分与开课学期可能不同，请以最新要求为准。</footer>
+  </main>
+  <script>
+    const $=id=>document.getElementById(id);
+    const blockData={
+      thought:{overline:'GENERAL REQUIRED',title:'思政理论 · 先稳住的大块头',credits:'20',copy:'约占总学分 13%。课程分布在多个学期，既是毕业结构里的大块头，也会持续影响成绩表现，适合从低年级就认真对待。',required:100,requiredLabel:'必修 20',electiveLabel:'选修 0',courses:['马原','毛概','习概','思修','近代史','形势与政策','思政实践'],note:'别把“容易拿分”当成“可以轻视”。学分占比大时，每门课的成绩都会更明显地进入整体表现。'},
+      english:{overline:'GENERAL REQUIRED',title:'大学英语 · 国际化能力主线',credits:'16',copy:'约占总学分 10%。通常包含通用英语读写、视听说和拓展英语等模块，是低年级课程结构里的连续主线。',required:100,requiredLabel:'必修 16',electiveLabel:'选修 0',courses:['通用英语读写','通用英语视听说','拓展英语'],note:'语言课靠长期积累。把听、说、读、写拆成小习惯，比考前集中冲刺更稳。'},
+      general:{overline:'GENERAL EDUCATION',title:'通识其他 · 给知识地图拓宽边界',credits:'约 30',copy:'包含数学、计算机、大学语文、体育、心理健康等通识必修，以及哲学与社会等板块的通识选修。',required:60,requiredLabel:'必修约 18',electiveLabel:'选修约 10',courses:['数学 8','计算机 2','大学语文 2','体育 4','心理健康 2','通识选修约 10'],note:'通识选修也有板块要求。选课前先看缺哪个模块，再考虑兴趣、时间与考核方式。'},
+      foundation:{overline:'DISCIPLINE FOUNDATION',title:'学科基础 · 专业学习的承重墙',credits:'约 38',copy:'学科基础课服务本专业所属学科的核心能力。常见结构是必修约 27–32 学分，选修约 6–8 学分。',required:82,requiredLabel:'必修约 27–32',electiveLabel:'选修约 6–8',courses:['学科理论基础','研究方法','量化工具','基础方向选修'],note:'不同专业差异最大的一块之一。不要照搬其他专业的课表，要回到自己的培养方案。'},
+      major:{overline:'MAJOR COURSES',title:'专业课程 · 从原理走向技能',credits:'约 22',copy:'专业课覆盖本专业要求的基本原理、基本知识与基本技能。常见结构为必修约 12–18 学分，选修约 8–10 学分。',required:63,requiredLabel:'必修约 12–18',electiveLabel:'选修约 8–10',courses:['专业核心课','方向模块','专业工具课','专业选修'],note:'专业选修会逐步影响方向。先确认先修关系、开课频率和是否隔年开设，再做取舍。'},
+      expansion:{overline:'PERSONAL DEVELOPMENT',title:'个性拓展 · 把课堂接到真实世界',credits:'约 35',copy:'包括仿真模拟训练、职业生涯设计、创新创业拓展、军事理论与训练、劳动教育、社会实践、毕业实习和毕业论文等。',required:79,requiredLabel:'必修约 27',electiveLabel:'选修约 6–8',courses:['仿真模拟 6','生涯设计 3','创新创业 3','军事训练 4','劳动教育 2','社会实践 2','毕业实习 3','毕业论文 4'],note:'许多课程采用集中实践或认定方式。提早看时间窗口和材料要求，避免最后一学期集中补手续。'}
+    };
+    function renderBlock(key){const data=blockData[key];$('blockOverline').textContent=data.overline;$('blockTitle').textContent=data.title;$('blockCredits').textContent=data.credits;$('blockCopy').textContent=data.copy;$('splitBar').style.setProperty('--required',data.required+'%');$('requiredLabel').textContent=data.requiredLabel;$('electiveLabel').textContent=data.electiveLabel;$('courseList').innerHTML=data.courses.map(course=>`<span class="course-pill">${course}</span>`).join('');$('blockNote').textContent=data.note;document.querySelectorAll('.block-tab').forEach(tab=>{const active=tab.dataset.block===key;tab.classList.toggle('active',active);tab.setAttribute('aria-selected',active)})}
+    const blockTabs=[...document.querySelectorAll('.block-tab')];document.querySelector('.block-tabs').addEventListener('click',event=>{const tab=event.target.closest('.block-tab');if(tab)renderBlock(tab.dataset.block)});document.querySelector('.block-tabs').addEventListener('keydown',event=>{const current=blockTabs.indexOf(document.activeElement);if(current<0||!['ArrowDown','ArrowUp','ArrowRight','ArrowLeft'].includes(event.key))return;event.preventDefault();const step=['ArrowDown','ArrowRight'].includes(event.key)?1:-1,next=(current+step+blockTabs.length)%blockTabs.length;blockTabs[next].focus();renderBlock(blockTabs[next].dataset.block)});renderBlock('thought');
+    const terms=[
+      {name:'大一上',credits:'26–30',title:'新生落地：必修主干最密集',copy:'先熟悉培养方案和教务系统，优先稳住思政、英语、数学等基础课。第一年课程权重大，成绩要从一开始就认真记账。'},
+      {name:'大一下',credits:'24–28',title:'建立节奏：别让小缺口滚大',copy:'继续推进通识必修，开始观察通识选修板块要求。选课时同时检查上课时间、考核方式和自己的学习负荷。'},
+      {name:'大二上',credits:'24–28',title:'进入学科：基础能力开始承重',copy:'学科基础与专业主干逐渐增加。关注先修关系，基础课没学稳会直接影响后续专业课体验。'},
+      {name:'大二下',credits:'20–26',title:'完成底盘：顺便确定方向',copy:'低年级主干进入收尾。盘点必修与通识模块，结合兴趣和成绩探索专业方向，不要等到选修开放才临时决定。'},
+      {name:'大三上',credits:'8–16',title:'方向分流：选修比重明显上升',copy:'专业选修、学科基础选修与个性拓展更重要。把课程方向与升学、就业或研究兴趣连起来看。'},
+      {name:'大三下',credits:'8–12',title:'连接实践：给实习和项目留空间',copy:'课程量通常下降，但实践性任务增加。提前核对毕业实习、创新创业和集中实践的认定流程。'},
+      {name:'大四上',credits:'8–12',title:'毕业预检：现在补洞最从容',copy:'做一次完整的模块审计：必修是否齐、各类选修是否达线、认定是否入账、论文与实习是否按计划启动。'},
+      {name:'大四下',credits:'7',title:'最后收口：论文、实习与确认',copy:'把注意力放在毕业环节和最终审核。发现异常尽快联系教务或学院，不要只凭个人记录判断已经完成。'}
+    ];
+    const termTabs=[...document.querySelectorAll('.term-tab')];function renderTerm(index){const data=terms[index];$('termName').textContent=data.name+' · 常见修读量';$('termCredits').textContent=data.credits;$('termTitle').textContent=data.title;$('termCopy').textContent=data.copy;termTabs.forEach((tab,i)=>{const active=i===index;tab.classList.toggle('active',active);tab.setAttribute('aria-selected',active)})}document.querySelector('.term-tabs').addEventListener('click',event=>{const tab=event.target.closest('.term-tab');if(tab)renderTerm(+tab.dataset.term)});document.querySelector('.term-tabs').addEventListener('keydown',event=>{const current=termTabs.indexOf(document.activeElement);if(current<0||!['ArrowRight','ArrowLeft'].includes(event.key))return;event.preventDefault();const next=(current+(event.key==='ArrowRight'?1:-1)+termTabs.length)%termTabs.length;termTabs[next].focus();renderTerm(next)});
+    function updateBackpack(){let done=+$('doneRange').value,elective=+$('electiveRange').value;if(elective>done){elective=done;$('electiveRange').value=done}$('doneValue').textContent=done;$('electiveValue').textContent=elective;const percent=Math.min(100,Math.round(done/160*100)),remain=Math.max(0,160-done),electiveGap=Math.max(0,34-elective);$('progressPercent').textContent=percent;$('progressRing').style.setProperty('--progress',percent+'%');$('remainValue').textContent=remain;$('electiveGap').textContent=electiveGap;let title='背包刚刚打开',copy='先看培养方案的课程结构，给每一类学分留出位置。';if(percent>=25){title='背包装到第三格';copy='先把低年级必修课稳稳放好；每学期结束时，用培养方案逐项对照模块，而不只看总数。'}if(percent>=55){title='主干已经成形';copy='开始关注选修板块、先修关系和方向课程，把后半程留给专业选择与实践。'}if(percent>=85){title='快拉上毕业拉链';copy='现在要做的是模块审计：总数接近不代表结构达标，逐项确认实习、论文与各类选修。'}if(percent>=100){title='总量灯亮了';copy='总学分参考线已达到，但仍需以教务系统确认必修、选修、实践和毕业环节全部完成。'}$('backpackTitle').textContent=title;$('backpackCopy').textContent=copy}
+    ['doneRange','electiveRange'].forEach(id=>$(id).addEventListener('input',updateBackpack));document.querySelector('.quick-row').addEventListener('click',event=>{const button=event.target.closest('button');if(!button)return;$('doneRange').value=button.dataset.credit;$('electiveRange').value=button.dataset.elective;updateBackpack()});updateBackpack();
+  </script>
+</body>
+</html>
