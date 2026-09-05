@@ -1,0 +1,1040 @@
+window.CaigouBankConfig={"title":"数学分级考","eyebrow":"CAIGOU · STUDY & REVIEW","heading":"把每一步想清楚，<br><em>带菜狗一起上岸。</em>","description":"本题库仅供学习与复习参考","storageKey":"caigou-placement-2024-quality","choiceMode":true,"bankId":"placement-2024"};
+window.CaigouBankQuestions=[
+  {
+    "no": 1,
+    "type": "选择题",
+    "text": "已知函数 \\(f(x)=\\begin{cases}\\sin(x-a),&x\\le0,\\\\\\cos(x-b),&x>0\\end{cases}\\) 是偶函数，则 \\(a,b\\) 的值可能是",
+    "options": [
+      "\\(a=\\frac\\pi3,\\ b=\\frac\\pi3\\)",
+      "\\(a=\\frac{2\\pi}3,\\ b=\\frac\\pi6\\)",
+      "\\(a=\\frac\\pi3,\\ b=\\frac\\pi6\\)",
+      "\\(a=\\frac{2\\pi}3,\\ b=\\frac{5\\pi}6\\)"
+    ],
+    "answer": "D",
+    "solution": {
+      "point": "分段函数、偶函数与三角恒等式",
+      "lead": "偶函数要求左右两段关于 \\(y\\) 轴完全对称，不能只检查某一个特殊点。",
+      "steps": [
+        {
+          "title": "写出偶函数条件",
+          "text": "对任意 \\(x>0\\)，应有 \\(f(-x)=f(x)\\)。把左右两段表达式代入：",
+          "formula": "\\[-\\sin(x+a)=\\cos(x-b).\\]"
+        },
+        {
+          "title": "比较同名三角函数的系数",
+          "text": "展开两边并比较 \\(\\sin x\\)、\\(\\cos x\\) 的系数，得到两个必要且充分的条件：",
+          "formula": "\\[\\begin{aligned}-\\cos\\frac{2\\pi}{3}&=\\sin\\frac{5\\pi}{6}=\\frac12,\\\\-\\sin\\frac{2\\pi}{3}&=\\cos\\frac{5\\pi}{6}=-\\frac{\\sqrt3}{2}.\\end{aligned}\\]"
+        },
+        {
+          "title": "逐项检验",
+          "text": "只有选项 \\(D\\) 同时满足这两个等式：",
+          "formula": "\\[\\begin{aligned}-\\cos\\frac{2\\pi}{3}&=\\sin\\frac{5\\pi}{6}=\\frac12,\\\\-\\sin\\frac{2\\pi}{3}&=\\cos\\frac{5\\pi}{6}=-\\frac{\\sqrt3}{2}.\\end{aligned}\\]"
+        }
+      ],
+      "conclusion": "所以 \\(a=\\frac{2\\pi}{3}\\)，\\(b=\\frac{5\\pi}{6}\\)。"
+    }
+  },
+  {
+    "no": 2,
+    "type": "选择题",
+    "text": "已知实数 \\(m,n\\)，函数 \\(f(x)=x^2+mx+n\\) 满足 \\(f(2)f(3)\\le0\\)，则 \\(m^2+2mn\\) 的最大值为（ ）。",
+    "options": [
+      "\\(\\frac{16}3\\)",
+      "\\(\\frac{81}5\\)",
+      "\\(27\\)",
+      "\\(\\frac{16}5\\)"
+    ],
+    "answer": "B",
+    "solution": {
+      "point": "二次函数零点、配方与上确界",
+      "lead": "先利用条件找到闭区间内的根，再对另一根配方求上界；最后构造满足等号的参数，证明上界确实能达到。",
+      "steps": [
+        {
+          "title": "用根表示参数",
+          "text": "若端点函数值为0，就取相应端点为根；若两端异号，由连续性在内部有根。因此可取 \\(r\\in[2,3]\\)，设另一根为 \\(s\\)，则 \\(m=-(r+s),\\ n=rs\\)。"
+        },
+        {
+          "title": "对另一根配方",
+          "text": "把参数代入并将 \\(s\\) 视为变量。因为 \\(1-2r<0\\)，平方项的系数为负，所以去掉它得到上界。",
+          "formula": "\\[\\begin{aligned}m^2+2mn&=(1-2r)\\left(s-\\frac{r(1-r)}{2r-1}\\right)^2\\\\&\\quad+\\frac{r^4}{2r-1}\\le\\frac{r^4}{2r-1}.\\end{aligned}\\]"
+        },
+        {
+          "title": "在闭区间上求上界",
+          "text": "令 \\(H(r)=r^4/(2r-1)\\)。在 \\([2,3]\\) 上有 \\(H'(r)=2r^3(3r-2)/(2r-1)^2>0\\)，故 \\(H(r)\\le H(3)=81/5\\)。"
+        },
+        {
+          "title": "构造同时满足两次等号的参数",
+          "text": "取 \\(r=3\\)、\\(s=r(1-r)/(2r-1)=-6/5\\)，配方平方项为零。由此 \\(m=-9/5,\\ n=-18/5\\)，且 \\(f(3)=0\\)，满足题目非严格不等式。"
+        },
+        {
+          "title": "代回目标式核验",
+          "text": "此时 \\(m^2+2mn=81/25+324/25=81/5\\)，上界已经达到，所以是最大值。若将条件改为 \\(f(2)f(3)<0\\)，端点根将不允许，那时只有上确界、没有最大值。"
+        }
+      ],
+      "conclusion": "在允许 \\(f(2)f(3)=0\\) 的条件下，最大值为 \\(81/5\\)。"
+    }
+  },
+  {
+    "no": 3,
+    "type": "选择题",
+    "text": "定义在 \\(\\mathbb R\\) 上的奇函数 \\(f(x)\\) 满足 \\(f(x+2)=-f(x)\\)，且当 \\(x\\in[0,1]\\) 时 \\(f(x)=2^x-1\\)，则",
+    "options": [
+      "\\(f(6)<f(-7)<f(11/2)\\)",
+      "\\(f(6)<f(11/2)<f(-7)\\)",
+      "\\(f(-7)<f(11/2)<f(6)\\)",
+      "\\(f(11/2)<f(-7)<f(6)\\)"
+    ],
+    "answer": "B",
+    "solution": {
+      "point": "奇函数、反周期与函数值比较",
+      "lead": "先由“平移 \\(2\\) 变号”得到周期 \\(4\\)，再把三个自变量都移到已知区间 \\([0,1]\\)。",
+      "steps": [
+        {
+          "title": "确定周期",
+          "text": "连续使用两次 \\(f(x+2)=-f(x)\\)：",
+          "formula": "\\[f(x+4)=-f(x+2)=f(x).\\]"
+        },
+        {
+          "title": "计算 \\(f(6)\\) 与 \\(f(-7)\\)",
+          "text": "利用周期、奇性以及 \\(f(0)=0\\)、\\(f(1)=1\\)：",
+          "formula": "\\[f(6)=f(2)=-f(0)=0,\\qquad f(-7)=f(1)=1.\\]"
+        },
+        {
+          "title": "计算 \\(f\\!\\left(\\frac{11}{2}\\right)\\)",
+          "text": "先减去一个周期，再利用奇函数：",
+          "formula": "\\[f\\left(\\frac{11}{2}\\right)=f\\left(\\frac32\\right)=-f\\left(-\\frac12\\right)=f\\left(\\frac12\\right)=\\sqrt2-1.\\]"
+        },
+        {
+          "title": "比较大小",
+          "text": "因为 \\(0<\\sqrt2-1<1\\)，所以：",
+          "formula": "\\[f(6)<f\\left(\\frac{11}{2}\\right)<f(-7).\\]"
+        }
+      ],
+      "conclusion": "三个函数值的顺序为 \\(f(6)<f\\!\\left(\\frac{11}{2}\\right)<f(-7)\\)。"
+    }
+  },
+  {
+    "no": 4,
+    "type": "选择题",
+    "text": "函数 \\(f(x)=\\sin(x-1)+e^{x-1}-e^{1-x}-x+4\\)，则满足 \\(f(x)+f(3-2x)<6\\) 的 \\(x\\) 的范围是",
+    "options": [
+      "\\((3,+\\infty)\\)",
+      "\\((1,+\\infty)\\)",
+      "\\((-\\infty,3)\\)",
+      "\\((-\\infty,1)\\)"
+    ],
+    "answer": "B",
+    "solution": {
+      "point": "奇函数构造与单调性",
+      "lead": "把原函数平移后减去常数 3，可得到一个严格递增的奇函数。",
+      "steps": [
+        {
+          "title": "构造辅助函数",
+          "text": "令 \\(t=x-1\\)，并定义：",
+          "formula": "\\[g(t)=f(t+1)-3=\\sin t+e^t-e^{-t}-t.\\]"
+        },
+        {
+          "title": "判断奇偶性与单调性",
+          "text": "易知 \\(g(-t)=-g(t)\\)。同时：",
+          "formula": "\\[g'(t)=\\cos t+e^t+e^{-t}-1\\ge \\cos t+1\\ge0.\\]"
+        },
+        {
+          "title": "改写不等式",
+          "text": "原不等式等价于：",
+          "formula": "\\[g(x-1)+g(2-2x)<0\\iff g(x-1)<g(2x-2).\\]"
+        },
+        {
+          "title": "利用单调性比较自变量",
+          "text": "函数 \\(g\\) 递增，因此只需比较自变量：",
+          "formula": "\\[x-1<2x-2\\quad\\Longrightarrow\\quad x>1.\\]"
+        },
+        {
+          "title": "补足严格递增的理由",
+          "text": "对辅助函数 \\(g(t)=\\sin t+e^t-e^{-t}-t\\)，有 \\(g'(0)=2\\)；\\(t\\ne0\\) 时 \\(e^t+e^{-t}>2\\)，故 \\(g'(t)>1+\\cos t\\ge0\\)。因此导数处处为正，不只是非负。"
+        }
+      ],
+      "conclusion": "不等式的解集为 \\((1,+\\infty)\\)。"
+    }
+  },
+  {
+    "no": 5,
+    "type": "选择题",
+    "text": "设 \\(a=e^{\\sqrt2}-\\ln2\\)，\\(b=e^{\\sqrt3}-\\ln3\\)，\\(c=\\sqrt2e-2/e\\)，则",
+    "options": [
+      "\\(a<b<c\\)",
+      "\\(b<a<c\\)",
+      "\\(b<c<a\\)",
+      "\\(c<a<b\\)"
+    ],
+    "answer": "D",
+    "solution": {
+      "point": "指数与对数大小比较",
+      "lead": "先把 \\(a,b\\) 写成同一函数在 \\(\\sqrt2,\\sqrt3\\) 处的函数值，再把 \\(a-c\\) 拆成两个可以分别判断正负的差。",
+      "steps": [
+        {
+          "title": "比较 \\(a\\) 与 \\(b\\)",
+          "text": "令 \\(h(x)=e^x-2\\ln x\\ (x>1)\\)。把导数通分后，正负关系更清楚：",
+          "formula": "\\[h'(x)=e^x-\\frac2x=\\frac{xe^x-2}{x}>0.\\]"
+        },
+        {
+          "title": "利用单调性得到第一组关系",
+          "text": "函数 \\(h(x)\\) 在 \\((1,+\\infty)\\) 上严格递增，而 \\(\\sqrt2<\\sqrt3\\)，所以：",
+          "formula": "\\[a=h(\\sqrt2)<h(\\sqrt3)=b.\\]"
+        },
+        {
+          "title": "拆分 \\(a-c\\)",
+          "text": "把含指数的部分与含对数的部分分别组合：",
+          "formula": "\\[a-c=\\left(e^{\\sqrt2}-\\sqrt2e\\right)+\\left(\\frac2e-\\ln2\\right).\\]"
+        },
+        {
+          "title": "证明第一部分为正",
+          "text": "令 \\(p(x)=e^x-ex\\)。当 \\(x>1\\) 时，\\(p'(x)=e^x-e>0\\)，因此：",
+          "formula": "\\[e^{\\sqrt2}-\\sqrt2e=p(\\sqrt2)>p(1)=0.\\]"
+        },
+        {
+          "title": "证明第二部分为正",
+          "text": "令 \\(q(x)=\\frac{x}{e}-\\ln x\\)。在 \\((0,e)\\) 上，\\(q'(x)=\\frac1e-\\frac1x<0\\)；又因为 \\(2<e\\)，所以：",
+          "formula": "\\[\\frac2e-\\ln2=q(2)>q(e)=0.\\]"
+        },
+        {
+          "title": "得到最终顺序",
+          "text": "上面两部分都为正，所以 \\(a-c>0\\)，即 \\(c<a\\)。再结合 \\(a<b\\)：",
+          "formula": "\\[c<a<b.\\]"
+        }
+      ],
+      "conclusion": "三个数的大小关系为 \\(c<a<b\\)。"
+    }
+  },
+  {
+    "no": 6,
+    "type": "选择题",
+    "text": "四面体 \\(D-ABC\\) 中，\\(AC=BC=AD=BD=1\\)，则四面体体积的最大值为",
+    "options": [
+      "\\(\\frac{4\\sqrt2}{27}\\)",
+      "\\(\\frac{3\\sqrt2}{8}\\)",
+      "\\(\\frac{2\\sqrt3}{27}\\)",
+      "\\(\\frac{\\sqrt3}{18}\\)"
+    ],
+    "answer": "C",
+    "solution": {
+      "point": "空间几何体积最值",
+      "lead": "利用四条等长边形成的两个全等三角形，把体积上界化为一个三角函数最值。",
+      "steps": [
+        {
+          "title": "建立对称量",
+          "text": "取 \\(CD\\) 的中点 \\(M\\)，设 \\(\\angle ACD=\\angle BCD=\\alpha\\)。由 \\(AC=BC=AD=BD=1\\)：",
+          "formula": "\\[AM=BM=\\sin\\alpha,\\qquad CD=2\\cos\\alpha.\\]"
+        },
+        {
+          "title": "估计底面积和高",
+          "text": "以 \\(\\triangle BCD\\) 为底，四面体的高 \\(h\\) 不超过 \\(AM\\)，因此：",
+          "formula": "\\[\\begin{aligned}V&=\\frac13S_{BCD}h\\\\&\\le\\frac16CD\\cdot BM\\cdot AM\\\\&=\\frac13\\cos\\alpha\\sin^2\\alpha.\\end{aligned}\\]"
+        },
+        {
+          "title": "求三角函数最大值",
+          "text": "令 \\(u=\\cos^2\\alpha\\)，则需要最大化 \\(\\sqrt{u}(1-u)\\)。当 \\(u=\\frac13\\) 时取得最大值：",
+          "formula": "\\[\\sqrt{u}(1-u)\\le\\frac{2}{3\\sqrt3}.\\]"
+        },
+        {
+          "title": "写出体积最大值",
+          "text": "于是：",
+          "formula": "\\[V_{\\max}=\\frac13\\cdot\\frac{2}{3\\sqrt3}=\\frac{2\\sqrt3}{27}.\\]"
+        },
+        {
+          "title": "检查最大值能否达到",
+          "text": "取 \\(C,D\\) 的中点 \\(M\\)，使 \\(CD=2/\\sqrt3\\)，并在垂直于 \\(CD\\) 的平面内取 \\(MA=MB=\\sqrt{2/3}\\)、\\(MA\\perp MB\\)。此时四条指定棱长均为 1，且体积达到 \\(2\\sqrt3/27\\)，所以上界确实是最大值。"
+        }
+      ],
+      "conclusion": "四面体体积的最大值为 \\(\\frac{2\\sqrt3}{27}\\)。"
+    }
+  },
+  {
+    "no": 7,
+    "type": "选择题",
+    "text": "若 \\(\\tan\\theta=-2\\)，则 \\(\\displaystyle\\frac{\\sin\\theta(1+\\sin2\\theta)}{\\sin\\theta+\\cos\\theta}\\) 等于",
+    "options": [
+      "\\(-\\frac65\\)",
+      "\\(-\\frac25\\)",
+      "\\(\\frac25\\)",
+      "\\(\\frac65\\)"
+    ],
+    "answer": "C",
+    "solution": {
+      "point": "三角恒等变形",
+      "lead": "关键是识别 \\(1+\\sin2\\theta=(\\sin\\theta+\\cos\\theta)^2\\)，再用 \\(\\tan\\theta\\) 统一表示。",
+      "steps": [
+        {
+          "title": "化简原式",
+          "text": "利用平方恒等式并约去 \\(\\sin\\theta+\\cos\\theta\\)：",
+          "formula": "\\[\\frac{\\sin\\theta(1+\\sin2\\theta)}{\\sin\\theta+\\cos\\theta}=\\sin\\theta(\\sin\\theta+\\cos\\theta).\\]"
+        },
+        {
+          "title": "改用正切",
+          "text": "将分子分母同除以 \\(\\cos^2\\theta\\)：",
+          "formula": "\\[\\sin^2\\theta+\\sin\\theta\\cos\\theta=\\frac{\\tan^2\\theta+\\tan\\theta}{1+\\tan^2\\theta}.\\]"
+        },
+        {
+          "title": "代入已知值",
+          "text": "代入 \\(\\tan\\theta=-2\\)：",
+          "formula": "\\[\\frac{(-2)^2+(-2)}{1+(-2)^2}=\\frac{4-2}{5}=\\frac25.\\]"
+        }
+      ],
+      "conclusion": "原式的值为 \\(\\frac25\\)。"
+    }
+  },
+  {
+    "no": 8,
+    "type": "选择题",
+    "text": "已知 \\(f(x)=x\\ln(e^{2x}+1)-x^2+1\\)，\\(f(a)=2\\)，则 \\(f(-a)\\) 的值为",
+    "options": [
+      "\\(1\\)",
+      "\\(0\\)",
+      "\\(-1\\)",
+      "\\(-2\\)"
+    ],
+    "answer": "B",
+    "solution": {
+      "point": "函数奇偶性构造",
+      "lead": "直接计算 \\(f(-a)\\) 很困难，因为题目只给出了 \\(f(a)\\)。关键是先去掉常数 \\(1\\)，再严格证明剩余部分是奇函数。",
+      "steps": [
+        {
+          "title": "构造辅助函数",
+          "text": "为了把不影响奇偶性的常数项单独分离，定义：",
+          "formula": "\\[g(x)=f(x)-1=x\\ln\\!\\left(e^{2x}+1\\right)-x^2.\\]"
+        },
+        {
+          "title": "写出 \\(g(-x)\\)",
+          "text": "把自变量 \\(x\\) 换成 \\(-x\\)。注意平方项 \\((-x)^2=x^2\\)，所以平方项的符号不变：",
+          "formula": "\\[g(-x)=-x\\ln\\!\\left(e^{-2x}+1\\right)-x^2.\\]"
+        },
+        {
+          "title": "严格验证奇函数",
+          "text": "将 \\(g(-x)\\) 与 \\(g(x)\\) 相加，并利用 \\(e^{-2x}+1=\\dfrac{e^{2x}+1}{e^{2x}}\\)。这样对数中分式的分母恰好可以约去：",
+          "formula": "\\[\\begin{aligned}g(-x)+g(x)&=x\\ln\\frac{e^{2x}+1}{e^{-2x}+1}-2x^2\\\\&=x\\ln e^{2x}-2x^2\\\\&=2x^2-2x^2=0.\\end{aligned}\\]"
+        },
+        {
+          "title": "利用题目给出的函数值",
+          "text": "上一步对任意实数 \\(x\\) 都成立，因此 \\(g\\) 是奇函数，即 \\(g(-a)=-g(a)\\)。另一方面，由 \\(f(a)=2\\) 可得：",
+          "formula": "\\[g(a)=f(a)-1=1,\\qquad g(-a)=-1.\\]"
+        },
+        {
+          "title": "还原原函数",
+          "text": "由定义 \\(f(x)=g(x)+1\\)，再令 \\(x=-a\\)：",
+          "formula": "\\[f(-a)=g(-a)+1=-1+1=0.\\]"
+        }
+      ],
+      "conclusion": "因此 \\(f(-a)=0\\)。"
+    }
+  },
+  {
+    "no": 9,
+    "type": "选择题",
+    "text": "\\(F(c,0)\\ (c>0)\\) 是双曲线 \\(\\displaystyle\\frac{x^2}{a^2}-\\frac{y^2}{b^2}=1\\) 的焦点。圆 \\(x^2+y^2-2cx+b^2=0\\) 与一条倾斜角为 \\(30^\\circ\\) 的渐近线交于 \\(A,B\\)，则 \\(\\tan\\angle AFB=\\)",
+    "options": [
+      "\\(-\\sqrt2\\)",
+      "\\(-\\sqrt3\\)",
+      "\\(-2\\sqrt2\\)",
+      "\\(-2\\sqrt3\\)"
+    ],
+    "answer": "C",
+    "solution": {
+      "point": "双曲线渐近线、圆的弦与倍角公式",
+      "lead": "圆心恰是焦点 \\(F\\)。先求弦 \\(AB\\) 对圆心所张角的一半，再用正切倍角公式。",
+      "steps": [
+        {
+          "title": "确定参数关系",
+          "text": "渐近线倾斜角为 \\(30^\\circ\\)，所以：",
+          "formula": "\\[\\frac ba=\\tan30^\\circ=\\frac{\\sqrt3}{3},\\qquad c^2=a^2+b^2.\\]"
+        },
+        {
+          "title": "识别圆心和半径",
+          "text": "圆方程化为：",
+          "formula": "\\[(x-c)^2+y^2=a^2,\\]"
+        },
+        {
+          "title": "求半角正切",
+          "text": "\\(F\\) 到渐近线的距离为 \\(FD=b\\)，半弦 \\(BD=\\sqrt{a^2-b^2}\\)，因此：",
+          "formula": "\\[\\tan\\angle DFB=\\frac{BD}{FD}=\\sqrt{\\frac{a^2}{b^2}-1}=\\sqrt2.\\]"
+        },
+        {
+          "title": "使用倍角公式",
+          "text": "因为 \\(\\angle AFB=2\\angle DFB\\)，所以：",
+          "formula": "\\[\\tan\\angle AFB=\\frac{2\\sqrt2}{1-2}=-2\\sqrt2.\\]"
+        }
+      ],
+      "conclusion": "因此 \\(\\tan\\angle AFB=-2\\sqrt2\\)。"
+    }
+  },
+  {
+    "no": 10,
+    "type": "选择题",
+    "text": "函数 \\(f(x)=\\sin\\omega x-\\cos(\\omega x+\\pi/6)\\ (\\omega>0)\\) 在 \\([0,\\pi]\\) 上有且仅有 2 个零点，则 \\(\\omega\\) 的范围是",
+    "options": [
+      "\\([1,13/6]\\)",
+      "\\([7/6,13/6)\\)",
+      "\\((7/6,2)\\)",
+      "\\([1,13/6)\\)"
+    ],
+    "answer": "B",
+    "solution": {
+      "point": "三角函数化一与零点计数",
+      "lead": "先化成单一正弦函数，再统计相位区间内包含几个 \\(k\\pi\\)。",
+      "steps": [
+        {
+          "title": "化一",
+          "text": "展开余弦并合并：",
+          "formula": "\\[f(x)=\\sqrt3\\sin\\left(\\omega x-\\frac\\pi6\\right).\\]"
+        },
+        {
+          "title": "写出相位范围",
+          "text": "当 \\(x\\in[0,\\pi]\\) 时，相位的变化区间为：",
+          "formula": "\\[\\left[-\\frac\\pi6,\\ \\omega\\pi-\\frac\\pi6\\right].\\]"
+        },
+        {
+          "title": "恰有两个零点",
+          "text": "该区间已经包含 \\(0\\)；要再包含 \\(\\pi\\) 但不能包含 \\(2\\pi\\)，因此：",
+          "formula": "\\[\\omega\\pi-\\frac\\pi6\\ge\\pi,\\qquad \\omega\\pi-\\frac\\pi6<2\\pi.\\]"
+        },
+        {
+          "title": "解参数范围",
+          "text": "分别解两个不等式：",
+          "formula": "\\[\\frac76\\le\\omega<\\frac{13}{6}.\\]"
+        }
+      ],
+      "conclusion": "参数范围为 \\(\\left[\\frac76,\\frac{13}{6}\\right)\\)。"
+    }
+  },
+  {
+    "no": 11,
+    "type": "选择题",
+    "text": "长方形 \\(ABCD\\) 中，\\(AB=\\sqrt{15}/2\\)，\\(AD=1\\)。点 \\(E\\) 在线段 \\(AB\\) 上且不取端点。将 \\(\\triangle ADE\\) 沿 \\(DE\\) 折起，设 \\(\\angle ADE=\\alpha\\)，二面角 \\(A^{\\prime}-DE-C\\) 为 \\(\\beta\\)。若 \\(\\alpha+\\beta=\\pi/2\\)，则四棱锥 \\(A^{\\prime}-BCDE\\) 体积最大值为",
+    "options": [
+      "\\(\\frac14\\)",
+      "\\(\\frac23\\)",
+      "\\(\\frac{\\sqrt{15}-1}{12}\\)",
+      "\\(\\frac{\\sqrt5-1}{8}\\)"
+    ],
+    "answer": "A",
+    "solution": {
+      "point": "折叠、二面角与体积最值",
+      "lead": "把折后四棱锥的底面积和高都用 \\(\\alpha\\) 表示，再化成一个正弦函数求最大值。",
+      "steps": [
+        {
+          "title": "表示底边和高",
+          "text": "由几何关系 \\(AE=\\tan\\alpha\\)；又因为 \\(\\alpha+\\beta=\\frac\\pi2\\)，折起后的高为：",
+          "formula": "\\[h=\\sin\\alpha\\sin\\beta=\\sin\\alpha\\cos\\alpha.\\]"
+        },
+        {
+          "title": "写出底面积",
+          "text": "四边形 \\(BCDE\\) 的面积为：",
+          "formula": "\\[S=\\frac12(\\sqrt{15}-\\tan\\alpha).\\]"
+        },
+        {
+          "title": "建立体积函数",
+          "text": "因此：",
+          "formula": "\\[\\begin{aligned}V&=\\frac16(\\sqrt{15}-\\tan\\alpha)\\sin\\alpha\\cos\\alpha\\\\&=\\frac1{12}(\\sqrt{15}\\sin2\\alpha+\\cos2\\alpha-1).\\end{aligned}\\]"
+        },
+        {
+          "title": "求最大值",
+          "text": "\\(\\sqrt{15}\\sin2\\alpha+\\cos2\\alpha\\) 的振幅为 \\(4\\)，所以：",
+          "formula": "\\[V\\le\\frac4{12}-\\frac1{12}=\\frac14.\\]"
+        },
+        {
+          "title": "检验等号位置在允许范围内",
+          "text": "最优角满足 \\(\\tan\\alpha=\\sqrt{3/5}\\)。由 \\(AD=1\\)，有 \\(AE=\\tan\\alpha\\)，它严格位于 \\(0\\) 与 \\(AB=\\sqrt{15}/2\\) 之间，故对应的 \\(E\\) 是允许的内点，\\(\\beta=\\pi/2-\\alpha\\) 也满足折起条件。"
+        }
+      ],
+      "conclusion": "四棱锥体积的最大值为 \\(\\frac14\\)。"
+    }
+  },
+  {
+    "no": 12,
+    "type": "选择题",
+    "text": "过 \\(P(x,y)\\) 作圆 \\(C_1:x^2+y^2=1\\) 与圆 \\(C_2:(x-2)^2+(y-2)^2=1\\) 的切线，切点分别为 \\(A,B\\)。若 \\(|PA|=|PB|\\)，则 \\(x^2+y^2\\) 的最小值为",
+    "options": [
+      "\\(\\sqrt2\\)",
+      "\\(2\\)",
+      "\\(2\\sqrt2\\)",
+      "\\(8\\)"
+    ],
+    "answer": "B",
+    "solution": {
+      "point": "圆的切线长与点到直线距离",
+      "lead": "两圆半径相同，切线长相等就等价于到两个圆心距离相等。",
+      "steps": [
+        {
+          "title": "使用切线长公式",
+          "text": "两个圆半径均为 1：",
+          "formula": "\\[PA^2=PC_1^2-1,\\qquad PB^2=PC_2^2-1.\\]"
+        },
+        {
+          "title": "转化为中垂线",
+          "text": "\\(PA=PB\\) 推出 \\(PC_1=PC_2\\)，所以点 \\(P\\) 在 \\(C_1C_2\\) 的中垂线上。"
+        },
+        {
+          "title": "写出直线方程",
+          "text": "\\(C_1=(0,0)\\)、\\(C_2=(2,2)\\)，其中垂线方程为：",
+          "formula": "\\[x+y-2=0.\\]"
+        },
+        {
+          "title": "求最小距离",
+          "text": "原点到该直线的距离为 \\(\\sqrt2\\)，因此：",
+          "formula": "\\[\\min(x^2+y^2)=(\\sqrt2)^2=2.\\]"
+        }
+      ],
+      "conclusion": "\\(x^2+y^2\\) 的最小值为 \\(2\\)。"
+    }
+  },
+  {
+    "no": 13,
+    "type": "选择题",
+    "text": "二项式 \\(\\displaystyle\\left(x^5-\\frac{2\\sqrt{x}}{x^3}\\right)^n\\) 的展开式含有常数项，则 \\(n\\) 的最小值为",
+    "options": [
+      "\\(2\\)",
+      "\\(3\\)",
+      "\\(4\\)",
+      "\\(5\\)"
+    ],
+    "answer": "B",
+    "solution": {
+      "point": "二项式通项与常数项",
+      "lead": "先化简括号内第二项的指数，再写二项式通项。常数项出现的充要条件是通项中 \\(x\\) 的总指数为 \\(0\\)。",
+      "steps": [
+        {
+          "title": "化简括号内的第二项",
+          "text": "利用 \\(\\sqrt{x}=x^{1/2}\\)，先把分式写成幂的形式：",
+          "formula": "\\[\\frac{2\\sqrt{x}}{x^3}=2x^{\\frac12-3}=2x^{-\\frac52}.\\]"
+        },
+        {
+          "title": "写出第 \\(k+1\\) 项",
+          "text": "在二项式展开中取 \\(k\\) 个第二项、\\(n-k\\) 个第一项，得到：",
+          "formula": "\\[\\begin{aligned}T_{k+1}&=\\binom nk(x^5)^{n-k}\\left(-2x^{-\\frac52}\\right)^k\\\\&=(-2)^k\\binom nkx^{,5n-\\frac{15}{2}k}.\\end{aligned}\\]"
+        },
+        {
+          "title": "令 \\(x\\) 的指数为零",
+          "text": "常数项不含 \\(x\\)，所以指数必须等于 \\(0\\)：",
+          "formula": "\\[5n-\\frac{15}{2}k=0\\quad\\Longleftrightarrow\\quad 2n=3k\\quad\\Longleftrightarrow\\quad n=\\frac32k.\\]"
+        },
+        {
+          "title": "寻找最小正整数",
+          "text": "\\(n,k\\) 都是整数，且 \\(0\\le k\\le n\\)。由 \\(2n=3k\\) 可知 \\(k\\) 必须是偶数；排除 \\(k=0\\) 后，最小取值为：",
+          "formula": "\\[k=2,\\qquad n=3.\\]"
+        }
+      ],
+      "conclusion": "因此 \\(n\\) 的最小值为 \\(3\\)。"
+    }
+  },
+  {
+    "no": 14,
+    "type": "选择题",
+    "text": "在平面直角坐标系 \\(xOy\\) 中，点 \\(A(1,0)\\)、\\(B(9,6)\\)，动点 \\(C\\) 在线段 \\(OB\\) 上。\\(BD\\perp y\\) 轴、\\(CE\\perp y\\) 轴、\\(CF\\perp BD\\)，垂足分别为 \\(D,E,F\\)。\\(OF\\) 与 \\(CE\\) 交于点 \\(P\\)。已知点 \\(Q\\) 在点 \\(P\\) 的轨迹上，且 \\(\\angle OAQ=120^\\circ\\)，则 \\(|AQ|=\\)",
+    "options": [
+      "\\(4\\)",
+      "\\(2\\)",
+      "\\(\\frac43\\)",
+      "\\(\\frac23\\)"
+    ],
+    "answer": "A",
+    "solution": {
+      "point": "解析几何、轨迹与抛物线焦点定义",
+      "lead": "先用相似关系求出点 \\(P\\) 的轨迹。该轨迹是抛物线 \\(y^2=4x\\)，而 \\(A(1,0)\\) 正是它的焦点。",
+      "steps": [
+        {
+          "title": "设动点坐标",
+          "text": "设 \\(C=(\\frac32y,y)\\)，则 \\(E=(0,y)\\)、\\(F=(\\frac32y,6)\\)。直线 \\(OF\\) 与直线 \\(Y=y\\) 相交于点 \\(P\\)。"
+        },
+        {
+          "title": "求 \\(P\\) 的轨迹",
+          "text": "直线 \\(OF\\) 的斜率为 \\(\\frac4y\\)，所以 \\(P=(\\frac{y^2}{4},y)\\)，即：",
+          "formula": "\\[y^2=4x,\\qquad 0\\le y\\le6.\\]"
+        },
+        {
+          "title": "利用焦点性质",
+          "text": "\\(A(1,0)\\) 是该抛物线的焦点。若 \\(Q=(x_0,y_0)\\)，由焦点—准线定义可得：",
+          "formula": "\\[AQ=x_0+1.\\]"
+        },
+        {
+          "title": "代入角条件",
+          "text": "向量 \\(\\overrightarrow{AO}=(-1,0)\\)，\\(\\overrightarrow{AQ}=(x_0-1,y_0)\\)，所以：",
+          "formula": "\\[\\cos120^\\circ=\\frac{1-x_0}{x_0+1}=-\\frac12.\\]"
+        },
+        {
+          "title": "解出长度",
+          "text": "由上式解得 \\(x_0=3\\)，从而：",
+          "formula": "\\[AQ=x_0+1=4.\\]"
+        }
+      ],
+      "conclusion": "线段 \\(AQ\\) 的长度为 \\(4\\)。"
+    }
+  },
+  {
+    "no": 15,
+    "type": "选择题",
+    "text": "向量 \\(\\vec a,\\vec b,\\vec c\\) 满足 \\(|\\vec a|=1\\)，\\(2\\vec a+\\vec b=0\\)，\\(2|\\vec c-\\vec a|=|\\vec c-\\vec b|\\)，则 \\(\\vec c-\\vec b\\) 与 \\(\\vec a\\) 夹角的最大值为",
+    "options": [
+      "\\(\\frac\\pi{12}\\)",
+      "\\(\\frac\\pi6\\)",
+      "\\(\\frac\\pi4\\)",
+      "\\(\\frac\\pi3\\)"
+    ],
+    "answer": "B",
+    "solution": {
+      "point": "向量模、数量积与基本不等式",
+      "lead": "把 \\(\\vec c-\\vec b\\) 看成一个整体向量 \\(\\vec u\\)，条件就能化成 \\(\\vec u\\) 与 \\(\\vec a\\) 的数量积关系。",
+      "steps": [
+        {
+          "title": "代换向量",
+          "text": "由 \\(2\\vec a+\\vec b=\\vec0\\) 得 \\(\\vec b=-2\\vec a\\)。令 \\(\\vec u=\\vec c-\\vec b\\)，则：",
+          "formula": "\\[\\vec c-\\vec a=\\vec u-3\\vec a.\\]"
+        },
+        {
+          "title": "平方原条件",
+          "text": "将 \\(2|\\vec u-3\\vec a|=|\\vec u|\\) 两边平方，并使用 \\(|\\vec a|=1\\)：",
+          "formula": "\\[|\\vec u|^2-8\\vec a\\cdot\\vec u+12=0.\\]"
+        },
+        {
+          "title": "写出夹角余弦",
+          "text": "设所求夹角为 \\(\\theta\\)，并令 \\(r=|\\vec u|\\)，则：",
+          "formula": "\\[\\cos\\theta=\\frac{\\vec a\\cdot\\vec u}{|\\vec a|\\,|\\vec u|}=\\frac{r^2+12}{8r}.\\]"
+        },
+        {
+          "title": "使用基本不等式",
+          "text": "由 \\(r^2+12\\ge4\\sqrt3r\\) 可得：",
+          "formula": "\\[\\cos\\theta\\ge\\frac{\\sqrt3}{2}\\quad\\Longrightarrow\\quad\\theta\\le\\frac\\pi6.\\]"
+        },
+        {
+          "title": "说明等号可以取得",
+          "text": "当 \\(r^2=12\\) 时基本不等式取等号，因此最大夹角确实可以达到 \\(\\frac\\pi6\\)。"
+        }
+      ],
+      "conclusion": "所求夹角的最大值为 \\(\\frac\\pi6\\)。"
+    }
+  },
+  {
+    "no": 16,
+    "type": "选择题",
+    "text": "\\(\\{a_n\\}\\) 为等差数列，\\(\\{b_n\\}\\) 为等比数列，\\(a_1+a_{2020}=27\\)，\\(b_1b_{2020}=2\\)。\\(f(x+2)=-f(x)\\)，且 \\(f(x)=e^x\\ (x\\in[0,2))\\)，则 \\(\\displaystyle f\\!\\left(\\frac{a_{1010}+a_{1011}}{1+b_{1010}b_{1011}}\\right)=\\)",
+    "options": [
+      "\\(e\\)",
+      "\\(e^2\\)",
+      "\\(e^{-1}\\)",
+      "\\(e^{-2}\\)"
+    ],
+    "answer": "A",
+    "solution": {
+      "point": "等差中项、等比中项与反周期函数",
+      "lead": "数列中间两项的和与积可以直接由首尾项得到。",
+      "steps": [
+        {
+          "title": "化简等差部分",
+          "text": "等差数列关于中点对称：",
+          "formula": "\\[a_{1010}+a_{1011}=a_1+a_{2020}=27.\\]"
+        },
+        {
+          "title": "化简等比部分",
+          "text": "等比数列指数之和相同：",
+          "formula": "\\[b_{1010}b_{1011}=b_1b_{2020}=2.\\]"
+        },
+        {
+          "title": "得到函数自变量",
+          "text": "代入上面两式，函数自变量化简为：",
+          "formula": "\\[\\frac{a_{1010}+a_{1011}}{1+b_{1010}b_{1011}}=\\frac{27}{1+2}=9.\\]"
+        },
+        {
+          "title": "按反周期回代",
+          "text": "连续使用 \\(f(x+2)=-f(x)\\)：",
+          "formula": "\\[f(9)=-f(7)=f(5)=-f(3)=f(1)=e.\\]"
+        },
+        {
+          "title": "检查延拓不会在端点冲突",
+          "text": "这里基本区间是半开区间 \\([0,2)\\)。每个实数唯一写成 \\(2k+t\\)，其中 \\(k\\in\\mathbb Z,\\ 0\\le t<2\\)，定义 \\(f(2k+t)=(-1)^ke^t\\) 即满足条件。\\(9=2\\times4+1\\)，所以本次取值是 \\(e\\)。不能同时把 \\(2\\) 放进基本区间。"
+        }
+      ],
+      "conclusion": "所求函数值为 \\(e\\)。"
+    },
+    "supplemental": true
+  },
+  {
+    "no": 17,
+    "type": "选择题",
+    "text": "\\(A,B,C\\) 在表面积为 \\(16\\pi\\) 的球 \\(O\\) 上，\\(AC=AB=1\\)，\\(\\angle ABC=30^\\circ\\)，则三棱锥 \\(O-ABC\\) 的体积为",
+    "options": [
+      "\\(\\frac1{12}\\)",
+      "\\(\\frac{\\sqrt3}{12}\\)",
+      "\\(\\frac14\\)",
+      "\\(\\frac{\\sqrt3}{4}\\)"
+    ],
+    "answer": "C",
+    "solution": {
+      "point": "球、三角形外接圆与棱锥体积",
+      "lead": "球心到平面 \\(ABC\\) 的垂足就是 \\(\\triangle ABC\\) 的外接圆圆心。",
+      "steps": [
+        {
+          "title": "求球半径",
+          "text": "由球的表面积公式：",
+          "formula": "\\[4\\pi R^2=16\\pi\\quad\\Longrightarrow\\quad R=2.\\]"
+        },
+        {
+          "title": "求三角形外接圆半径",
+          "text": "因为 \\(AB=AC=1\\)、\\(\\angle B=30^\\circ\\)，所以 \\(\\angle C=30^\\circ\\)、\\(\\angle A=120^\\circ\\)。由正弦定理：",
+          "formula": "\\[2r=\\frac{AC}{\\sin30^\\circ}=2,\\qquad r=1.\\]"
+        },
+        {
+          "title": "求棱锥高",
+          "text": "球心到平面 \\(ABC\\) 的距离为：",
+          "formula": "\\[d=\\sqrt{R^2-r^2}=\\sqrt3.\\]"
+        },
+        {
+          "title": "求底面积与体积",
+          "text": "先求底面三角形面积，再代入棱锥体积公式：",
+          "formula": "\\[\\begin{aligned}S_{\\triangle ABC}&=\\frac12\\sin120^\\circ=\\frac{\\sqrt3}{4},\\\\V&=\\frac13\\cdot\\frac{\\sqrt3}{4}\\cdot\\sqrt3=\\frac14.\\end{aligned}\\]"
+        }
+      ],
+      "conclusion": "三棱锥 \\(O-ABC\\) 的体积为 \\(\\frac14\\)。"
+    }
+  },
+  {
+    "no": 18,
+    "type": "选择题",
+    "text": "景区有 \\(A\\) 至 \\(H\\) 共 8 个停车位，排列为两行四列：第一行从左至右为 A、B、C、D，第二行对应为 E、F、G、H。2 辆不同白车、2 辆不同黑车停车，要求同色车不在同一行也不在同一列，则方法数为",
+    "options": [
+      "\\(288\\)",
+      "\\(336\\)",
+      "\\(576\\)",
+      "\\(1680\\)"
+    ],
+    "answer": "B",
+    "solution": {
+      "point": "分步计数与排列组合",
+      "lead": "车辆彼此不同。先放两辆白车，再在剩余位置中安排两辆黑车。",
+      "steps": [
+        {
+          "title": "安排白车",
+          "text": "第一辆有 \\(8\\) 个位置；第二辆必须换行且换列，有 \\(3\\) 个位置，因此白车共有：",
+          "formula": "\\[8\\times3=24\\ \\text{种}.\\]"
+        },
+        {
+          "title": "固定一种白车布局",
+          "text": "利用对称性，设白车停在 \\(A,F\\)。黑车允许的无序位置对共有 \\(7\\) 对：\\(BE,BG,BH,CE,CH,DE,DG\\)。"
+        },
+        {
+          "title": "区分两辆黑车",
+          "text": "两辆黑车不同，每一对位置可交换车辆，故黑车共有：",
+          "formula": "\\[7\\times2=14\\ \\text{种}.\\]"
+        },
+        {
+          "title": "使用乘法原理",
+          "text": "总数为：",
+          "formula": "\\[24\\times14=336.\\]"
+        },
+        {
+          "title": "解释为何可以固定一种白车布局",
+          "text": "不同的列可互换、两行也可互换；这些重排不改变“同行或同列”的关系。每种合法白车布局都能重排为 A、F，因此黑车的 14 种安排对所有白车布局均适用，乘法原理不会漏算或重复。"
+        }
+      ],
+      "conclusion": "不同的停车方法共有 \\(336\\) 种。"
+    }
+  },
+  {
+    "no": 19,
+    "type": "选择题",
+    "text": "等比数列 \\(\\{a_n\\}\\) 各项为正，\\(a_1a_2a_3=27\\)，\\(a_4-a_2=-8/3\\)，则 \\(a_1a_2\\cdots a_n\\) 的最大值为",
+    "options": [
+      "\\(9\\)",
+      "\\(8\\)",
+      "\\(3\\)",
+      "\\(27\\)"
+    ],
+    "answer": "D",
+    "solution": {
+      "point": "等比数列与整数型二次函数最值",
+      "lead": "先求公比，再把前 \\(n\\) 项乘积写成以 \\(3\\) 为底的幂。",
+      "steps": [
+        {
+          "title": "求中项与公比",
+          "text": "由 \\(a_1a_2a_3=a_2^3=27\\) 得 \\(a_2=3\\)。再使用 \\(a_4-a_2=-\\frac83\\)：",
+          "formula": "\\[3q^2-3=-\\frac83.\\]"
+        },
+        {
+          "title": "利用正项条件",
+          "text": "解得 \\(q=\\frac13\\)；负根不符合“各项均为正”。于是：",
+          "formula": "\\[a_n=3\\left(\\frac13\\right)^{n-2}=3^{3-n}.\\]"
+        },
+        {
+          "title": "写出前 \\(n\\) 项积",
+          "text": "将各项的指数相加：",
+          "formula": "\\[a_1a_2\\cdots a_n=3^{\\frac{n(5-n)}2}.\\]"
+        },
+        {
+          "title": "在正整数上取最大值",
+          "text": "当 \\(n=2\\) 或 \\(n=3\\) 时，指数 \\(\\frac{n(5-n)}2\\) 的最大值为 \\(3\\)，所以：",
+          "formula": "\\[\\max(a_1a_2\\cdots a_n)=3^3=27.\\]"
+        }
+      ],
+      "conclusion": "前 \\(n\\) 项乘积的最大值为 \\(27\\)。"
+    }
+  },
+  {
+    "no": 20,
+    "type": "选择题",
+    "text": "点 \\(O,A,B\\) 不重合且 \\(|OA|=|AB|=4\\)。当 \\(\\lambda\\in[0,1]\\) 时，\\(\\left|\\lambda\\overrightarrow{OB}-\\overrightarrow{OA}\\right|+\\left|(1-\\lambda)\\overrightarrow{BO}-\\frac12\\overrightarrow{BA}\\right|\\) 的最小值为 \\(2\\sqrt5\\)，则 \\(|OB|=\\)",
+    "options": [
+      "\\(2\\)",
+      "\\(2\\sqrt2\\)",
+      "\\(4\\)",
+      "\\(4\\sqrt2\\)"
+    ],
+    "answer": "D",
+    "solution": {
+      "point": "向量几何化与折线最短路",
+      "lead": "把 \\(\\lambda\\) 对应成线段 \\(OB\\) 上的动点 \\(M\\)，两个向量模就变成 \\(AM\\) 与 \\(PM\\) 的长度。",
+      "steps": [
+        {
+          "title": "引入动点",
+          "text": "令 \\(\\overrightarrow{OM}=\\lambda\\overrightarrow{OB}\\)，并取 \\(P\\) 为 \\(BA\\) 的中点，则：",
+          "formula": "\\[|\\lambda\\overrightarrow{OB}-\\overrightarrow{OA}|=AM,\\qquad |(1-\\lambda)\\overrightarrow{BO}-\\tfrac12\\overrightarrow{BA}|=PM.\\]"
+        },
+        {
+          "title": "使用对称法",
+          "text": "把点 \\(A\\) 关于直线 \\(OB\\) 对称到 \\(A'\\)，则 \\(AM+PM=A'M+PM\\)。当 \\(A',M,P\\) 共线时取到最短值：",
+          "formula": "\\[A'P=2\\sqrt5.\\]"
+        },
+        {
+          "title": "建立三角关系",
+          "text": "设 \\(\\angle OAB=2\\theta\\)。由 \\(OA=AB=4\\)，有 \\(AA'=8\\cos\\theta\\)、\\(AP=2\\)。在 \\(\\triangle AA'P\\) 中使用余弦定理：",
+          "formula": "\\[\\begin{aligned}\\frac{AP^2+(AA')^2-(A'P)^2}{2AP\\cdot AA'}&=\\cos\\theta,\\\\\\frac{4+64\\cos^2\\theta-20}{32\\cos\\theta}&=\\cos\\theta.\\end{aligned}\\]"
+        },
+        {
+          "title": "解出角的三角函数",
+          "text": "整理上式得到 \\(32\\cos^2\\theta=16\\)。因为 \\(\\theta\\) 是三角形内角的一半，所以 \\(\\cos\\theta>0\\)：",
+          "formula": "\\[\\cos^2\\theta=\\frac12,\\qquad \\sin\\theta=\\frac{\\sqrt2}{2}.\\]"
+        },
+        {
+          "title": "求底边 \\(OB\\)",
+          "text": "在等腰三角形中，\\(OB=8\\sin\\theta\\)，因此：",
+          "formula": "\\[OB=8\\cdot\\frac{\\sqrt2}{2}=4\\sqrt2.\\]"
+        }
+      ],
+      "conclusion": "线段 \\(OB\\) 的长度为 \\(4\\sqrt2\\)。"
+    }
+  },
+  {
+    "no": 21,
+    "type": "选择题",
+    "text": "棱长为 2 的正方体 \\(ABCD-A_1B_1C_1D_1\\) 中，\\(E,F\\) 分别为 \\(AA_1,CC_1\\) 的中点。过 \\(BE\\) 的平面 \\(\\alpha\\) 与 \\(A_1F\\) 平行，则截面面积为",
+    "options": [
+      "\\(\\sqrt5\\)",
+      "\\(2\\sqrt5\\)",
+      "\\(4\\)",
+      "\\(5\\)"
+    ],
+    "answer": "B",
+    "solution": {
+      "point": "正方体中的平行截面",
+      "lead": "用“平面过 \\(BE\\) 且平行 \\(A_1F\\)”确定截面方向，截面最终是一个矩形。",
+      "steps": [
+        {
+          "title": "确定平面内第二条方向",
+          "text": "\\(E,F\\) 分别是 \\(AA_1,CC_1\\) 的中点，可验证 \\(CE\\parallel A_1F\\)。因此，过 \\(BE\\) 且平行 \\(A_1F\\) 的平面就是平面 \\(BEC\\)。"
+        },
+        {
+          "title": "补全截面",
+          "text": "该平面与另一侧棱 \\(DD_1\\) 的交点也是中点；连接四个交点后得到一个矩形截面。"
+        },
+        {
+          "title": "计算相邻边",
+          "text": "矩形一边为 \\(BC=2\\)，另一边是水平长度为 \\(2\\)、竖直高度差为 \\(1\\) 的面对角线：",
+          "formula": "\\[\\sqrt{2^2+1^2}=\\sqrt5.\\]"
+        },
+        {
+          "title": "计算面积",
+          "text": "矩形截面的面积为：",
+          "formula": "\\[2\\times\\sqrt5=2\\sqrt5.\\]"
+        }
+      ],
+      "conclusion": "截面面积为 \\(2\\sqrt5\\)。"
+    }
+  },
+  {
+    "no": 22,
+    "type": "选择题",
+    "text": "直线 \\(x-y+1=0\\) 经过椭圆 \\(\\displaystyle\\frac{x^2}{a^2}+\\frac{y^2}{b^2}=1\\ (a>b>0)\\) 的左焦点 \\(F\\)，交椭圆于 \\(A,B\\)，交 \\(y\\) 轴于 \\(C\\)。若 \\(\\overrightarrow{FC}=2\\overrightarrow{AC}\\)，则离心率为",
+    "options": [
+      "\\(\\frac{\\sqrt{10}-\\sqrt2}{2}\\)",
+      "\\(\\frac{\\sqrt3-1}{2}\\)",
+      "\\(2\\sqrt2-2\\)",
+      "\\(\\sqrt2-1\\)"
+    ],
+    "answer": "A",
+    "solution": {
+      "point": "椭圆焦点、向量条件与离心率",
+      "lead": "直线的两个截距给出 \\(F,C\\)；向量条件给出交点 \\(A\\)，再代入椭圆方程。",
+      "steps": [
+        {
+          "title": "确定 \\(F\\) 与 \\(C\\)",
+          "text": "直线 \\(x-y+1=0\\) 与坐标轴交于 \\(F=(-1,0)\\)、\\(C=(0,1)\\)，故焦距参数 \\(c=1\\)。"
+        },
+        {
+          "title": "利用向量条件求 \\(A\\)",
+          "text": "由 \\(\\overrightarrow{FC}=2\\overrightarrow{AC}\\)，得到：",
+          "formula": "\\[A=\\left(-\\frac12,\\frac12\\right).\\]"
+        },
+        {
+          "title": "代入椭圆方程",
+          "text": "又 \\(b^2=a^2-c^2=a^2-1\\)，因此：",
+          "formula": "\\[\\frac{(1/2)^2}{a^2}+\\frac{(1/2)^2}{a^2-1}=1.\\]"
+        },
+        {
+          "title": "解出 \\(a^2\\)",
+          "text": "整理上式并取符合 \\(a>1\\) 的根：",
+          "formula": "\\[a^2=\\frac{3+\\sqrt5}{4}.\\]"
+        },
+        {
+          "title": "计算离心率",
+          "text": "由 \\(e=\\frac ca\\) 化简：",
+          "formula": "\\[e=\\frac{2}{\\sqrt{3+\\sqrt5}}=\\frac{\\sqrt{10}-\\sqrt2}{2}.\\]"
+        },
+        {
+          "title": "核对方向与椭圆条件",
+          "text": "此处使用的是有方向的向量等式，而非长度等式。计算得到 \\(a^2=(3+\\sqrt5)/4>1\\)，故 \\(b^2=a^2-1>0\\)，同时 \\(0<e<1\\)，符合椭圆要求。"
+        }
+      ],
+      "conclusion": "椭圆的离心率为 \\(\\frac{\\sqrt{10}-\\sqrt2}{2}\\)。"
+    }
+  },
+  {
+    "no": 23,
+    "type": "选择题",
+    "text": "数列 \\(\\{c_n\\}\\) 满足 \\(c_1=1\\)，\\(\\displaystyle c_{n+1}=\\frac{c_n}{c_n^3+1}\\)，则 \\(c_{18}\\in\\)",
+    "options": [
+      "\\((1/3,2/5)\\)",
+      "\\((2/7,1/3)\\)",
+      "\\((1/4,2/7)\\)",
+      "\\((2/9,1/4)\\)"
+    ],
+    "answer": "C",
+    "solution": {
+      "point": "递推数列、倒数变换与放缩夹逼",
+      "lead": "原递推对倒数非常友好。令 \\(x_n=\\frac1{c_n}\\)，再比较相邻两项立方的差。",
+      "steps": [
+        {
+          "title": "倒数变换",
+          "text": "由递推式：",
+          "formula": "\\[x_{n+1}=\\frac1{c_{n+1}}=\\frac1{c_n}+c_n^2=x_n+c_n^2.\\]"
+        },
+        {
+          "title": "得到下界",
+          "text": "展开立方：",
+          "formula": "\\[x_{n+1}^3=x_n^3+3+3c_n^3+c_n^6>x_n^3+3.\\]"
+        },
+        {
+          "title": "累加得到 \\(c_{18}\\) 的上界",
+          "text": "从 \\(n=1\\) 累加到 \\(17\\)：",
+          "formula": "\\[x_{18}^3>1+17\\times3=52>\\left(\\frac72\\right)^3\\quad\\Longrightarrow\\quad c_{18}<\\frac27.\\]"
+        },
+        {
+          "title": "反向放缩",
+          "text": "因为 \\(0<c_n\\le1\\)，有 \\(3c_n^3+c_n^6\\le4c_n^3\\)；又 \\(c_2=\\frac12\\) 且数列递减，所以：",
+          "formula": "\\[x_{18}^3<1+51+4\\left(1+16\\cdot\\frac18\\right)=64.\\]"
+        },
+        {
+          "title": "得到 \\(c_{18}\\) 的下界",
+          "text": "由 \\(x_{18}<4\\) 取倒数可得：",
+          "formula": "\\[c_{18}>\\frac14.\\]"
+        }
+      ],
+      "conclusion": "因此 \\(\\frac14<c_{18}<\\frac27\\)。"
+    }
+  },
+  {
+    "no": 24,
+    "type": "选择题",
+    "text": "\\(P,Q,R\\) 是等腰直角三角形 \\(ABC\\ (\\angle A=\\pi/2)\\) 内的点，且满足 \\(\\angle APB=\\angle BPC=\\angle CPA\\)，\\(\\angle ACQ=\\angle CBQ=\\angle BAQ\\)，以及 \\(\\sin A\\,\\overrightarrow{RA}+\\sin B\\,\\overrightarrow{RB}+\\sin C\\,\\overrightarrow{RC}=\\vec0\\)。下列数量积关系正确的是",
+    "options": [
+      "\\(\\overrightarrow{PA}\\!\\cdot\\!\\overrightarrow{PB}>\\overrightarrow{QA}\\!\\cdot\\!\\overrightarrow{QB}>\\overrightarrow{RA}\\!\\cdot\\!\\overrightarrow{RB}\\)",
+      "\\(\\overrightarrow{QA}\\!\\cdot\\!\\overrightarrow{QB}>\\overrightarrow{PA}\\!\\cdot\\!\\overrightarrow{PB}>\\overrightarrow{RA}\\!\\cdot\\!\\overrightarrow{RB}\\)",
+      "\\(\\overrightarrow{RA}\\!\\cdot\\!\\overrightarrow{RB}>\\overrightarrow{PA}\\!\\cdot\\!\\overrightarrow{PB}>\\overrightarrow{QA}\\!\\cdot\\!\\overrightarrow{QB}\\)",
+      "\\(\\overrightarrow{RA}\\!\\cdot\\!\\overrightarrow{RB}>\\overrightarrow{QA}\\!\\cdot\\!\\overrightarrow{QB}>\\overrightarrow{PA}\\!\\cdot\\!\\overrightarrow{PB}\\)"
+    ],
+    "answer": "C",
+    "solution": {
+      "point": "三角形特殊点与向量数量积比较",
+      "lead": "三个点分别由三组条件确定：\\(P\\) 是等角点，\\(R\\) 是内心，\\(Q\\) 可由相似三角形求长度。数量积最终都化成可比较的常数。",
+      "steps": [
+        {
+          "title": "证明 \\(R\\) 是内心",
+          "text": "设 \\(a=BC\\)、\\(b=CA\\)、\\(c=AB\\)，外接圆半径为 \\(\\rho\\)。由正弦定理 \\(\\sin A=\\frac{a}{2\\rho}\\) 等关系，可将题设向量式化为 \\(a\\overrightarrow{RA}+b\\overrightarrow{RB}+c\\overrightarrow{RC}=\\overrightarrow0\\)。再代入 \\(\\overrightarrow{RA}=\\overrightarrow{RC}+\\overrightarrow{CA}\\)、\\(\\overrightarrow{RB}=\\overrightarrow{RC}+\\overrightarrow{CB}\\)，整理得：",
+          "formula": "\\[(a+b+c)\\overrightarrow{RC}=a\\overrightarrow{AC}+b\\overrightarrow{BC}=ab\\left(\\frac{\\overrightarrow{AC}}{|AC|}+\\frac{\\overrightarrow{BC}}{|BC|}\\right).\\]"
+        },
+        {
+          "title": "说明角平分线结论",
+          "text": "等式右端的两个单位向量分别从 \\(A\\)、\\(B\\) 指向 \\(C\\)，它们的和沿 \\(C\\) 的内角平分线所在直线，方向与从 \\(C\\) 指向三角形内部相反。左端 \\(\\overrightarrow{RC}\\) 也指向 \\(C\\)。又因 \\(R\\) 在三角形内部，可知 \\(CR\\) 是内角平分线；循环同理，\\(R\\) 是内心。"
+        },
+        {
+          "title": "计算 \\(P\\) 对应的数量积",
+          "text": "不妨按比例取 \\(AB=AC=6\\)。由 \\(\\angle APB=\\angle BPC=\\angle CPA=120^\\circ\\)，且 \\(P\\) 在 \\(\\angle A\\) 的角平分线上，可得：",
+          "formula": "\\[\\begin{gathered}PA=3\\sqrt2-\\sqrt6,\\quad PB=2\\sqrt6,\\\\\\overrightarrow{PA}\\cdot\\overrightarrow{PB}=6-6\\sqrt3.\\end{gathered}\\]"
+        },
+        {
+          "title": "计算 \\(R\\) 对应的数量积",
+          "text": "直角等腰三角形的内切圆半径为 \\(6-3\\sqrt2\\)。将内心到三个顶点的关系代入数量积并整理，得到：",
+          "formula": "\\[\\overrightarrow{RA}\\cdot\\overrightarrow{RB}=72-54\\sqrt2.\\]"
+        },
+        {
+          "title": "计算 \\(Q\\) 对应的数量积",
+          "text": "由角条件可证 \\(\\triangle BQC\\sim\\triangle AQB\\)，所以 \\(BQ=\\sqrt2\\,AQ\\)。再用余弦定理解得 \\(AQ^2=\\frac{36}{5}\\)，于是：",
+          "formula": "\\[\\overrightarrow{QA}\\cdot\\overrightarrow{QB}=-\\frac{36}{5}.\\]"
+        },
+        {
+          "title": "比较三个数",
+          "text": "分别取近似值进行比较：",
+          "formula": "\\[\\begin{aligned}72-54\\sqrt2&\\approx-4.368,\\\\6-6\\sqrt3&\\approx-4.392,\\\\-36/5&=-7.2.\\end{aligned}\\]"
+        }
+      ],
+      "conclusion": "\\(\\overrightarrow{RA}\\cdot\\overrightarrow{RB}>\\overrightarrow{PA}\\cdot\\overrightarrow{PB}>\\overrightarrow{QA}\\cdot\\overrightarrow{QB}\\)。"
+    }
+  },
+  {
+    "no": 25,
+    "type": "选择题",
+    "text": "设半圆的直径为 \\(AB\\)，半径为 \\(\\sqrt2\\)。在半圆弧内部取点 \\(P\\)，以 \\(AP\\) 为直径，在直线 \\(AP\\) 不含 \\(B\\) 的一侧作小半圆。“月牙 \\(AP\\)”指这个小半圆内部位于原圆外部的区域。将弧 \\(AB\\) 作 \\(2k+1\\) 等分，分点依次为 \\(P_1,\\ldots,P_{2k}\\)，令 \\(S_k\\) 为这 \\(2k\\) 个月牙 \\(AP_i\\) 面积的平均值。若对所有正整数 \\(k\\) 都有 \\(\\lambda<S_k\\)，则 \\(\\lambda\\) 的最大值为（ ）。",
+    "options": [
+      "\\(\\frac1\\pi\\)",
+      "\\(\\frac2\\pi\\)",
+      "\\(\\frac12\\)",
+      "\\(1\\)"
+    ],
+    "answer": "B",
+    "solution": {
+      "point": "月牙面积、对称配对与定积分估计",
+      "lead": "把关于半圆中点对称的两个月牙配成一组，面积和可以化为正弦值；再把平均值看成黎曼和。",
+      "steps": [
+        {
+          "title": "对称配对",
+          "text": "将 \\(P_i\\) 与 \\(P_{2k+1-i}\\) 配对。由半圆对称性和 \\(AP_i^2+BP_i^2=AB^2=8\\)，可得每对月牙面积之和为：",
+          "formula": "\\[2\\sin\\frac{i\\pi}{2k+1}.\\]"
+        },
+        {
+          "title": "写出平均值",
+          "text": "共 \\(2k\\) 个月牙，因此它们的平均面积为：",
+          "formula": "\\[S_k=\\frac{2\\sum_{i=1}^{k}\\sin\\frac{i\\pi}{2k+1}}{2k}.\\]"
+        },
+        {
+          "title": "严格得到积分下界",
+          "text": "把 \\([0,\\frac\\pi2]\\) 分成 \\(k\\) 个等长小区间。第 \\(i\\) 个取样点 \\(x_i=\\frac{i\\pi}{2k+1}\\) 位于相应小区间中点的右侧；\\(\\sin x\\) 在该区间上递增且为凹函数，因此相应矩形面积严格大于该小区间曲线下的面积。求和得到：",
+          "formula": "\\[S_k=\\frac2\\pi\\sum_{i=1}^{k}\\frac{\\pi}{2k}\\sin\\frac{i\\pi}{2k+1}>\\frac2\\pi\\int_0^{\\pi/2}\\sin x\\,dx=\\frac2\\pi.\\]"
+        },
+        {
+          "title": "说明 \\(\\frac2\\pi\\) 是最佳常数",
+          "text": "当 \\(k\\to\\infty\\) 时，取样点与等分点的差趋于 \\(0\\)，上述和就是 \\(\\sin x\\) 在 \\([0,\\frac\\pi2]\\) 上的黎曼和，所以：",
+          "formula": "\\[\\lim_{k\\to\\infty}S_k=\\frac2\\pi.\\]"
+        },
+        {
+          "title": "为什么严格不等式仍允许取下确界",
+          "text": "每个有限 \\(k\\) 都满足 \\(S_k>2/\\pi\\)，且 \\(S_k\\to2/\\pi\\)。所以 \\(\\lambda=2/\\pi\\) 对所有 \\(k\\) 可用；若再增大 \\(\\lambda\\)，充分大的 \\(k\\) 将使 \\(S_k<\\lambda\\)。这里求的是所有可行 \\(\\lambda\\) 的最大值，不是某个 \\(S_k\\) 的最小值。"
+        }
+      ],
+      "conclusion": "使 \\(\\lambda<S_k\\) 对任意正整数 \\(k\\) 恒成立的最大 \\(\\lambda\\) 为 \\(\\frac2\\pi\\)。"
+    }
+  }
+];

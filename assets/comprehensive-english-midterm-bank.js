@@ -1,4 +1,5 @@
-window.ComprehensiveEnglishMidtermQuestions=[
+window.CaigouBankConfig={"title":"综合英语 · 大一上期中","eyebrow":"CAIGOU · STUDY & REVIEW","heading":"把每一步想清楚，<br><em>带菜狗一起上岸。</em>","description":"本题库仅供学习与复习参考","storageKey":"caigou-comprehensive-english-midterm-v1","choiceMode":true,"bankId":"comprehensive-english-midterm"};
+window.CaigouBankQuestions=[
   {
     "no": 1,
     "type": "词汇与结构",

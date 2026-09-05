@@ -1,6 +1,6 @@
 (() => {
   const style = document.createElement('style');
-  style.textContent = '.katex-display{max-width:100%;overflow-x:auto;overflow-y:hidden;padding:.25rem 0}.katex{font-size:1.02em}.q-title,.q,.question-text,.opt{min-width:0;max-width:100%;overflow-wrap:anywhere;word-break:break-word}.q-title>.katex,.q>.katex,.question-text>.katex{display:inline-block;max-width:100%;overflow-x:auto;overflow-y:hidden;vertical-align:middle}.opt{overflow-x:auto;overflow-y:hidden}';
+  style.textContent = '.katex-display{max-width:100%;overflow:visible;padding:.25rem 0}.katex{font-size:1.02em}.q-title,.q,.question-text,.opt{min-width:0;max-width:100%;overflow-wrap:anywhere;word-break:break-word}.q-title>.katex,.q>.katex,.question-text>.katex{display:inline-block;max-width:100%;vertical-align:middle}.formula{overflow:hidden}.formula .katex-display>.katex{display:inline-block;transform-origin:left top}.formula.formula-too-wide{outline:2px solid #e0a03a}';
   document.head.appendChild(style);
 
   const options = {
@@ -33,10 +33,35 @@
     });
   };
 
+  const fitFormulae = (root) => {
+    requestAnimationFrame(() => {
+      root.querySelectorAll?.('.formula').forEach((box) => {
+        box.classList.remove('formula-too-wide');
+        const display = box.querySelector('.katex-display');
+        const math = display?.querySelector(':scope > .katex');
+        if (!display || !math) return;
+        math.style.transform = '';
+        math.style.fontSize = '';
+        display.style.height = '';
+        const styles = getComputedStyle(box);
+        const available = box.clientWidth - parseFloat(styles.paddingLeft) - parseFloat(styles.paddingRight);
+        const naturalWidth = math.scrollWidth;
+        if (naturalWidth <= available || available <= 0) return;
+        const scale = available / naturalWidth;
+        if (scale < .78) {
+          box.classList.add('formula-too-wide');
+          return;
+        }
+        math.style.fontSize = `${scale}em`;
+      });
+    });
+  };
+
   const render = (root = document.body) => {
     if (!root || !window.renderMathInElement) return false;
     addBreaks(root);
     window.renderMathInElement(root, options);
+    fitFormulae(root);
     return true;
   };
 

@@ -11,9 +11,9 @@
     .step-no{width:29px;height:29px;display:grid;place-items:center;border-radius:50%;background:#56835a;color:#fff;font-size:12px;font-weight:800}
     .step-copy b{display:block;margin:2px 0 4px;color:#173a2b}
     .step-copy p{margin:0;line-height:1.78;color:#345343}
-    .formula{width:fit-content;min-width:280px;max-width:min(100%,720px);margin-top:8px;padding:10px 17px;border:1px solid #d9e8d4;border-radius:11px;background:#fff;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch}
+    .formula{width:fit-content;min-width:0;max-width:100%;margin-top:8px;padding:10px 12px;border:1px solid #d9e8d4;border-radius:11px;background:#fff;overflow:visible}
     .formula .katex{font-size:1.06em}.formula .katex-display{margin:.35em 0}
-    .code-block{max-width:100%;margin-top:8px;padding:12px 14px;border-radius:10px;background:#18392b;color:#e8f7e7;white-space:pre-wrap;overflow-x:auto;font:13px/1.6 Consolas,monospace}
+    .code-block{max-width:100%;margin-top:8px;padding:12px 14px;border-radius:10px;background:#18392b;color:#e8f7e7;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.6 Consolas,monospace}
     .solution-note{margin-top:13px;padding:10px 12px;border-left:3px solid #d1a53a;border-radius:0 9px 9px 0;background:#fff8df;color:#6e5724;line-height:1.72}
     .solution-conclusion{width:fit-content;max-width:100%;margin-top:15px;padding:9px 12px;border-left:3px solid #79a86f;border-radius:0 9px 9px 0;background:rgba(255,255,255,.62);color:#345343}
     .final-answer{margin-top:15px;padding:10px 12px;border-radius:10px;background:#dff1d6;color:#347047;font-weight:800}
