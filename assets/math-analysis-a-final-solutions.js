@@ -112,7 +112,7 @@ window.MathAnalysisAFinalSolutions=[
       {
         "title": "相乘并保留三次项",
         "text": "把两式相乘，超过三次的项并入高阶无穷小。",
-        "formula": "\\[\\sin x\\,e^{x^2}=x+\\left(1-\\frac16\\right)x^3+o(x^3)=x+\\frac56x^3+o(x^3).\\]"
+        "formula": "\\[\\begin{aligned}\\sin x\\,e^{x^2}&=x+\\left(1-\\frac16\\right)x^3+o(x^3)\\\\&=x+\\frac56x^3+o(x^3).\\end{aligned}\\]"
       },
       {
         "title": "处理分子和分母",
