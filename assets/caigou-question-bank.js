@@ -14,7 +14,7 @@
       <section class="hero">
         <div>
           <div class="eyebrow">${esc(config.eyebrow)}</div>
-          <h1>${config.heading}</h1>
+          <h1>${esc(config.title.split('·')[0].trim())}</h1>
           <p>${esc(config.description)}</p>
         </div>
       </section>
