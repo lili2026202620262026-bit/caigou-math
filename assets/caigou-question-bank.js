@@ -17,7 +17,6 @@
           <h1>${config.heading}</h1>
           <p>${esc(config.description)}</p>
         </div>
-        <div class="score"><b id="score">0 / ${questions.length}</b><span>已完成</span></div>
       </section>
       <section class="progress">
         <div class="progress-head"><b id="progress-title">复习刚开始</b><span id="progress-copy">第 1 题 · 已完成 0 / ${questions.length}</span></div>
@@ -78,7 +77,6 @@
     const stage = n === questions.length ? 3 : n >= Math.ceil(questions.length * .65) ? 2 : n >= 1 ? 1 : 0;
     const title = ['复习刚开始', '菜狗冒泡中', '快到岸边了', '期末过关，菜狗上岸！'];
     const label = ['溺水中', '冒泡中', '快上岸了', '捞出来啦'];
-    $('score').textContent = `${n} / ${questions.length}`;
     $('progress-title').textContent = title[stage];
     $('progress-copy').textContent = `第 ${state.current + 1} 题 · 已完成 ${n} / ${questions.length}`;
     $('bar').style.width = `${n / questions.length * 100}%`;
