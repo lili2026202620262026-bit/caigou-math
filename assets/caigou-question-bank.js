@@ -14,7 +14,7 @@
       <section class="hero">
         <div>
           <div class="eyebrow">${esc(config.eyebrow)}</div>
-          <h1>${esc(config.title.split('·')[0].trim())}</h1>
+          <h1><span style="background:linear-gradient(transparent 64%,#d6efaa 0);-webkit-box-decoration-break:clone;box-decoration-break:clone">${esc(config.title.split('·')[0].trim())}</span></h1>
           <p>${esc(config.description)}</p>
         </div>
       </section>
