@@ -135,7 +135,7 @@
 
     $('prev').hidden = state.current === 0;
     $('next').hidden = state.current === questions.length - 1;
-    $('jump-trigger').textContent = `第 ${state.current + 1} / ${questions.length} 题`;
+    $('jump-trigger').innerHTML = `<span style="display:block;font:700 13px/1.3 sans-serif">跳转选题 <span aria-hidden="true">▦</span></span><span style="display:block;margin-top:2px;font-size:11px;line-height:1.2">第 ${state.current + 1} / ${questions.length} 题</span>`;
     sync();
     window.CaigouMath?.render($('card'));
   }
