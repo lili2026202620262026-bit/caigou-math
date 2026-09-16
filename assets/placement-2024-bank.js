@@ -27,11 +27,11 @@ window.CaigouBankQuestions=[
         },
         {
           "title": "逐项检验",
-          "text": "只有选项 \\(D\\) 同时满足这两个等式：",
-          "formula": "\\[\\begin{aligned}-\\cos\\frac{2\\pi}{3}&=\\sin\\frac{5\\pi}{6}=\\frac12,\\\\-\\sin\\frac{2\\pi}{3}&=\\cos\\frac{5\\pi}{6}=-\\frac{\\sqrt3}{2}.\\end{aligned}\\]"
+          "text": "只有选项 \\(D\\) 同时满足这两个等式："
         }
       ],
-      "conclusion": "所以 \\(a=\\frac{2\\pi}{3}\\)，\\(b=\\frac{5\\pi}{6}\\)。"
+      "conclusion": "所以 \\(a=\\frac{2\\pi}{3}\\)，\\(b=\\frac{5\\pi}{6}\\)。",
+      "method": "分段函数的奇偶性，需要把左右两段放在互为相反数的自变量处比较，再验证关系对整个区间成立。"
     }
   },
   {
@@ -71,7 +71,8 @@ window.CaigouBankQuestions=[
           "text": "此时 \\(m^2+2mn=81/25+324/25=81/5\\)，上界已经达到，所以是最大值。若将条件改为 \\(f(2)f(3)<0\\)，端点根将不允许，那时只有上确界、没有最大值。"
         }
       ],
-      "conclusion": "在允许 \\(f(2)f(3)=0\\) 的条件下，最大值为 \\(81/5\\)。"
+      "conclusion": "在允许 \\(f(2)f(3)=0\\) 的条件下，最大值为 \\(81/5\\)。",
+      "method": "二次函数在区间端点异号或有零值时，可先引入区间内的根，用韦达定理改写参数，再证明上界可达到。"
     }
   },
   {
@@ -110,7 +111,8 @@ window.CaigouBankQuestions=[
           "formula": "\\[f(6)<f\\left(\\frac{11}{2}\\right)<f(-7).\\]"
         }
       ],
-      "conclusion": "三个函数值的顺序为 \\(f(6)<f\\!\\left(\\frac{11}{2}\\right)<f(-7)\\)。"
+      "conclusion": "三个函数值的顺序为 \\(f(6)<f\\!\\left(\\frac{11}{2}\\right)<f(-7)\\)。",
+      "method": "反周期与奇偶性并用时，先求周期，再把待求自变量移到已知区间，逐次记录是否变号。"
     }
   },
   {
@@ -134,9 +136,9 @@ window.CaigouBankQuestions=[
           "formula": "\\[g(t)=f(t+1)-3=\\sin t+e^t-e^{-t}-t.\\]"
         },
         {
-          "title": "判断奇偶性与单调性",
-          "text": "易知 \\(g(-t)=-g(t)\\)。同时：",
-          "formula": "\\[g'(t)=\\cos t+e^t+e^{-t}-1\\ge \\cos t+1\\ge0.\\]"
+          "title": "分别验证奇性与严格递增",
+          "text": "把 \\(-t\\) 代入可得 \\(g(-t)=-g(t)\\)，所以 \\(g\\) 是奇函数。导数满足下式；当 \\(t\\ne0\\) 时，\\(e^t+e^{-t}>2\\)，故导数严格大于 \\(1+\\cos t\\ge0\\)；在 \\(t=0\\) 时导数等于 2。因此 \\(g\\) 处处严格递增。",
+          "formula": "\\[g'(t)=\\cos t+e^t+e^{-t}-1.\\]"
         },
         {
           "title": "改写不等式",
@@ -147,13 +149,10 @@ window.CaigouBankQuestions=[
           "title": "利用单调性比较自变量",
           "text": "函数 \\(g\\) 递增，因此只需比较自变量：",
           "formula": "\\[x-1<2x-2\\quad\\Longrightarrow\\quad x>1.\\]"
-        },
-        {
-          "title": "补足严格递增的理由",
-          "text": "对辅助函数 \\(g(t)=\\sin t+e^t-e^{-t}-t\\)，有 \\(g'(0)=2\\)；\\(t\\ne0\\) 时 \\(e^t+e^{-t}>2\\)，故 \\(g'(t)>1+\\cos t\\ge0\\)。因此导数处处为正，不只是非负。"
         }
       ],
-      "conclusion": "不等式的解集为 \\((1,+\\infty)\\)。"
+      "conclusion": "不等式的解集为 \\((1,+\\infty)\\)。",
+      "method": "不等式同时含函数在多个自变量处的值时，可先去掉平移和常数，寻找奇偶性与单调性。"
     }
   },
   {
@@ -202,7 +201,8 @@ window.CaigouBankQuestions=[
           "formula": "\\[c<a<b.\\]"
         }
       ],
-      "conclusion": "三个数的大小关系为 \\(c<a<b\\)。"
+      "conclusion": "三个数的大小关系为 \\(c<a<b\\)。",
+      "method": "比较复杂数值可先构造共同函数；仍不能直接比较的两项，再作差并分别证明各部分的符号。"
     }
   },
   {
@@ -245,7 +245,8 @@ window.CaigouBankQuestions=[
           "text": "取 \\(C,D\\) 的中点 \\(M\\)，使 \\(CD=2/\\sqrt3\\)，并在垂直于 \\(CD\\) 的平面内取 \\(MA=MB=\\sqrt{2/3}\\)、\\(MA\\perp MB\\)。此时四条指定棱长均为 1，且体积达到 \\(2\\sqrt3/27\\)，所以上界确实是最大值。"
         }
       ],
-      "conclusion": "四面体体积的最大值为 \\(\\frac{2\\sqrt3}{27}\\)。"
+      "conclusion": "四面体体积的最大值为 \\(\\frac{2\\sqrt3}{27}\\)。",
+      "method": "几何最值不仅要得到体积上界，还要构造满足原几何约束的等号情形，才能称为最大值。"
     }
   },
   {
@@ -279,7 +280,9 @@ window.CaigouBankQuestions=[
           "formula": "\\[\\frac{(-2)^2+(-2)}{1+(-2)^2}=\\frac{4-2}{5}=\\frac25.\\]"
         }
       ],
-      "conclusion": "原式的值为 \\(\\frac25\\)。"
+      "conclusion": "原式的值为 \\(\\frac25\\)。",
+      "method": "三角表达式先识别完全平方，再用已知的正切统一变量；约分前确认分母不为零。",
+      "pitfall": "\\(\\tan\\theta=-2\\) 保证 \\(\\cos\\theta\\ne0\\)。又 \\(\\sin\\theta+\\cos\\theta=\\cos\\theta(\\tan\\theta+1)=-\\cos\\theta\\ne0\\)，所以题中的约分合法。"
     }
   },
   {
@@ -299,7 +302,7 @@ window.CaigouBankQuestions=[
       "steps": [
         {
           "title": "构造辅助函数",
-          "text": "为了把不影响奇偶性的常数项单独分离，定义：",
+          "text": "原函数含常数 1，这会影响奇函数关于原点的对称性。先把它单独分离，定义下面的辅助函数，再对该函数严格验证奇偶性。",
           "formula": "\\[g(x)=f(x)-1=x\\ln\\!\\left(e^{2x}+1\\right)-x^2.\\]"
         },
         {
@@ -323,7 +326,8 @@ window.CaigouBankQuestions=[
           "formula": "\\[f(-a)=g(-a)+1=-1+1=0.\\]"
         }
       ],
-      "conclusion": "因此 \\(f(-a)=0\\)。"
+      "conclusion": "因此 \\(f(-a)=0\\)。",
+      "method": "已知一个函数值而要求相反自变量处的值时，先检查减去常数后的函数是否具有奇偶性。"
     }
   },
   {
@@ -362,7 +366,8 @@ window.CaigouBankQuestions=[
           "formula": "\\[\\tan\\angle AFB=\\frac{2\\sqrt2}{1-2}=-2\\sqrt2.\\]"
         }
       ],
-      "conclusion": "因此 \\(\\tan\\angle AFB=-2\\sqrt2\\)。"
+      "conclusion": "因此 \\(\\tan\\angle AFB=-2\\sqrt2\\)。",
+      "method": "圆的弦与圆心角题，可用弦心距构造直角三角形求半角，再由倍角公式恢复所需角度。"
     }
   },
   {
@@ -401,7 +406,9 @@ window.CaigouBankQuestions=[
           "formula": "\\[\\frac76\\le\\omega<\\frac{13}{6}.\\]"
         }
       ],
-      "conclusion": "参数范围为 \\(\\left[\\frac76,\\frac{13}{6}\\right)\\)。"
+      "conclusion": "参数范围为 \\(\\left[\\frac76,\\frac{13}{6}\\right)\\)。",
+      "method": "三角函数零点个数问题，可转成相位区间内整数倍圆周率的个数；端点取到零点时要计入。",
+      "pitfall": "相位的左端点是 \\(-\\pi/6\\)，所以区间首先包含 0，再依次包含 \\(\\pi,2\\pi\\)。第二个零点允许落在右端点，第三个零点不能落入，因此下界取等号、上界不取等号。"
     }
   },
   {
@@ -444,7 +451,8 @@ window.CaigouBankQuestions=[
           "text": "最优角满足 \\(\\tan\\alpha=\\sqrt{3/5}\\)。由 \\(AD=1\\)，有 \\(AE=\\tan\\alpha\\)，它严格位于 \\(0\\) 与 \\(AB=\\sqrt{15}/2\\) 之间，故对应的 \\(E\\) 是允许的内点，\\(\\beta=\\pi/2-\\alpha\\) 也满足折起条件。"
         }
       ],
-      "conclusion": "四棱锥体积的最大值为 \\(\\frac14\\)。"
+      "conclusion": "四棱锥体积的最大值为 \\(\\frac14\\)。",
+      "method": "折叠几何的体积由不变底面与变化的高共同决定，先用一个参数表达二者，再检查最优参数是否可实现。"
     }
   },
   {
@@ -482,7 +490,9 @@ window.CaigouBankQuestions=[
           "formula": "\\[\\min(x^2+y^2)=(\\sqrt2)^2=2.\\]"
         }
       ],
-      "conclusion": "\\(x^2+y^2\\) 的最小值为 \\(2\\)。"
+      "conclusion": "\\(x^2+y^2\\) 的最小值为 \\(2\\)。",
+      "method": "等半径圆的相等切线长可转为到圆心等距，从而得到垂直平分线，再求点到原点的最近距离。",
+      "pitfall": "算出直线上的最短距离后，还要确认相应点确能向两圆作切线。最近点 \\((1,1)\\) 到两个圆心的距离均为 \\(\\sqrt2>1\\)，所以它位于两圆外部，等号可取。"
     }
   },
   {
@@ -521,7 +531,8 @@ window.CaigouBankQuestions=[
           "formula": "\\[k=2,\\qquad n=3.\\]"
         }
       ],
-      "conclusion": "因此 \\(n\\) 的最小值为 \\(3\\)。"
+      "conclusion": "因此 \\(n\\) 的最小值为 \\(3\\)。",
+      "method": "求展开式的常数项，先写通项并整理指数，再把指数为零转化为整数约束。"
     }
   },
   {
@@ -564,7 +575,8 @@ window.CaigouBankQuestions=[
           "formula": "\\[AQ=x_0+1=4.\\]"
         }
       ],
-      "conclusion": "线段 \\(AQ\\) 的长度为 \\(4\\)。"
+      "conclusion": "线段 \\(AQ\\) 的长度为 \\(4\\)。",
+      "method": "轨迹与距离结合时，先找轨迹的标准方程，再检查固定点是否恰好是焦点，以利用圆锥曲线定义。"
     }
   },
   {
@@ -607,7 +619,8 @@ window.CaigouBankQuestions=[
           "text": "当 \\(r^2=12\\) 时基本不等式取等号，因此最大夹角确实可以达到 \\(\\frac\\pi6\\)。"
         }
       ],
-      "conclusion": "所求夹角的最大值为 \\(\\frac\\pi6\\)。"
+      "conclusion": "所求夹角的最大值为 \\(\\frac\\pi6\\)。",
+      "method": "向量夹角最值可先把模长条件平方，转为数量积关系，再用基本不等式控制余弦并检查等号。"
     }
   },
   {
@@ -650,7 +663,8 @@ window.CaigouBankQuestions=[
           "text": "这里基本区间是半开区间 \\([0,2)\\)。每个实数唯一写成 \\(2k+t\\)，其中 \\(k\\in\\mathbb Z,\\ 0\\le t<2\\)，定义 \\(f(2k+t)=(-1)^ke^t\\) 即满足条件。\\(9=2\\times4+1\\)，所以本次取值是 \\(e\\)。不能同时把 \\(2\\) 放进基本区间。"
         }
       ],
-      "conclusion": "所求函数值为 \\(e\\)。"
+      "conclusion": "所求函数值为 \\(e\\)。",
+      "method": "等差数列看对称项之和，等比数列看下标和相同的项之积；化简数值后再使用函数的周期关系。"
     },
     "supplemental": true
   },
@@ -690,7 +704,8 @@ window.CaigouBankQuestions=[
           "formula": "\\[\\begin{aligned}S_{\\triangle ABC}&=\\frac12\\sin120^\\circ=\\frac{\\sqrt3}{4},\\\\V&=\\frac13\\cdot\\frac{\\sqrt3}{4}\\cdot\\sqrt3=\\frac14.\\end{aligned}\\]"
         }
       ],
-      "conclusion": "三棱锥 \\(O-ABC\\) 的体积为 \\(\\frac14\\)。"
+      "conclusion": "三棱锥 \\(O-ABC\\) 的体积为 \\(\\frac14\\)。",
+      "method": "球内三角形与球心组成的棱锥，可先求三角形外接圆半径，再由球半径求球心到截面的距离。"
     }
   },
   {
@@ -732,7 +747,8 @@ window.CaigouBankQuestions=[
           "text": "不同的列可互换、两行也可互换；这些重排不改变“同行或同列”的关系。每种合法白车布局都能重排为 A、F，因此黑车的 14 种安排对所有白车布局均适用，乘法原理不会漏算或重复。"
         }
       ],
-      "conclusion": "不同的停车方法共有 \\(336\\) 种。"
+      "conclusion": "不同的停车方法共有 \\(336\\) 种。",
+      "method": "分步计数要明确车辆是否可区分，并说明后一阶段的合法安排数是否与前一阶段的具体选择有关。"
     }
   },
   {
@@ -771,7 +787,8 @@ window.CaigouBankQuestions=[
           "formula": "\\[\\max(a_1a_2\\cdots a_n)=3^3=27.\\]"
         }
       ],
-      "conclusion": "前 \\(n\\) 项乘积的最大值为 \\(27\\)。"
+      "conclusion": "前 \\(n\\) 项乘积的最大值为 \\(27\\)。",
+      "method": "正等比数列的乘积最值，可化为固定底数的指数最值；指数中的项数必须取正整数。"
     }
   },
   {
@@ -815,7 +832,8 @@ window.CaigouBankQuestions=[
           "formula": "\\[OB=8\\cdot\\frac{\\sqrt2}{2}=4\\sqrt2.\\]"
         }
       ],
-      "conclusion": "线段 \\(OB\\) 的长度为 \\(4\\sqrt2\\)。"
+      "conclusion": "线段 \\(OB\\) 的长度为 \\(4\\sqrt2\\)。",
+      "method": "含线段参数的向量模，可以先解释为动点到固定点的距离，再用几何关系求距离和最小值。"
     }
   },
   {
@@ -852,7 +870,8 @@ window.CaigouBankQuestions=[
           "formula": "\\[2\\times\\sqrt5=2\\sqrt5.\\]"
         }
       ],
-      "conclusion": "截面面积为 \\(2\\sqrt5\\)。"
+      "conclusion": "截面面积为 \\(2\\sqrt5\\)。",
+      "method": "过已知直线且平行给定方向的截面，先确定各棱交点和截面形状，再求边长与面积。"
     }
   },
   {
@@ -899,7 +918,8 @@ window.CaigouBankQuestions=[
           "text": "此处使用的是有方向的向量等式，而非长度等式。计算得到 \\(a^2=(3+\\sqrt5)/4>1\\)，故 \\(b^2=a^2-1>0\\)，同时 \\(0<e<1\\)，符合椭圆要求。"
         }
       ],
-      "conclusion": "椭圆的离心率为 \\(\\frac{\\sqrt{10}-\\sqrt2}{2}\\)。"
+      "conclusion": "椭圆的离心率为 \\(\\frac{\\sqrt{10}-\\sqrt2}{2}\\)。",
+      "method": "含向量比例的解析几何，先保留方向写坐标等式，确定交点后再代入曲线方程。"
     }
   },
   {
@@ -943,7 +963,8 @@ window.CaigouBankQuestions=[
           "formula": "\\[c_{18}>\\frac14.\\]"
         }
       ],
-      "conclusion": "因此 \\(\\frac14<c_{18}<\\frac27\\)。"
+      "conclusion": "因此 \\(\\frac14<c_{18}<\\frac27\\)。",
+      "method": "递推式中分母与分子次数相差明显时，可尝试取倒数，并比较相邻项某个幂的差来累加放缩。"
     }
   },
   {
@@ -991,7 +1012,8 @@ window.CaigouBankQuestions=[
           "formula": "\\[\\begin{aligned}72-54\\sqrt2&\\approx-4.368,\\\\6-6\\sqrt3&\\approx-4.392,\\\\-36/5&=-7.2.\\end{aligned}\\]"
         }
       ],
-      "conclusion": "\\(\\overrightarrow{RA}\\cdot\\overrightarrow{RB}>\\overrightarrow{PA}\\cdot\\overrightarrow{PB}>\\overrightarrow{QA}\\cdot\\overrightarrow{QB}\\)。"
+      "conclusion": "\\(\\overrightarrow{RA}\\cdot\\overrightarrow{RB}>\\overrightarrow{PA}\\cdot\\overrightarrow{PB}>\\overrightarrow{QA}\\cdot\\overrightarrow{QB}\\)。",
+      "method": "由不同条件定义的三角形内点，需要分别确定位置，统一坐标或长度尺度后再比较数量积。"
     }
   },
   {
@@ -1034,7 +1056,8 @@ window.CaigouBankQuestions=[
           "text": "每个有限 \\(k\\) 都满足 \\(S_k>2/\\pi\\)，且 \\(S_k\\to2/\\pi\\)。所以 \\(\\lambda=2/\\pi\\) 对所有 \\(k\\) 可用；若再增大 \\(\\lambda\\)，充分大的 \\(k\\) 将使 \\(S_k<\\lambda\\)。这里求的是所有可行 \\(\\lambda\\) 的最大值，不是某个 \\(S_k\\) 的最小值。"
         }
       ],
-      "conclusion": "使 \\(\\lambda<S_k\\) 对任意正整数 \\(k\\) 恒成立的最大 \\(\\lambda\\) 为 \\(\\frac2\\pi\\)。"
+      "conclusion": "使 \\(\\lambda<S_k\\) 对任意正整数 \\(k\\) 恒成立的最大 \\(\\lambda\\) 为 \\(\\frac2\\pi\\)。",
+      "method": "对称几何面积可先配对简化；涉及对所有指标成立的不等式时，要区分下确界是否被某一项达到。"
     }
   }
 ];

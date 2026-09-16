@@ -12,7 +12,7 @@ window.CaigouBankQuestions=[
       "steps": [
         {
           "title": "确定对应点",
-          "text": "解 \\(x^3+x=2\\)。函数严格递增，且 \\(f(1)=2\\)，所以唯一的对应点是 \\(x_0=1\\)。",
+          "text": "反函数在输入 2 处的值，是原函数输出等于 2 时的自变量。由 \\(f'(x)=3x^2+1>0\\)，原函数严格递增，且两端趋于正负无穷，故反函数在实数上存在。又 \\(f(1)=2\\)，对应点唯一为 1。",
           "formula": "\\[\\varphi(2)=1.\\]"
         },
         {
@@ -26,7 +26,8 @@ window.CaigouBankQuestions=[
           "formula": "\\[\\varphi^{\\prime}(2)=\\frac1{f^{\\prime}(1)}=\\frac14.\\]"
         }
       ],
-      "conclusion": "填入 \\(1/4\\)。"
+      "conclusion": "填入 \\(1/4\\)。",
+      "method": "反函数在某个输入处求导，先求它对应的原函数自变量，再对该点的原函数导数取倒数。"
     }
   },
   {
@@ -54,7 +55,8 @@ window.CaigouBankQuestions=[
           "formula": "\\[\\xi=\\frac1{\\sqrt3}=\\frac{\\sqrt3}{3}.\\]"
         }
       ],
-      "conclusion": "填入 \\(\\sqrt3/3\\)。"
+      "conclusion": "填入 \\(\\sqrt3/3\\)。",
+      "method": "中值定理先核对闭区间连续、开区间可导，再求导数等于割线斜率的点，并筛选区间内的根。"
     }
   },
   {
@@ -73,7 +75,7 @@ window.CaigouBankQuestions=[
         },
         {
           "title": "使用乘积求导",
-          "text": "对 \\(xe^x\\) 使用乘积法则。",
+          "text": "乘积求导分为两项：第一项是 \\(x' e^x=1\\cdot e^x\\)，第二项是 \\(x(e^x)'=xe^x\\)。相加后提出共同因子 \\(e^x\\)，不能只对其中一个因子求导。",
           "formula": "\\[f(x)=(xe^x)^{\\prime}=e^x+xe^x=(x+1)e^x.\\]"
         },
         {
@@ -81,7 +83,8 @@ window.CaigouBankQuestions=[
           "text": "对所得函数积分，确实得到 \\(xe^x+C\\)，所以结果无遗漏。"
         }
       ],
-      "conclusion": "因此 \\(f(x)=(x+1)e^x\\)。"
+      "conclusion": "因此 \\(f(x)=(x+1)e^x\\)。",
+      "method": "已知不定积分反求被积函数，就是对给出的原函数求导；乘积中的两个因子都需要参与求导。"
     }
   },
   {
@@ -110,7 +113,8 @@ window.CaigouBankQuestions=[
           "formula": "\\[F^{\\prime}(x)=\\int_a^x f(t)\\,dt.\\]"
         }
       ],
-      "conclusion": "所求导数为 \\(\\int_a^x f(t)\\,dt\\)。"
+      "conclusion": "所求导数为 \\(\\int_a^x f(t)\\,dt\\)。",
+      "method": "积分上限和被积函数都含同一变量时，可先拆出该变量，再分别用乘积法则与微积分基本定理。"
     },
     "supplemental": true
   },
@@ -119,7 +123,7 @@ window.CaigouBankQuestions=[
     "type": "证明题",
     "text": "对任意正数 \\(a,b,p,q\\)，若 \\(\\displaystyle\\frac1p+\\frac1q=1\\)，证明 \\(\\displaystyle ab\\le\\frac1pa^p+\\frac1qb^q\\)。",
     "options": [],
-    "answer": "命题得证",
+    "answer": "\\(ab\\le a^p/p+b^q/q\\)，等号当且仅当 \\(a^p=b^q\\)。",
     "solution": {
       "point": "Young 不等式与凹函数 Jensen 不等式",
       "lead": "条件 \\(1/p+1/q=1\\) 正好给出两个权重。把 \\(a^p,b^q\\) 代入凹函数 \\(\\ln x\\) 的 Jensen 不等式即可。",
@@ -144,7 +148,9 @@ window.CaigouBankQuestions=[
           "formula": "\\[\\frac1pa^p+\\frac1qb^q\\ge ab.\\]"
         }
       ],
-      "conclusion": "Young 不等式得证；等号在 \\(a^p=b^q\\) 时成立。"
+      "conclusion": "Young 不等式得证；等号在 \\(a^p=b^q\\) 时成立。",
+      "method": "出现正权重且权重和为一时，可考虑凸凹函数不等式；先核对权重和变量的取值条件，再选择方向。",
+      "pitfall": "这里对数函数是严格凹函数，Jensen 不等式的方向为“函数作用于加权平均，不小于函数值的加权平均”。两权重均正，等号当且仅当 \\(a^p=b^q\\)。"
     }
   },
   {
@@ -152,14 +158,14 @@ window.CaigouBankQuestions=[
     "type": "证明题",
     "text": "设 \\(f(x)\\) 在 \\([a,b]\\) 上连续、在 \\((a,b)\\) 内可导，且 \\(a>0\\)、\\(af(b)=bf(a)\\)。证明存在 \\(t\\in(a,b)\\)，使 \\(tf^{\\prime}(t)=f(t)\\)。",
     "options": [],
-    "answer": "命题得证",
+    "answer": "存在 \\(t\\in(a,b)\\)，使 \\(tf'(t)=f(t)\\)。",
     "solution": {
       "point": "罗尔定理与辅助函数构造",
       "lead": "目标 \\(tf^{\\prime}(t)-f(t)=0\\) 正好是商 \\(f(x)/x\\) 的分子。条件 \\(a>0\\) 保证这个辅助函数在整个区间上有定义。",
       "steps": [
         {
           "title": "构造辅助函数",
-          "text": "令",
+          "text": "目标 \\(xf'(x)-f(x)\\) 正好是 \\(f(x)/x\\) 求导后的分子，因此构造下式。由于 \\(a>0\\)，整个 \\([a,b]\\) 上 \\(x\\ne0\\)，商函数在所需区间内有定义。",
           "formula": "\\[F(x)=\\frac{f(x)}x.\\]"
         },
         {
@@ -177,7 +183,8 @@ window.CaigouBankQuestions=[
           "formula": "\\[0=F^{\\prime}(t)=\\frac{tf^{\\prime}(t)-f(t)}{t^2}.\\]"
         }
       ],
-      "conclusion": "因为 \\(t^2>0\\)，所以 \\(tf^{\\prime}(t)=f(t)\\)，命题得证。"
+      "conclusion": "因为 \\(t^2>0\\)，所以 \\(tf^{\\prime}(t)=f(t)\\)，命题得证。",
+      "method": "目标含变量乘导数减函数本身时，可尝试对函数与变量的商求导，并把端点关系改写为罗尔定理条件。"
     }
   },
   {
@@ -206,7 +213,8 @@ window.CaigouBankQuestions=[
           "formula": "\\[f^{(10)}(x)=(x^2+20x+89)e^x.\\]"
         }
       ],
-      "conclusion": "十阶导数为 \\((x^2+20x+89)e^x\\)。"
+      "conclusion": "十阶导数为 \\((x^2+20x+89)e^x\\)。",
+      "method": "多项式乘指数函数的高阶导数，用莱布尼兹公式；多项式超过自身次数的导数为零，展开会自动截断。"
     }
   },
   {
@@ -244,7 +252,8 @@ window.CaigouBankQuestions=[
           "text": "由 \\((1+x)^{1/x}=e-ex/2+o(x)\\)，\\(x>0\\) 时函数值在 \\(e\\) 下方，\\(x<0\\) 时在上方；两侧差商均趋于 \\(-e/2\\)。底数要求 \\(1+x>0\\)，在 0 附近满足。"
         }
       ],
-      "conclusion": "所求极限为 \\(-e/2\\)。"
+      "conclusion": "所求极限为 \\(-e/2\\)。",
+      "method": "幂指型极限先取对数化成指数形式；外层有差商时，需要比常数极限多保留一阶。"
     }
   },
   {
@@ -263,7 +272,7 @@ window.CaigouBankQuestions=[
         },
         {
           "title": "拆分有理式",
-          "text": "代入并作整式除法。",
+          "text": "把分子写成 \\(2t=2(t+1)-2\\)，即可除出常数项，剩下分母为 \\(t+1\\) 的对数型积分。这里 \\(t=\\sqrt{x}\\ge0\\)，所以分母不为零。",
           "formula": "\\[\\int\\frac{dx}{\\sqrt{x}+1}=\\int\\frac{2t}{t+1}dt=\\int\\left(2-\\frac2{t+1}\\right)dt.\\]"
         },
         {
@@ -272,7 +281,9 @@ window.CaigouBankQuestions=[
           "formula": "\\[2t-2\\ln|t+1|+C=2\\sqrt{x}-2\\ln(\\sqrt{x}+1)+C.\\]"
         }
       ],
-      "conclusion": "原函数为 \\(2\\sqrt{x}-2\\ln(\\sqrt{x}+1)+C\\)。"
+      "conclusion": "原函数为 \\(2\\sqrt{x}-2\\ln(\\sqrt{x}+1)+C\\)。",
+      "method": "被积函数含平方根时，令平方根为新变量，连同微分一起替换，积分后再换回原变量。",
+      "pitfall": "通常在开区间 \\(x>0\\) 上求原函数，此时换元可正常求导；\\(t+1>0\\) 允许在换回后去掉对数的绝对值。积分常数不能漏掉。"
     }
   },
   {
@@ -301,7 +312,8 @@ window.CaigouBankQuestions=[
           "formula": "\\[\\int_0^1\\frac{dx}{\\sqrt{4-x^2}}=\\left.\\arcsin\\frac x2\\right|_0^1=\\arcsin\\frac12=\\frac\\pi6.\\]"
         }
       ],
-      "conclusion": "所求极限为 \\(\\pi/6\\)。"
+      "conclusion": "所求极限为 \\(\\pi/6\\)。",
+      "method": "根号内含指标平方的求和极限，先提出正的指标，再识别区间宽度与取样点。"
     }
   },
   {
@@ -330,7 +342,8 @@ window.CaigouBankQuestions=[
           "formula": "\\[2\\left[-t\\cos t+\\sin t\\right]_0^\\pi=2\\pi.\\]"
         }
       ],
-      "conclusion": "定积分等于 \\(2\\pi\\)。"
+      "conclusion": "定积分等于 \\(2\\pi\\)。",
+      "method": "定积分换元必须同时换微分和上下限；若换元后是多项式乘三角函数，再考虑分部积分。"
     }
   },
   {
@@ -350,7 +363,7 @@ window.CaigouBankQuestions=[
         },
         {
           "title": "处理绝对值项",
-          "text": "\\(|x^3|\\) 是偶函数。",
+          "text": "由 \\(|(-x)^3|=|x^3|\\) 可知绝对值项是偶函数，因此左右两半积分相等。在右半区间 \\(x\\ge0\\)，\\(|x^3|=x^3\\)，所以可去掉绝对值并乘以 2。",
           "formula": "\\[\\int_{-2}^{2}|x^3|\\,dx=2\\int_0^2x^3\\,dx.\\]"
         },
         {
@@ -359,7 +372,8 @@ window.CaigouBankQuestions=[
           "formula": "\\[2\\int_0^2x^3\\,dx=2\\left[\\frac{x^4}{4}\\right]_0^2=2\\cdot4=8.\\]"
         }
       ],
-      "conclusion": "原积分等于 \\(8\\)。"
+      "conclusion": "原积分等于 \\(8\\)。",
+      "method": "对称区间积分先分辨各项奇偶性；绝对值项常为偶函数，不能与原来的奇次幂混为一谈。"
     }
   }
 ];

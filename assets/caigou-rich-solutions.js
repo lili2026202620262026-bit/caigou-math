@@ -13,11 +13,14 @@
     .step-copy p{margin:0;line-height:1.78;color:#345343}
     .formula{width:fit-content;min-width:280px;max-width:min(100%,720px);margin-top:8px;padding:10px 17px;border:1px solid #d9e8d4;border-radius:11px;background:#fff;overflow:hidden}
     .formula .katex{font-size:1.06em}.formula .katex-display{margin:.35em 0}
-    .code-block{max-width:100%;margin-top:8px;padding:12px 14px;border-radius:10px;background:#18392b;color:#e8f7e7;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.6 Consolas,monospace}
+    .code-block{max-width:100%;margin-top:8px;padding:12px 14px;border-radius:10px;background:#18392b;color:#e8f7e7;white-space:pre-wrap;overflow-x:auto;font:13px/1.6 Consolas,monospace}
     .solution-note{margin-top:13px;padding:10px 12px;border-left:3px solid #d1a53a;border-radius:0 9px 9px 0;background:#fff8df;color:#6e5724;line-height:1.72}
     .solution-rubric{margin-top:13px;padding:11px 13px;border:1px solid #d6e9d5;border-radius:12px;background:#f8fcf5;color:#345343;line-height:1.72}
     .solution-conclusion{width:fit-content;max-width:100%;margin-top:15px;padding:9px 12px;border-left:3px solid #79a86f;border-radius:0 9px 9px 0;background:rgba(255,255,255,.62);color:#345343}
-    .final-answer{margin-top:15px;padding:10px 12px;border-radius:10px;background:#dff1d6;color:#347047;font-weight:800}
+    .final-answer{margin:0 0 20px;padding:13px 15px;border:1px solid #c9e3bb;border-radius:12px;background:#dff1d6;color:#245b36;font-weight:800;line-height:1.8;overflow-wrap:anywhere}
+    .solution-section{margin-top:20px}.solution-section>p{margin:9px 0 0;line-height:1.85}
+    .solution-section .solution-title{margin-bottom:12px}.solution-method{margin-top:18px;padding:12px 14px;border-left:3px solid #79a86f;border-radius:0 10px 10px 0;background:#ffffffa6;line-height:1.85}
+    .solution-extra{margin-top:16px;border:1px solid #d6e9d5;border-radius:10px;padding:10px 12px;line-height:1.85}.solution-extra summary{cursor:pointer;color:#347047;font-weight:700}
     .econ-diagram{width:min(100%,720px);margin-top:10px;padding:10px;border:1px solid #d9e8d4;border-radius:13px;background:#fff;overflow:hidden}
     .econ-diagram svg{display:block;width:100%;height:auto}.econ-diagram .axis{stroke:#547461;stroke-width:2}.econ-diagram .curve{fill:none;stroke-width:3;stroke-linecap:round}.econ-diagram .guide{stroke:#9bb4a3;stroke-width:1.5;stroke-dasharray:6 6}.econ-diagram text{fill:#355846;font:700 14px "Microsoft YaHei",sans-serif}.econ-diagram .small{fill:#688577;font-size:12px}.econ-diagram .profit{fill:#bfe57666;stroke:#75a85d;stroke-width:1.5}.econ-diagram .dwl{fill:#f3ba596e;stroke:#c88a23;stroke-width:1.5}
     @media(max-width:650px){.solution-step{grid-template-columns:29px minmax(0,1fr);gap:8px}.step-no{width:27px;height:27px}.formula{width:100%;min-width:0;max-width:100%;padding:8px 10px}.formula .katex{font-size:1em}.solution-conclusion{width:100%}.econ-diagram{width:100%;padding:5px}.econ-diagram text{font-size:16px}.econ-diagram .small{font-size:14px}}
@@ -46,7 +49,9 @@
 
   const render = (solution, answer) => {
     if (!solution) return `<div class="final-answer">正确答案：${escapeHtml(answer)}</div>`;
-    return `<div class="rich-solution"><span class="analysis-label">考点分析</span><div class="analysis-point">${escapeHtml(solution.point)}</div><p class="analysis-lead">${escapeHtml(solution.lead)}</p><div class="solution-title">解题步骤</div><div class="solution-steps">${(solution.steps || []).map(renderStep).join('')}</div>${solution.note ? `<div class="solution-note"><b>严谨性说明：</b>${escapeHtml(solution.note)}</div>` : ''}${solution.rubric ? `<div class="solution-rubric"><b>评分参考：</b>${escapeHtml(solution.rubric)}</div>` : ''}${solution.conclusion ? `<div class="solution-conclusion">${escapeHtml(solution.conclusion)}</div>` : ''}<div class="final-answer">正确答案：${escapeHtml(answer)}</div></div>`;
+    const warnings=[solution.pitfall,solution.note].filter(Boolean);
+    const extra=solution.extra;
+    return `<div class="rich-solution"><div class="final-answer">正确答案：${escapeHtml(answer)}</div><section class="solution-section"><span class="analysis-label">考点与思路</span><div class="analysis-point">${escapeHtml(solution.point)}</div><p class="analysis-lead">${escapeHtml(solution.lead)}</p></section><section class="solution-section"><div class="solution-title">分步解答</div><div class="solution-steps">${(solution.steps || []).map(renderStep).join('')}</div></section>${warnings.length ? `<section class="solution-section"><span class="analysis-label">易错提醒与条件检查</span>${warnings.map(t=>`<div class="solution-note">${escapeHtml(t)}</div>`).join('')}</section>` : ''}${solution.rubric ? `<div class="solution-rubric"><b>自行核对要点：</b>${escapeHtml(solution.rubric)}</div>` : ''}${solution.method ? `<div class="solution-method"><b>方法总结：</b>${escapeHtml(solution.method)}</div>` : (solution.conclusion ? `<div class="solution-conclusion">${escapeHtml(solution.conclusion)}</div>` : '')}${extra ? `<details class="solution-extra"><summary>补充理解</summary><p>${escapeHtml(extra)}</p></details>` : ''}</div>`;
   };
 
   window.CaigouRichSolution = { render, escapeHtml };

@@ -33,7 +33,8 @@ window.CaigouBankQuestions=[
           "text": "可对角化矩阵的特征值未必互异，例如单位矩阵可对角化但只有一个不同的特征值，所以该条件不是必要条件。"
         }
       ],
-      "conclusion": "“有 \\(n\\) 个互异特征值”是矩阵可对角化的充分非必要条件。"
+      "conclusion": "“有 \\(n\\) 个互异特征值”是矩阵可对角化的充分非必要条件。",
+      "method": "判断充分非必要条件，要完成两件事：证明条件能推出结论，再给出结论成立但条件不成立的反例。"
     },
     "supplemental": true
   },
@@ -58,7 +59,7 @@ window.CaigouBankQuestions=[
         },
         {
           "title": "求逆矩阵的作用",
-          "text": "由 \\(Av=\\lambda v\\) 左乘 \\(A^{-1}\\)，得到 \\(A^{-1}v=\\lambda^{-1}v\\)。"
+          "text": "由 \\(Av=\\lambda v\\) 左乘 \\(A^{-1}\\)，先得到 \\(v=\\lambda A^{-1}v\\)。由于已确认 \\(\\lambda\\ne0\\)，两边除以 \\(\\lambda\\) 才得到 \\(A^{-1}v=\\lambda^{-1}v\\)。"
         },
         {
           "title": "使用实对称条件",
@@ -71,7 +72,8 @@ window.CaigouBankQuestions=[
         }
       ],
       "conclusion": "与 \\(v\\) 对应的特征值为 \\(\\lambda+\\lambda^{-1}\\)。",
-      "note": "若不补入“实对称”或“共享该特征向量”等条件，一般不能只由 \\(A\\) 的一个特征值确定 \\(A^{-1}+A^{\\mathsf T}\\) 的特征值。"
+      "note": "若不补入“实对称”或“共享该特征向量”等条件，一般不能只由 \\(A\\) 的一个特征值确定 \\(A^{-1}+A^{\\mathsf T}\\) 的特征值。",
+      "method": "已知特征向量时，直接计算新矩阵作用在该向量上的结果；能提出的标量就是对应特征值。"
     },
     "supplemental": true
   },
@@ -103,7 +105,8 @@ window.CaigouBankQuestions=[
           "text": "\\(2(1,1,0)+(0,1,1)+(1,0,1)=(3,3,2)=v\\)，系数无误。"
         }
       ],
-      "conclusion": "\\([v]_\\beta=(2,1,1)^{\\mathsf T}\\)。"
+      "conclusion": "\\([v]_\\beta=(2,1,1)^{\\mathsf T}\\)。",
+      "method": "求向量在指定基下的坐标，就是按基的顺序求线性组合系数；坐标不是向量在标准基下的分量。"
     },
     "supplemental": true
   },
@@ -139,7 +142,8 @@ window.CaigouBankQuestions=[
           "text": "任意 \\([x]_\\beta\\) 左乘该矩阵，都得到 \\([T(x)]_\\beta\\)，符合表示矩阵的定义。"
         }
       ],
-      "conclusion": "线性变换在基 \\(\\beta\\) 下的矩阵为 \\(\\begin{pmatrix}5&-1\\\\-2&0\\end{pmatrix}\\)。"
+      "conclusion": "线性变换在基 \\(\\beta\\) 下的矩阵为 \\(\\begin{pmatrix}5&-1\\\\-2&0\\end{pmatrix}\\)。",
+      "method": "线性变换的矩阵按列记录各个基向量的像，先展开像的坐标，再保持原基的顺序排成列。"
     },
     "supplemental": true
   },
@@ -171,7 +175,8 @@ window.CaigouBankQuestions=[
           "text": "乘积为 \\(1\\cdot2\\cdot3\\cdot4=24\\)。"
         }
       ],
-      "conclusion": "\\(|B-I|=24\\)。"
+      "conclusion": "\\(|B-I|=24\\)。",
+      "method": "涉及相似矩阵的行列式，可先转为特征值的乘积；减去单位矩阵对应把每个特征值减一。"
     }
   },
   {
@@ -207,7 +212,8 @@ window.CaigouBankQuestions=[
           "formula": "\\[e_3=\\frac1{\\sqrt3}(-1,1,1).\\]"
         }
       ],
-      "conclusion": "一组标准正交基为 \\(e_1=(1,1,0)/\\sqrt2\\)、\\(e_2=(1,-1,2)/\\sqrt6\\)、\\(e_3=(-1,1,1)/\\sqrt3\\)。"
+      "conclusion": "一组标准正交基为 \\(e_1=(1,1,0)/\\sqrt2\\)、\\(e_2=(1,-1,2)/\\sqrt6\\)、\\(e_3=(-1,1,1)/\\sqrt3\\)。",
+      "method": "施密特正交化先减去在已有正交向量上的投影，再逐个单位化；最后检查两两内积为零、各向量长度为一。"
     },
     "supplemental": true
   },
@@ -250,7 +256,8 @@ window.CaigouBankQuestions=[
           "formula": "\\[[T(I)]_F=(-1,0,-2,4)^{\\mathsf T}.\\]"
         }
       ],
-      "conclusion": "三问答案依次为上面的 \\([T]_E\\)、\\([T]_F\\) 与 \\([T(I)]_F=(-1,0,-2,4)^{\\mathsf T}\\)。"
+      "conclusion": "三问答案依次为上面的 \\([T]_E\\)、\\([T]_F\\) 与 \\([T(I)]_F=(-1,0,-2,4)^{\\mathsf T}\\)。",
+      "method": "矩阵空间也能看作向量空间：逐个作用于基矩阵，再按同一顺序读取坐标，不能把矩阵元素顺序随意调换。"
     }
   },
   {
@@ -280,7 +287,8 @@ window.CaigouBankQuestions=[
           "text": "矩阵阶数为 3，已找到 1 个对应 \\(3\\) 的方向和 2 维零特征空间，合计维数为 3，没有遗漏。"
         }
       ],
-      "conclusion": "特征值为 \\(3\\)（一次）和 \\(0\\)（二次）；全部非零特征向量分别来自 \\(\\operatorname{span}\\{(1,1,1)^{\\mathsf T}\\}\\) 与平面 \\(x_1+x_2+x_3=0\\)。"
+      "conclusion": "特征值为 \\(3\\)（一次）和 \\(0\\)（二次）；全部非零特征向量分别来自 \\(\\operatorname{span}\\{(1,1,1)^{\\mathsf T}\\}\\) 与平面 \\(x_1+x_2+x_3=0\\)。",
+      "method": "全一矩阵作用于向量时，每个分量都变成原分量的和；分别讨论全一向量方向与分量和为零的子空间。"
     }
   },
   {
@@ -288,7 +296,7 @@ window.CaigouBankQuestions=[
     "type": "证明题",
     "text": "证明：任意实对称矩阵都可以正交对角化。",
     "options": [],
-    "answer": "命题得证",
+    "answer": "存在实正交矩阵 \\(Q\\)，使 \\(Q^{\\mathsf T}AQ\\) 为实对角矩阵。",
     "solution": {
       "point": "实对称矩阵的正交对角化",
       "lead": "要得到正交基，既要证明特征向量可以正交，也要证明能够找齐维数。用不变正交补上的归纳补全这一步。",
@@ -315,7 +323,8 @@ window.CaigouBankQuestions=[
           "text": "每一列都是特征向量，因此 \\(AQ=Q\\Lambda\\)。左乘 \\(Q^{\\mathsf T}\\)，得到 \\(Q^{\\mathsf T}AQ=\\Lambda\\)，其中 \\(\\Lambda\\) 为实对角矩阵。命题得证。"
         }
       ],
-      "conclusion": "任意实对称矩阵均可由一个实正交矩阵对角化。"
+      "conclusion": "任意实对称矩阵均可由一个实正交矩阵对角化。",
+      "method": "正交对角化不仅要有特征向量，还要找齐维数；利用实对称性保留正交补，再按维数归纳。"
     }
   },
   {
@@ -323,7 +332,7 @@ window.CaigouBankQuestions=[
     "type": "证明题",
     "text": "在欧几里得空间中，设 \\(\\beta=(b_1,\\ldots,b_n)\\) 是一组正交基。若向量 \\(a\\) 与每个 \\(b_i\\) 都正交，证明 \\(a=0\\)。",
     "options": [],
-    "answer": "\\(a=0\\)",
+    "answer": "\\(a=0\\)。",
     "solution": {
       "point": "正交基展开与傅里叶系数",
       "lead": "在正交基中展开待证向量，再分别与每个基向量取内积；正交性会消去所有交叉项。",
@@ -334,7 +343,7 @@ window.CaigouBankQuestions=[
         },
         {
           "title": "与第 \\(j\\) 个基向量取内积",
-          "text": "利用内积的线性性，",
+          "text": "固定 \\(j\\)，对展开式两边与 \\(b_j\\) 取内积。正交性使 \\(i\\ne j\\) 的内积全部为零，只有 \\(i=j\\) 的一项留下；该项的内积等于 \\(\\lVert b_j\\rVert^2\\)。",
           "formula": "\\[\\langle a,b_j\\rangle=\\sum_{i=1}^{n}c_i\\langle b_i,b_j\\rangle=c_j\\lVert b_j\\rVert^2.\\]"
         },
         {
@@ -346,7 +355,8 @@ window.CaigouBankQuestions=[
           "text": "于是对每个 \\(j\\) 都有 \\(c_j=0\\)，从而 \\(a=0b_1+\\cdots+0b_n=0\\)。"
         }
       ],
-      "conclusion": "向量 \\(a\\) 是零向量，命题得证。"
+      "conclusion": "向量 \\(a\\) 是零向量，命题得证。",
+      "method": "正交基中求展开系数，分别与每个基向量取内积；其他项因正交性消失，再除以该基向量的模平方。"
     }
   }
 ];
