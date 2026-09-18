@@ -38,6 +38,10 @@
       <div class="picker-grid" id="picker-grid"></div>
     </dialog>`;
 
+  let practiceIndices = null;
+  let topicView = null;
+  const visibleIndices = () => practiceIndices || questions.map((_, i) => i);
+
   const fresh = { current: 0, done: {}, chosen: {}, results: {} };
   let state;
   try {
@@ -113,7 +117,8 @@
   }
 
   function syncPicker() {
-    $('picker-grid').innerHTML = questions.map((q, index) => {
+    $('picker-grid').innerHTML = visibleIndices().map(index => {
+      const q = questions[index];
       const classes = ['picker-number'];
       if (state.done[q.no]) classes.push('done');
       if (index === state.current) classes.push('current');
@@ -182,9 +187,10 @@
       });
     }
 
-    $('prev').hidden = state.current === 0;
-    $('next').hidden = state.current === questions.length - 1;
-    $('jump-trigger').innerHTML = `<span style="display:block;font:700 13px/1.3 sans-serif">跳转选题 <span aria-hidden="true">▦</span></span><span style="display:block;margin-top:2px;font-size:11px;line-height:1.2">第 ${state.current + 1} / ${questions.length} 题</span>`;
+    const sequence=visibleIndices(), position=sequence.indexOf(state.current);
+    $('prev').hidden = position <= 0;
+    $('next').hidden = position === sequence.length - 1;
+    $('jump-trigger').innerHTML = `<span style="display:block;font:700 13px/1.3 sans-serif">跳转选题 <span aria-hidden="true">▦</span></span><span style="display:block;margin-top:2px;font-size:11px;line-height:1.2">${practiceIndices ? `专项 ${position + 1} / ${sequence.length} · 原题 ${q.no}` : `第 ${state.current + 1} / ${questions.length} 题`}</span>`;
     sync();
     showFeedback(q,message);
     window.CaigouMath?.render($('card'));
@@ -204,11 +210,14 @@
   }
 
   function go(index) {
-    state.current = Math.max(0, Math.min(questions.length - 1, Number(index) || 0));
+    const target = Math.max(0, Math.min(questions.length - 1, Number(index) || 0));
+    if(practiceIndices && !practiceIndices.includes(target)){practiceIndices=null;topicView?.clear();}
+    state.current = target;
     save();
     closePicker();
     render();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    $('card').scrollIntoView({block:'start',behavior:'smooth'});
+    $('card').setAttribute('tabindex','-1');$('card').focus({preventScroll:true});
   }
 
   function submitCurrent() {
@@ -245,14 +254,24 @@
     save();sync();showFeedback(q);$('self-check').hidden=true;
   }
 
-  $('prev').addEventListener('click', () => go(state.current - 1));
-  $('next').addEventListener('click', () => go(state.current + 1));
+  $('prev').addEventListener('click', () => {const seq=visibleIndices();go(seq[Math.max(0,seq.indexOf(state.current)-1)]);});
+  $('next').addEventListener('click', () => {const seq=visibleIndices();go(seq[Math.min(seq.length-1,seq.indexOf(state.current)+1)]);});
   $('jump-trigger').addEventListener('click', openPicker);
   $('picker-close').addEventListener('click', closePicker);
   $('question-picker').addEventListener('click', event => {
     if (event.target === $('question-picker')) closePicker();
   });
 
+  const topicHost=document.createElement('div');
+  document.querySelector('.progress').before(topicHost);
+  const topicGroups=window.CaigouTopicGroups?.[location.pathname.split('/').pop().replace('.html','')] || {};
+  topicView=window.CaigouTopics?.mount({
+    container:topicHost,
+    questions:questions.map(q=>({no:q.no,point:q.point||q.solution?.point,score:q.score,topic:Object.keys(topicGroups).find(name=>topicGroups[name].includes(q.no))})),
+    onJump:go,
+    onPractice(indices){practiceIndices=indices;go(indices[0]);},
+    onReset(){practiceIndices=null;go(state.current);}
+  });
   window.go = go;
   window.reveal = reveal;
   window.submitCurrent = submitCurrent;
